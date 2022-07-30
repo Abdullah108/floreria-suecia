@@ -70,7 +70,7 @@
     "prestart": "npm run tailwind:dev",
     "start": "react-scripts start",
     "prebuild": "npm run tailwind:build",
-    "build": "react-scripts build",
+    "build": "node --max_old_space_size=2560 react-scripts build",
     "cz": "git-cz",
     "release": "release-it",
     "test": "react-scripts test",
