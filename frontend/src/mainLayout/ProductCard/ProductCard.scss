@@ -1,0 +1,68 @@
+@import "./../utillities_config";
+
+.productCard {
+  border-radius: 20px !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #f8f8f8;
+  height: 550px;
+  .both {
+    display: flex;
+    flex-direction: row !important;
+    width: 93%;
+    margin-bottom: 30px;
+    .link {
+      @media (min-width: 1600px) {
+        height: 47px !important;
+      }
+    }
+
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    img {
+      border-radius: 20px !important;
+      width: 20px;
+      @media (min-width: 1600px) {
+        width: 25px !important;
+      }
+    }
+  }
+  .cardImage {
+    border-radius: 20px 20px 0px 0px;
+    img {
+      border-radius: 20px 20px 0px 0px;
+
+      width: 330px !important;
+      height: 330px !important;
+    }
+  }
+  .cardTitle {
+    font-family: "Nunito";
+    font-weight: 700;
+    font-size: 18px;
+    color: #000000;
+    margin-top: 0.8rem;
+    margin-bottom: 0 !important;
+  }
+
+  .cardPrice {
+    font-family: "Poppins";
+
+    font-weight: 600;
+    font-size: 22px;
+    color: #000000;
+  }
+  button {
+    //margin-bottom: 1rem;
+    width: 100%;
+    @media (min-width: 1024px) {
+      font-size: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      font-size: 0.7rem;
+    }
+  }
+}

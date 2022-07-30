@@ -1,0 +1,95 @@
+.productSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+
+  padding-top: 80px;
+  @media (max-width: 768px) {
+  }
+
+  h1 {
+    text-align: center;
+    font-weight: 600;
+    font-family: "Cormorant Upright";
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    font-size: 1.8rem;
+    @media (min-width: 450px) {
+      font-size: 1.8rem;
+    }
+    @media (min-width: 768px) {
+      font-size: 2.5rem;
+    }
+    @media (min-width: 1024px) {
+      font-size: 3rem;
+    }
+  }
+
+  .lastslider {
+    @media (max-width: 768px) {
+      display: block;
+    }
+  }
+  .dabba {
+    max-width: 300px;
+    max-height: 550px;
+    width: 300px;
+    height: 550px;
+    background-color: #f8f8f8;
+    border-radius: 20px;
+    @media (max-width: 768px) {
+      margin-top: 20px;
+    }
+  }
+  .carosel {
+    @media (max-width: 600px) {
+      display: flex !important;
+      flex-direction: column !important;
+    }
+    .right_arr {
+      @media (max-width: 600px) {
+        align-self: self-end !important;
+      }
+    }
+    .left_arr {
+      @media (max-width: 600px) {
+        align-self: self-start !important;
+      }
+    }
+  }
+  .react-multi-carousel-list {
+    width: 90%;
+    align-self: center;
+    //justify-content: center;
+    align-items: center;
+    .react-multi-carousel-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  .carousel-button-group {
+    display: flex;
+    width: 95%;
+    justify-content: space-between;
+    align-self: center;
+    position: relative;
+    bottom: 300px;
+    @media (max-width: 1220px) {
+      position: relative;
+      bottom: 300px;
+    }
+    @media (max-width: 1012px) {
+      bottom: 300px;
+    }
+    @media (max-width: 605px) {
+      bottom: 300px;
+    }
+    @media (max-width: 465px) {
+      bottom: 300px;
+      width: 100% !important;
+      display: none;
+    }
+  }
+}
