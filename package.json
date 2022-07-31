@@ -6,10 +6,11 @@
   "scripts": {
     "start:dev": "nodemon index.js",
     "start-client": "cd frontend && npm start",
-    "start": "concurrently -k \"node index.js\" \"npm run start-client\"",
+    "start": "node index.js",
     "install-client": "cd frontend && npm install --legacy-peer-deps",
     "build-client": "cd frontend && npm run build",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run install-client && npm run build-client"
+    "install-dev": "npm install",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run install-client && npm run build-client && npm run install-dev"
   },
   "author": "htmlLover",
   "license": "ISC",
