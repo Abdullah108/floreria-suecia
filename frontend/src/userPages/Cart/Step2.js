@@ -234,7 +234,7 @@ const Step2 = ({ handleNext }) => {
     };
     console.log(body);
     const response = await axios.post(
-      "http://localhost:5000/api/order/add",
+      "https://floreria-suecia.netlify.app/api/order/add",
       body,
       { headers }
     );
