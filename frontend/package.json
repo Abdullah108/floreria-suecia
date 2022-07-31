@@ -68,7 +68,7 @@
     "tailwind:dev": "tailwindcss build src/assets/css/tailwind.css -o src/assets/css/tailwind.output.css",
     "tailwind:build": "cross-env NODE_ENV=production postcss src/assets/css/tailwind.css -o src/assets/css/tailwind.output.css",
     "start": "react-scripts start",
-    "prestart": "npm run tailwind:dev && npm start",
+    "prestart": "npm run tailwind:dev",
     "prebuild": "npm run tailwind:build",
     "build": "react-scripts build",
     "cz": "git-cz",
