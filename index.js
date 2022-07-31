@@ -41,12 +41,6 @@ app.use('/api/order/', userOrderRoutes);
 app.use('/api/admin/', adminRoutes);
 app.use('/api/orders/', isAuth, orderRoutes);
 
-// Use express's default error handling middleware
-app.use((err, req, res, next) => {
-  if (res.headersSent) return next(err);
-  res.status(400).json({ err: err });
-});
-
 const PORT = process.env.PORT || 5000;
 
 // app.listen(PORT, () => console.log(`server running on port ${PORT}`));
@@ -60,3 +54,11 @@ if (process.env.NODE_ENV === 'production') {
   
 }
 app.listen(PORT, () => console.log(`server running on port ${PORT}`));
+
+
+// Use express's default error handling middleware
+// app.use((err, req, res, next) => {
+//   if (res.headersSent) return next(err);
+//   res.status(400).json({ err: err });
+// });
+
