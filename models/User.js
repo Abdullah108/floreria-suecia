@@ -6,41 +6,23 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    image: {
-      type: String,
-      required: false,
-    },
-    address: {
-      type: String,
-      required: false,
-    },
-    country: {
-      type: String,
-      required: false,
-    },
-    city: {
-      type: String,
-      required: false,
-    },
-
     email: {
       type: String,
       required: true,
-      unique: true,
-      lowercase: true,
-    },
-    phone: {
-      type: String,
-      required: false,
     },
     password: {
       type: String,
-      required: false,
+      required: true,
+    },
+    role: {
+      type: String,
+      required: true,
+    },
+    date: {
+      type: Date,
+      default: Date.now
     },
   },
-  {
-    timestamps: true,
-  }
 );
 
 const User = mongoose.models.User || mongoose.model('User', userSchema);

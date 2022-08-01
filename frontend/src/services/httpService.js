@@ -2,7 +2,7 @@ import axios from 'axios';
 import Cookies from 'js-cookie';
 
 const instance = axios.create({
-  baseURL: `https://floreria-suecia.netlify.app/api/`,
+  baseURL: `http://localhost:5000/api/`,
   timeout: 500000,
   headers: {
     Accept: 'application/json',

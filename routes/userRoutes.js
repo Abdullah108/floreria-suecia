@@ -22,7 +22,7 @@ const {
 router.post('/verify-email', emailVerificationLimit, verifyEmailAddress);
 
 //register a user
-router.post('/register/:token', registerUser);
+router.post('/register', registerUser);
 
 //login a user
 router.post('/login', loginUser);

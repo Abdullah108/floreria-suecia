@@ -2,6 +2,8 @@ require('dotenv').config();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
+const { check, validationResult } = require('express-validator');
+const config = require('config');
 // const { signInToken, tokenForVerify, sendEmail } = require('../config/auth');
 
 const verifyEmailAddress = async (req, res) => {
@@ -39,44 +41,51 @@ const verifyEmailAddress = async (req, res) => {
 };
 
 const registerUser = async (req, res) => {
-  const token = req.params.token;
-  const { name, email, password } = jwt.decode(token);
-  const isAdded = await User.findOne({ email: email });
+  const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
 
-  if (isAdded) {
-    const token = signInToken(isAdded);
-    return res.send({
-      token,
-      name: isAdded.name,
-      email: isAdded.email,
-      message: 'Email Already Verified!',
-    });
-  }
+    const { name, email, password } = req.body;
 
-  if (token) {
-    jwt.verify(token, process.env.JWT_SECRET_FOR_VERIFY, (err, decoded) => {
-      if (err) {
-        return res.status(401).send({
-          message: 'Token Expired, Please try again!',
-        });
-      } else {
-        const newUser = new User({
-          name,
-          email,
-          password: bcrypt.hashSync(password),
-        });
-        newUser.save();
-        const token = signInToken(newUser);
-        res.send({
-          token,
-          _id: newUser._id,
-          name: newUser.name,
-          email: newUser.email,
-          message: 'Email Verified, Please Login Now!',
-        });
+    try {
+      let user = await User.findOne({ email });
+
+      if (user) {
+        return res
+          .status(400)
+          .json({ errors: [{ msg: 'User already exists' }] });
       }
-    });
-  }
+
+      const role = 'user'
+      user = new User({
+        name,
+        email,
+        password,
+        role,
+      });
+      const salt = await bcrypt.genSalt(10);
+
+      user.password = await bcrypt.hash(password, salt);
+
+      await user.save();
+      const payload = {
+        email,
+        password
+      }
+      jwt.sign(
+        payload,
+        "jwtsecret", //jwtsecret
+        { expiresIn: '5 days' },
+        (err, token) => {
+          if (err) throw err;
+          res.json({ token });
+        }
+      );
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send('Server error');
+    }
 };
 
 const loginUser = async (req, res) => {
@@ -137,7 +146,6 @@ const forgetPassword = async (req, res) => {
         <strong>Kachabazar Team</strong>
              `,
     };
-
     const message = 'Please check your email to reset password!';
     // sendEmail(body, res, message);
   }
