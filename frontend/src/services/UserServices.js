@@ -11,6 +11,9 @@ const UserServices = {
   deleteUser(id) {
     return requests.delete(`/user/${id}`);
   },
+  loginUser(body) {
+    return requests.post(`/user/login`, body);
+  },
 };
 
 export default UserServices;

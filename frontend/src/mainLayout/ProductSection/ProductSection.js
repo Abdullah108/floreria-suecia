@@ -70,8 +70,7 @@ const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
 
 const ProductSection = () => {
   const { data, loading } = useAsync(ProductServices.getAllProducts);
-  const tempData = data;
-
+  console.log(data)
   return (
     <div className="productSection">
       <h1>Nuestros Productos</h1>
@@ -85,74 +84,27 @@ const ProductSection = () => {
         swipeable={true}
         containerClass="home-carousel h-full"
       >
-        {/*   {tempData.map((item, index) => (
-          <ProductCard key={index} value={item} />
-        ))} */}
-        <div className="dabba" style={{ justifySelf: "self-end" }}>
-          <img style={{ width: "100%" }} src={f1} />
-          <p className="dabbap1">iEntrega en menos de 2 horas!</p>
-          <p className="dabbap2">iCompra hoy, entrega cuando quieras!</p>
-          <p className="dabbap3"> Ramo del día</p>
-          <p className="dabbap4"> $19.990</p>
-          <div style={{ display: "flex", paddingTop: "10px" }}>
-            <Link className="dabbaa1" to="/user/category?products=|">
-              <Button className="dabbab1">Agregar al carrito</Button>
-            </Link>
-            <img style={{ width: "20px" }} src={delivery} />
-          </div>
-        </div>
-        <div className="dabba">
-          <img style={{ width: "100%" }} src={f2} />
-          <p className="dabbap1">iEntrega en menos de 2 horas!</p>
-          <p className="dabbap2">iCompra hoy, entrega cuando quieras!</p>
-          <p className="dabbap3"> Ramo del día</p>
-          <p className="dabbap4"> $19.990</p>
-          <div style={{ display: "flex", paddingTop: "10px" }}>
-            <Link className="dabbaa1" to="/user/category?products=|">
-              <Button className="dabbab1">Agregar al carrito</Button>
-            </Link>
-            <img style={{ width: "20px" }} src={delivery} />
-          </div>
-        </div>
-        <div className="dabba" style={{ justifySelf: "start" }}>
-          <img style={{ width: "100%" }} src={f3} />
-          <p className="dabbap1">iEntrega en menos de 2 horas!</p>
-          <p className="dabbap2">iCompra hoy, entrega cuando quieras!</p>
-          <p className="dabbap3"> Ramo del día</p>
-          <p className="dabbap4"> $19.990</p>
-          <div style={{ display: "flex", paddingTop: "10px" }}>
-            <Link className="dabbaa1" to="/user/category?products=licories">
-              <Button className="dabbab1">Agregar al carrito</Button>
-            </Link>
-            <img style={{ width: "20px" }} src={delivery} />
-          </div>
-        </div>
-        <div className="dabba" style={{ justifySelf: "start" }}>
-          <img style={{ width: "100%" }} src={f3} />
-          <p className="dabbap1">iEntrega en menos de 2 horas!</p>
-          <p className="dabbap2">iCompra hoy, entrega cuando quieras!</p>
-          <p className="dabbap3"> Ramo del día</p>
-          <p className="dabbap4"> $19.990</p>
-          <div style={{ display: "flex", paddingTop: "10px" }}>
-            <Link className="dabbaa1" to="/user/category?products=licories">
-              <Button className="dabbab1">Agregar al carrito</Button>
-            </Link>
-            <img style={{ width: "20px" }} src={delivery} />
-          </div>
-        </div>
-        <div className="dabba" style={{ justifySelf: "start" }}>
-          <img style={{ width: "100%" }} src={f3} />
-          <p className="dabbap1">iEntrega en menos de 2 horas!</p>
-          <p className="dabbap2">iCompra hoy, entrega cuando quieras!</p>
-          <p className="dabbap3"> Ramo del día</p>
-          <p className="dabbap4"> $19.990</p>
-          <div style={{ display: "flex", paddingTop: "10px" }}>
-            <Link className="dabbaa1" to="/user/category?products=licories">
-              <Button className="dabbab1">Agregar al carrito</Button>
-            </Link>
-            <img style={{ width: "20px" }} src={delivery} />
-          </div>
-        </div>
+        
+          {data.map((product, index) => {
+            return (
+              <div className="dabba">
+                <div key={index}>
+                  <img style={{ width: "100%" }} src={product.image} />
+                  <p className="dabbap1">{product.productName}</p>
+                  <p className="dabbap2">{product.description}</p>
+                  <p className="dabbap3"> Ramo del día</p>
+                  <p className="dabbap4"> ${product.productPrice}</p>
+                  <div style={{ display: "flex", paddingTop: "10px" }}>
+                    <Link className="dabbaa1" to={`/user/product/${product._id}`}>
+                      <Button className="dabbab1">Agregar al carrito</Button>
+                    </Link>
+                    <img style={{ width: "20px" }} src={delivery} />
+                  </div>
+                </div>
+              </div>
+            )
+            })}
+          
       </Carousel>
     </div>
   );

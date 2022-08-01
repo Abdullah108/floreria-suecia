@@ -89,34 +89,49 @@ const registerUser = async (req, res) => {
 };
 
 const loginUser = async (req, res) => {
-  try {
-    const user = await User.findOne({ email: req.body.registerEmail });
-
-    if (
-      user &&
-      user.password &&
-      bcrypt.compareSync(req.body.password, user.password)
-    ) {
-      const token = signInToken(user);
-      res.send({
-        token,
-        _id: user._id,
-        name: user.name,
-        email: user.email,
-        address: user.address,
-        phone: user.phone,
-        image: user.image,
-      });
-    } else {
-      res.status(401).send({
-        message: 'Invalid user or password!',
-      });
+  const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
     }
-  } catch (err) {
-    res.status(500).send({
-      message: err.message,
-    });
-  }
+
+    const { email, password } = req.body;
+
+    try {
+      let user = await User.findOne({ email });
+
+      if (!user) {
+        return res
+          .status(400)
+          .json({ errors: [{ msg: 'Invalid Credentials' }] });
+      }
+
+      const isMatch = await bcrypt.compare(password, user.password);
+
+      if (!isMatch) {
+        return res
+          .status(400)
+          .json({ errors: [{ msg: 'Invalid Credentials' }] });
+      }
+
+      const payload = {
+        user: {
+          id: user.id
+        }
+      };
+      const jwtSecret = 'jwtSecret'
+      jwt.sign(
+        payload,
+        jwtSecret,
+        { expiresIn: '5 days' },
+        (err, token) => {
+          if (err) throw err;
+          res.json({ token });
+        }
+      );
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send('Server error');
+    }
 };
 
 const forgetPassword = async (req, res) => {

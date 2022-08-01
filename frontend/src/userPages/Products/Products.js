@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react/swiper-react.js";
 import { Navigation, Thumbs } from "swiper";
 //component
 import ProductSection from "../../mainLayout/ProductSection/ProductSection";
+import TabsSection from "./Tabs"
 // Import Swiper styles
 import "swiper/swiper.scss"; // core Swiper
 import "swiper/modules/navigation/navigation.scss"; // Navigation module
@@ -31,16 +32,6 @@ import b_arrow from "./../../assets/breadcrumb_arrow.png";
 import cal from "./../../assets/cal.png";
 import cross from "./../../assets/cross.svg";
 import Button from "@mui/material/Button";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import PropTypes from "prop-types";
-import List from "@mui/material/List";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import Collapse from "@mui/material/Collapse";
-import ExpandLess from "@mui/icons-material/ExpandLess";
-import ExpandMore from "@mui/icons-material/ExpandMore";
 import { productImagesButton } from "./../../assets/productImagesBottom/index";
 import ProductCard from "./../../mainLayout/ProductCard/ProductCard";
 import { display } from "@mui/system";
@@ -59,86 +50,36 @@ import ProductServices from "../../services/ProductServices";
 import { useDispatch, useSelector } from "react-redux";
 import { setProductsDetails, setTotalPrice } from "../Redux/Reducer";
 
+
+//get productID from url
+const url = window.location.href;
+var productId = url.substring(url.lastIndexOf("/") + 1);
+
 const Products = () => {
+  const { data, loading } = useAsync(() =>
+    ProductServices.getProductById(productId)
+  );
+
   const dispatch = useDispatch();
   const store = useSelector((state) => state);
 
   const [productDetails, setProductDetails] = useState([]);
   const [productCount, setProductCount] = useState(0);
   const [tempArr, setTempArr] = useState(store.orders.productsDetails);
-  //get productID from url
-  const url = window.location.href;
-  var productId = url.substring(url.lastIndexOf("=") + 1);
+  
+  console.log("product by id",data);
 
-  //set state redux
-  console.log(store.orders.productsDetails);
-
-  // const endOfParams = window.history.previous.href
-  // console.log(endOfParams)
-  const { data, loading } = useAsync(() =>
-    ProductServices.getProductById(productId)
-  );
-
-  console.log(data);
-  // List Item state
-  const [open, setOpen] = React.useState(false);
-
-  const handleClickList = () => {
-    setOpen(!open);
-  };
-  // Tab panel State
-  const [value, setValue] = React.useState(0);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-  function handleClick(event) {
-    event.preventDefault();
-    console.info("You clicked a breadcrumb.");
-  }
-
-  // tab Panel Component
-  function TabPanel(props) {
-    const { children, value, index, ...other } = props;
-
-    return (
-      <div
-        role="tabpanel"
-        hidden={value !== index}
-        id={`simple-tabpanel-${index}`}
-        aria-labelledby={`simple-tab-${index}`}
-        {...other}
-      >
-        {value === index && <div>{children}</div>}
-      </div>
-    );
-  }
-  // Props Types for TabPanel
-  TabPanel.propTypes = {
-    children: PropTypes.node,
-    index: PropTypes.number.isRequired,
-    value: PropTypes.number.isRequired,
-  };
-
-  function a11yProps(index) {
-    return {
-      id: `simple-tab-${index}`,
-      "aria-controls": `simple-tabpanel-${index}`,
-    };
-  }
-
+  
   const [activeThumb, setactiveThumb] = useState();
   const breadcrumbs = [
-    <a key="1" onClick={handleClick}>
+    <a key="1">
       {data.category}
     </a>,
     <a key="2">{data.productName}</a>,
-    // <a key="3" style={{ color: "#72509D", fontWeight: "bold" }}>
-    //   Vino 3V con Botanas
-    // </a>,
+
   ];
   const breadcrumbs2 = [
-    <a style={{ color: "#9BABBF" }} key="1" onClick={handleClick}>
+    <a style={{ color: "#9BABBF" }} key="1">
       Estado de México
     </a>,
     <img style={{ width: "10px" }} src={b_arrow} />,
@@ -560,9 +501,6 @@ const Products = () => {
       console.log("working..");
     }
   };
-  console.log("redux", store.orders.productsDetails);
-
-  console.log(store.orders.totalPrice);
 
   return (
     <div className="ProductContainer">
@@ -592,15 +530,14 @@ const Products = () => {
             className="product-image-slider"
             style={{ height: "500px", width: "500px", marginLeft: "0" }}
           >
-            {/* {productImages.map((item, index) => ( */}
-            <SwiperSlide style={{ textAlign: "-webkit-center" }}>
+
+            <SwiperSlide key="index" style={{ textAlign: "-webkit-center" }}>
               <img
-                src={data.images}
+                src={data.image}
                 alt="product Image"
                 style={{ height: "100%", borderRadius: "20px" }}
               />
             </SwiperSlide>
-            {/* ))} */}
           </Swiper>
           <Swiper
             onSwiper={setactiveThumb}
@@ -615,7 +552,7 @@ const Products = () => {
             <SwiperSlide style={{ width: "100px" }}>
               <div className="product-image-slider-thumbs-wrapper">
                 <img
-                  src={data.images}
+                  src={data.image}
                   alt="product Image"
                   style={{
                     width: "100%",
@@ -634,11 +571,11 @@ const Products = () => {
           </div>
           <div className="productInformationd2">
             Puntos :{" "}
-            <p className="productInformationd2p1">{data.variantPrice}</p>
+            <p className="productInformationd2p1">{data.productPrice}</p>
           </div>
           <div style={{ marginTop: "10px" }}>
             {" "}
-            <h6 className="productInformationh6">${data.variantPrice} </h6>
+            <h6 className="productInformationh6">${data.productPrice} </h6>
           </div>
           <p className="productInformationp1">$12.990 Precio Normal </p>
           <Divider className="productInformationdivider1" />
@@ -1018,204 +955,7 @@ const Products = () => {
           <div className="productInformationline3"></div>
         </div>
       </div>
-      <div>
-        <div>
-          <Tabs
-            value={value}
-            onChange={handleChange}
-            aria-label="secondary tabs example"
-            className="productDetailTab"
-          >
-            <Tab {...a11yProps(0)} label="Descripción del producto" />
-            <Tab {...a11yProps(1)} label="Políticas de envío" />
-            <Tab {...a11yProps(2)} label="Políticas de Sustitución" />
-          </Tabs>
-        </div>
-        <div style={{ margin: "0 0.3rem" }}>
-          <TabPanel value={value} index={0}>
-            <div className="tabpaneld1">
-              <h4 className="tabpaneld1h1">
-                Vino 3V y Botanas con Globo "Love You"
-              </h4>
-              <p style={{ textAlign: "left", color: "#9BABBF" }}>
-                Demuestra tu agradecimiento y cariño con nuestra exclusiva
-                canasta Vinum la cual contiene la combinación perfecta de vino y
-                botanas que hará de este, el regalo perfecto junto con un globo
-                con la frase "Love you". <br />
-                <br />
-                Nuestra caja titulada Vinum, palabra de origen latin que
-                significa Vino, conecta el origen de esta bebida que tiene
-                presencia desde antiguas civilizaciones, y se posiciona hasta el
-                día de hoy como la bebida por excelencia para celebraciones.
-              </p>
-              <h5 className="tabpaneld1h2">Especificaciones del Empaque:</h5>
-              <List
-                sx={{
-                  width: "100%",
-                  maxWidth: 360,
-                  bgcolor: "background.paper",
-                  fontWeight: "400",
-                  fontSize: "10px",
-                }}
-                component="nav"
-                aria-labelledby="nested-list-subheader"
-                className="DetailList"
-              >
-                <div style={{ display: "flex", width: "700px" }}>
-                  <div className="tabpaneld2"></div>
-                  <p className="tabpanelp1">
-                    Caja rígida decorativa o reutilizable tipo libro color hueso
-                    y foil color champagne
-                  </p>
-                </div>
-                <div style={{ display: "flex", width: "700px" }}>
-                  <div className="tabpaneld3"></div>
-                  <p className="tabpanelp2">
-                    Medidas de la caja: 36.5 cm x 21 cm x 9.5 cm
-                  </p>
-                </div>
-                <ListItemButton onClick={handleClickList}>
-                  <ListItemText
-                    style={{ color: "#D96581", textDecoration: "underline" }}
-                    primary="Ver Más"
-                  />
-                  {open ? <ExpandLess /> : <ExpandMore />}
-                </ListItemButton>
-                <Collapse in={open} timeout="auto" unmountOnExit>
-                  <List component="div" disablePadding>
-                    <ListItemButton sx={{ pl: 4 }}>
-                      <ListItemText primary="" />
-                    </ListItemButton>
-                  </List>
-                </Collapse>
-              </List>
-            </div>
-          </TabPanel>
-          <TabPanel value={value} index={1}>
-            <div className="tabpaneld1">
-              <h4 className="tabpaneld1h1">
-                Vino 3V y Botanas con Globo "Love You"
-              </h4>
-              <p style={{ textAlign: "left", color: "#9BABBF" }}>
-                Demuestra tu agradecimiento y cariño con nuestra exclusiva
-                canasta Vinum la cual contiene la combinación perfecta de vino y
-                botanas que hará de este, el regalo perfecto junto con un globo
-                con la frase "Love you". <br />
-                <br />
-                Nuestra caja titulada Vinum, palabra de origen latin que
-                significa Vino, conecta el origen de esta bebida que tiene
-                presencia desde antiguas civilizaciones, y se posiciona hasta el
-                día de hoy como la bebida por excelencia para celebraciones.
-              </p>
-              <h5 className="tabpaneld1h2">Especificaciones del Empaque:</h5>
-              <List
-                sx={{
-                  width: "100%",
-                  maxWidth: 360,
-                  bgcolor: "background.paper",
-                  fontWeight: "400",
-                  fontSize: "10px",
-                }}
-                component="nav"
-                aria-labelledby="nested-list-subheader"
-                className="DetailList"
-              >
-                <div style={{ display: "flex", width: "700px" }}>
-                  <div className="tabpaneld2"></div>
-                  <p className="tabpanelp1">
-                    Caja rígida decorativa o reutilizable tipo libro color hueso
-                    y foil color champagne
-                  </p>
-                </div>
-                <div style={{ display: "flex", width: "700px" }}>
-                  <div className="tabpaneld3"></div>
-                  <p className="tabpanelp2">
-                    Medidas de la caja: 36.5 cm x 21 cm x 9.5 cm
-                  </p>
-                </div>
-                <ListItemButton onClick={handleClickList}>
-                  <ListItemText
-                    style={{ color: "#D96581", textDecoration: "underline" }}
-                    primary="Ver Más"
-                  />
-                  {open ? <ExpandLess /> : <ExpandMore />}
-                </ListItemButton>
-                <Collapse in={open} timeout="auto" unmountOnExit>
-                  <List component="div" disablePadding>
-                    <ListItemButton sx={{ pl: 4 }}>
-                      <ListItemText primary="" />
-                    </ListItemButton>
-                  </List>
-                </Collapse>
-              </List>
-            </div>
-          </TabPanel>
-          <TabPanel value={value} index={2}>
-            <div className="tabpaneld1">
-              <h4 className="tabpaneld1h1">
-                Vino 3V y Botanas con Globo "Love You"
-              </h4>
-              <p style={{ textAlign: "left", color: "#9BABBF" }}>
-                Demuestra tu agradecimiento y cariño con nuestra exclusiva
-                canasta Vinum la cual contiene la combinación perfecta de vino y
-                botanas que hará de este, el regalo perfecto junto con un globo
-                con la frase "Love you". <br />
-                <br />
-                Nuestra caja titulada Vinum, palabra de origen latin que
-                significa Vino, conecta el origen de esta bebida que tiene
-                presencia desde antiguas civilizaciones, y se posiciona hasta el
-                día de hoy como la bebida por excelencia para celebraciones.
-              </p>
-              <h5 className="tabpaneld1h2">Especificaciones del Empaque:</h5>
-              <List
-                sx={{
-                  width: "100%",
-                  maxWidth: 360,
-                  bgcolor: "background.paper",
-                  fontWeight: "400",
-                  fontSize: "10px",
-                }}
-                component="nav"
-                aria-labelledby="nested-list-subheader"
-                className="DetailList"
-              >
-                <div style={{ display: "flex", width: "700px" }}>
-                  <div className="tabpaneld2"></div>
-                  <p className="tabpanelp1">
-                    Caja rígida decorativa o reutilizable tipo libro color hueso
-                    y foil color champagne
-                  </p>
-                </div>
-                <div style={{ display: "flex", width: "700px" }}>
-                  <div className="tabpaneld3"></div>
-                  <p className="tabpanelp2">
-                    Medidas de la caja: 36.5 cm x 21 cm x 9.5 cm
-                  </p>
-                </div>
-                <ListItemButton onClick={handleClickList}>
-                  <ListItemText
-                    style={{ color: "#D96581", textDecoration: "underline" }}
-                    primary="Ver Más"
-                  />
-                  {open ? <ExpandLess /> : <ExpandMore />}
-                </ListItemButton>
-                <Collapse in={open} timeout="auto" unmountOnExit>
-                  <List component="div" disablePadding>
-                    <ListItemButton sx={{ pl: 4 }}>
-                      <ListItemText primary="" />
-                    </ListItemButton>
-                  </List>
-                </Collapse>
-              </List>
-            </div>
-          </TabPanel>
-        </div>
-      </div>
-
-      <div className="productSlideHeading">
-        <h4>Productos Relacionados</h4>
-      </div>
-
+      <TabsSection />
       <ProductSection />
     </div>
   );

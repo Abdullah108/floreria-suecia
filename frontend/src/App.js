@@ -60,7 +60,7 @@ const App = () => {
           {/* client side */}
          
           <Route path="/user/home" component={Home} />
-          <Route path="/user/product" component={Product} />
+          <Route path="/user/product/:id" component={Product} />
           <Route path="/user/myaccount/home" component={MyAccount} />
           <Route path="/user/myaccount/referrals" component={Referrals} />
           <Route path="/user/myaccount/myorders" component={MyOrders} />
