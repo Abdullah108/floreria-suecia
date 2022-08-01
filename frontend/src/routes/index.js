@@ -14,6 +14,7 @@ const ThankYou = lazy(() => import("../userPages/Thankyou/ThankYou"));
 const Signin = lazy(() => import("../userPages/Signin/Signin"));
 const Home = lazy(() => import("../userPages/Home/Home"));
 const Login = lazy(() => import("../userPages/Login/Login"));
+const SignUp = lazy(() => import("../userPages/SignUp/SignUp"));
 
 const Product = lazy(() => import("../userPages/Products/Products"));
 // use lazy for better code splitting
@@ -106,6 +107,10 @@ const routes = [
   {
     path: "/user/login",
     component: Login,
+  },
+  {
+    path: "/user/signup",
+    component: SignUp,
   },
   {
     path: "/user/home",

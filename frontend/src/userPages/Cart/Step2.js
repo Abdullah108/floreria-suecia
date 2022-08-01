@@ -438,16 +438,15 @@ const Step2 = ({ handleNext }) => {
           </div>
           <div style={{ display: "flex", alignItems: "center" }}>
             <input
-              className="span2i1"
-              class="form-check-input"
+              className="span2i1 form-check-input"
               type="checkbox"
               value=""
               id="flexCheckDefault"
             />
             <label
               style={{ marginLeft: "20px", color: "#444444" }}
-              class="form-check-label"
-              for="flexCheckDefault"
+              className="form-check-label"
+              htmlFor="flexCheckDefault"
             >
               Activar recordatorio anual
             </label>
@@ -571,18 +570,16 @@ const Step2 = ({ handleNext }) => {
           </div>
           <div className="span4d1">
             <input
-              className="span4i1"
+              className="span4i1 form-check-input"
               checked={checked1}
               onChange={handlecheckbox1}
-              class="form-check-input"
               type="checkbox"
               value=""
               id="flexCheckDefault"
             />
             <label
-              className="span4l1"
-              class="form-check-label"
-              for="flexCheckDefault"
+              className="span4l1 form-check-label"
+              htmlFor="flexCheckDefault"
             >
               No enviar tarjeta
             </label>
@@ -624,23 +621,21 @@ const Step2 = ({ handleNext }) => {
             {" "}
             <div className="span4d3">
               <input
-                className="span4i1"
+                className="span4i1 form-check-input"
                 checked={checked2}
                 onChange={handlecheckbox2}
-                class="form-check-input"
                 type="checkbox"
                 value=""
                 id="flexCheckDefault"
               />
               <label
-                className="span4l1"
+                className="span4l1 form-check-label"
                 style={{
                   marginLeft: "20px",
                   color: "#444444",
                   fontFamily: "Nunito",
                 }}
-                class="form-check-label"
-                for="flexCheckDefault"
+                htmlFor="flexCheckDefault"
               >
                 No enviar tarjeta
               </label>
@@ -670,10 +665,9 @@ const Step2 = ({ handleNext }) => {
           <div className="tripleDiv">
             <div className="subDiv">
               <input
-                className="span45i1"
+                className="span45i1 form-check-input"
                 checked={checkedm1}
                 onChange={handlecheckboxm1}
-                class="form-check-input"
                 type="checkbox"
                 value=""
               />
@@ -689,10 +683,9 @@ const Step2 = ({ handleNext }) => {
           >
             <div className="subDiv">
               <input
-                className="span45i1"
+                className="span45i1 form-check-input"
                 checked={checkedm2}
                 onChange={handlecheckboxm2}
-                class="form-check-input"
                 type="checkbox"
                 value=""
               />
@@ -708,10 +701,9 @@ const Step2 = ({ handleNext }) => {
           >
             <div className="subDiv">
               <input
-                className="span45i1"
+                className="span45i1 form-check-input"
                 checked={checkedm3}
                 onChange={handlecheckboxm3}
-                class="form-check-input"
                 type="checkbox"
                 value=""
               />
@@ -722,31 +714,29 @@ const Step2 = ({ handleNext }) => {
           <div className="lastCheckboxDiv">
             <div style={{ display: "flex", alignItems: "center" }}>
               <input
-                className="span45i1"
+                className="span45i1 form-check-input"
                 checked={checkedterms}
                 onChange={handlecheckboxterms}
-                class="form-check-input"
                 type="checkbox"
                 value=""
               />
-              <p className="span45p2">
-                Acepto los
-                <p className="span45p3">Términos y Condiciones</p>
+              <p className="span45p2">Acepto los </p>
+              <p className="span45p3">Términos y Condiciones</p>
+              <p style={{ marginLeft: "0" }} className="span45p2">
                 de Florería Suecia
               </p>
             </div>
             <div className="span45d1">
               <input
-                className="span45i1"
+                className="span45i1 form-check-input"
                 checked={checkedannual}
                 onChange={handlecheckboxannual}
-                class="form-check-input"
                 type="checkbox"
                 value=""
               />
-              <p className="span45p2">
-                Activar
-                <p className="span45p3">recordatorio anual</p>
+              <p className="span45p2">Activar </p>
+              <p className="span45p3">recordatorio anual</p>
+              <p style={{ marginLeft: "0" }} className="span45p2">
                 de Florería Suecia
               </p>
             </div>
@@ -863,7 +853,7 @@ const Step2 = ({ handleNext }) => {
               {" "}
               <div className="paymentspan">
                 <div
-                  class="alert alert-info text-justify"
+                  className="alert alert-info text-justify"
                   style={{
                     background: "#f0d8b6",
                     width: "86%",

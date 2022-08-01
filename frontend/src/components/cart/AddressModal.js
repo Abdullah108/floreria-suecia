@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import "./AddressModel.scss";
 
@@ -20,7 +20,6 @@ import Button from "@mui/material/Button";
 
 import { geocodeByAddress, getLatLng } from "react-google-places-autocomplete";
 import Autocomplete from "react-google-autocomplete";
-import GooglePlacesAutocomplete from "react-google-places-autocomplete";
 
 //asset
 import cross from "./../../assets/cross.svg";
@@ -34,7 +33,6 @@ const AddressModal = ({
   setShow,
   setNewAddress,
 }) => {
-  const [openmodel2, setopenModel2] = useState(openmodelchild2);
   const [googleaddress, setgoogleAddress] = useState(null);
   const [personName, setPersonName] = useState([]);
   const [absentName, setAbsentName] = useState([]);
@@ -44,14 +42,11 @@ const AddressModal = ({
   const [longitude, setlongitude] = useState("");
   const [addressname, setaddressname] = useState("");
   const [newAddresschild, setNewAddresschild] = useState([]);
-  // const [booldata, setboolData] = useState();
-  //const [disable, setDisable] = useState(true);
-  // const [show, setShow] = useState(false);
 
   const handleOpenMap = () => setopenmodelmap(true);
   const handleCloseMap = () => setopenmodelmap(false);
   function handleClose2() {
-    return setopenModel2(false), setopenModelchild2(false);
+    return setopenModelchild2(false);
   }
   const handleInputChange = (e) => {
     const Value = e.target.value;
@@ -74,7 +69,7 @@ const AddressModal = ({
   };
   const handleStore = () => {
     inputvalues.address = googleaddress.label;
-    //setopenModel2(false);
+
     handleOpenMap();
 
     setaddressname(googleaddress.label);

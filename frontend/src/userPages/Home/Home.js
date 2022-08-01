@@ -134,7 +134,7 @@ const Home = () => {
               <p style={{ color: "#C8CED4" }}>¿Donde envías?</p>
 
               <input
-                style={{ borderRadius: "10px" }}
+                style={{ borderRadius: "10px", width: "220px" }}
                 className="modalCI1"
                 type="email"
                 class="form-control"

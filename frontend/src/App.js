@@ -1,4 +1,4 @@
-import React, { lazy, useEffect } from "react";
+import React, { lazy } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -6,10 +6,7 @@ import {
   Redirect,
 } from "react-router-dom";
 // Client
-import MainLayout from "./mainLayout/mainLayout";
 import Product from "./userPages/Products/Products";
-import Header from "./mainLayout/Header/Header";
-import Footer from "./mainLayout/Footer/Footer";
 import MyAccount from "./userPages/MyAccount/MyAccount";
 import Referrals from "./userPages/MyAccount/Referrals";
 import MyOrders from "./userPages/MyAccount/MyOrders";
@@ -22,6 +19,7 @@ import ThankYou from "./userPages/Thankyou/ThankYou";
 import Signin from "./userPages/Signin/Signin";
 import Home from "./userPages/Home/Home";
 import Login from "./userPages/Login/Login";
+import SignUp from "./userPages/SignUp/SignUp";
 
 import { ToastContainer } from "./utils/toast";
 import AccessibleNavigationAnnouncer from "./components/AccessibleNavigationAnnouncer";
@@ -29,36 +27,32 @@ import PrivateRoute from "./components/login/PrivateRoute";
 
 const Layout = lazy(() => import("./layout/Layout"));
 //const Login = lazy(() => import("./pages/Login"));
-const SignUp = lazy(() => import("./pages/SignUp"));
+//const SignUp = lazy(() => import("./pages/SignUp"));
 const ForgetPassword = lazy(() => import("./pages/ForgotPassword"));
 const ResetPassword = lazy(() => import("./pages/ResetPassword"));
 
 const App = () => {
-  
   const params = window.location.href.split("/");
-  console.log(params)
-  
+  console.log(params);
+
   return (
     <>
       <ToastContainer />
       <Router>
-        
-
         <AccessibleNavigationAnnouncer />
         <Switch>
           {/* Admin side */}
           {/* <Route path="/login" component={Login} /> */}
-          <Route path="/signup" component={SignUp} />
+          {/* <Route path="/signup" component={SignUp} /> */}
           <Route path="/forgot-password" component={ForgetPassword} />
           <Route path="/reset-password/:token" component={ResetPassword} />
 
           <PrivateRoute>
             <Route path="/" component={Layout} />
           </PrivateRoute>
-          
 
           {/* client side */}
-         
+
           <Route path="/user/home" component={Home} />
           <Route path="/user/product/:id" component={Product} />
           <Route path="/user/myaccount/home" component={MyAccount} />
@@ -74,7 +68,7 @@ const App = () => {
           <Route path="/user/cart" component={Cart} />
           <Route path="/user/thankyou" component={ThankYou} />
           <Route path="/user/signin" component={Signin} />
-          
+          <Route path="/user/signup" component={SignUp} />
           <Route path="/user/login" component={Login} />
           <Redirect exact from="/" to="/user/login" />
         </Switch>
