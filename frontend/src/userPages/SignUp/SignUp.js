@@ -141,7 +141,7 @@ const SignUp = () => {
             <Button className="leftpageb2">Ingresar</Button>
             {/* </Link> */}
           </div>
-          <Button className="leftpageb1">
+          <Button className="leftpageb1" style={{marginTop:'20px'}}>
             <GoogleIcon className="googleicon" sx={{ color: pink[300] }} />
             <p>Ingresar con Google</p>
           </Button>

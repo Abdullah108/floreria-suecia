@@ -32,8 +32,6 @@ const ForgetPassword = lazy(() => import("./pages/ForgotPassword"));
 const ResetPassword = lazy(() => import("./pages/ResetPassword"));
 
 const App = () => {
-  const params = window.location.href.split("/");
-  console.log(params);
 
   return (
     <>

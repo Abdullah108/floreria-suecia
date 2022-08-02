@@ -5,9 +5,11 @@
   display: none;
 } */
 .LoginDiv {
-  width: 90%;
+  justify-content: space-between;
+  // width: 90%;
   display: flex;
   margin: 0 auto;
+  min-height: 100vh;
 
   p,
   h6 {
@@ -18,10 +20,12 @@
     display: flex;
     justify-content: center;
     margin-top: 30px;
+    align-items: center;
     form {
       margin-bottom: 20px;
       input {
-        width: 400px;
+        max-width: 400px;
+        width: 100%;
         height: 50px;
         background: #f8f8f8;
         border-radius: 10px;
@@ -30,7 +34,8 @@
       }
     }
     Button {
-      width: 400px;
+      max-width: 400px;
+      width: 100%;
       height: 50px;
       background: #d96581;
       border-radius: 10px;
@@ -45,7 +50,7 @@
       display: flex;
       flex-direction: column;
       width: fit-content;
-      height: 700px;
+      // height: 700px;
       justify-content: space-around;
       .leftpagep1 {
         font-family: "Cormorant Upright";
@@ -115,12 +120,15 @@
     }
   }
   .rightpage {
-    width: 50%;
+    // width: 50%;
+    position: fixed;
+    right: 0;
+    height: 100%;
     img {
-      width: 166%;
+      // width: 100%;
       height: 100%;
       position: relative;
-      right: 55%;
+      right: 0%;
 
       z-index: -1;
       max-width: none;
@@ -135,12 +143,13 @@
   }
   @media screen and (max-width: 850px) {
     .leftpage {
-      width: 100% !important;
+      // width: 100% !important;
     }
     .rightpage {
       display: none !important;
     }
   }
+
   .role {
     width: 400px;
     height: 50px;
@@ -148,5 +157,11 @@
     border-radius: 10px;
     padding-left: 15px;
     outline: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .LoginDiv {
+    padding: 0 10px;
   }
 }

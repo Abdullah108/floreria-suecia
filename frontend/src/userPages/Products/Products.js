@@ -17,27 +17,14 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import Stack from "@mui/material/Stack";
 import Divider from "@mui/material/Divider";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import DateRangeIcon from "@mui/icons-material/DateRange";
-import IconButton from "@mui/material/IconButton";
 import { selectableProductImages } from "./../../assets/selectableProductImages/index";
 import Carousel from "react-elastic-carousel";
-import { ReactComponent as Gift } from "./../../assets/gift.svg";
-import f1 from "./../../assets/f1.svg";
-import f2 from "./../../assets/f2.svg";
-import f3 from "./../../assets/f3.svg";
-import delivery from "./../../assets/delivery.svg";
 import b_arrow from "./../../assets/breadcrumb_arrow.png";
 import cal from "./../../assets/cal.png";
 import cross from "./../../assets/cross.svg";
 import Button from "@mui/material/Button";
-import { productImagesButton } from "./../../assets/productImagesBottom/index";
-import ProductCard from "./../../mainLayout/ProductCard/ProductCard";
-import { display } from "@mui/system";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
-import isWeekend from "date-fns/isWeekend";
 import { StaticDatePicker } from "@mui/x-date-pickers/StaticDatePicker";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
@@ -51,11 +38,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { setProductsDetails, setTotalPrice } from "../Redux/Reducer";
 
 
-//get productID from url
-const url = window.location.href;
-var productId = url.substring(url.lastIndexOf("/") + 1);
 
 const Products = () => {
+  //get productID from url
+  const url = window.location.href;
+  var productId = url.substring(url.lastIndexOf("/") + 1);
+
   const { data, loading } = useAsync(() =>
     ProductServices.getProductById(productId)
   );

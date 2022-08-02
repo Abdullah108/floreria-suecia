@@ -20,12 +20,12 @@ const Layout = () => {
     closeSidebar();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location]);
-  console.log("params", params);
+  console.log("params", params[4]);
   return (
     <>
       {params[3] == "user" && (
         <>
-          {params[4] != "login" && <HeaderClient /> }
+          {params[4] != "login" & params[4] != "signup"  && <HeaderClient /> }
           <Suspense fallback={<ThemeSuspense />}>
             <Switch>
               {routes.map((route, i) => {
@@ -42,7 +42,7 @@ const Layout = () => {
               {/*<Route component={Page404} />*/}
             </Switch>
           </Suspense>
-          {params[4] != "login" && <FooterClient/>}
+          {params[4] != "login" & params[4] != "signup" && <FooterClient/>}
         </>
       )}
       {params[3] == "" && (
