@@ -10,62 +10,45 @@ import AddressModal from "../../components/cart/AddressModal";
 // mui
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
-import IconButton from "@mui/material/IconButton";
-import Grid from "@mui/material/Grid";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import Stack from "@mui/material/Stack";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 // Select Menu imports
 import Modal from "@mui/material/Modal";
-import Radio from "@mui/material/Radio";
 import FormControl from "@mui/material/FormControl";
-import RadioGroup from "@mui/material/RadioGroup";
 import b_arrow from "./../../assets/breadcrumb_arrow.png";
 import f1 from "./../../assets/f1.svg";
 import f2 from "./../../assets/f2.svg";
-import f3 from "./../../assets/f3.svg";
 import f4 from "./../../assets/f4.png";
 import m1 from "./../../assets/m1.png";
 import m2 from "./../../assets/m2.png";
 import m3 from "./../../assets/m3.png";
 import questionmark from "./../../assets/questionmark.png";
-import cross from "./../../assets/cross.svg";
 import addAdd from "./../../assets/addAdd.svg";
 import btncal from "./../../assets/btncal.png";
 import truck from "./../../assets/truck.png";
 import home from "./../../assets/home.png";
-
 import TextField from "@mui/material/TextField";
-import FormGroup from "@mui/material/FormGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import PropTypes from "prop-types";
-import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 import InputLabel from "@mui/material/InputLabel";
 import TextareaAutosize from "@mui/material/TextareaAutosize";
 import { pink } from "@mui/material/colors";
-import CreditCardIcon from "@mui/icons-material/CreditCard";
-import GooglePlacesAutocomplete from "react-google-places-autocomplete";
-
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { setName, setEmail } from "../Redux/Reducer";
 //redux
-import OrderServices from "../../services/OrderServices";
-import useAsync from "../../hooks/useAsync";
-import { AutoComplete } from "antd";
 
-const ApiPagoFacil = require("@pagofacil/api_pago_facil");
+//const ApiPagoFacil = require("@pagofacil/api_pago_facil");
 const Signature = require("@pagofacil/sdk-apis-javascript-signature");
 
-const trx = new ApiPagoFacil.TrxsApi();
+/* const trx = new ApiPagoFacil.TrxsApi();
 
 const tokenService = process.env.TOKEN_SERVICE;
-const tokenSecret = process.env.TOKEN_SECRET;
+const tokenSecret = process.env.TOKEN_SECRET; */
 
 const { v4: uuidv4 } = require("uuid");
 
@@ -89,9 +72,7 @@ const Step2 = ({ handleNext }) => {
   const [style_index, setIndex] = useState("");
 
   const [open, setOpen] = useState(false);
-  const [showPassword, setShowPassword] = useState(false);
-  const [radioValue, setRadioValue] = useState("");
-  const [openmodel1, setopenModel1] = useState(false);
+
   const [openmodel3, setopenmodel3] = useState(false);
   const [disable, setDisable] = useState(true);
   const [address2, setaddress] = useState([]);
@@ -101,7 +82,7 @@ const Step2 = ({ handleNext }) => {
     name: "",
     email: "",
   });
-
+  console.log(address2);
   useEffect(() => {
     if (quantity1 < 1) {
       setQuantity1(1);
@@ -119,20 +100,12 @@ const Step2 = ({ handleNext }) => {
   const [checkedterms, setCheckedterms] = useState(false);
   const [checkedannual, setCheckedannual] = useState(false);
   const [openmodel2, setopenModel2] = useState(false);
-  const [openmodelmap, setopenmodelmap] = useState(false);
   const [newAddress, setNewAddress] = useState([]);
-
   const [checked1, setChecked1] = useState(false);
   const [checked2, setChecked2] = useState(false);
-  const [selected1, setSelected1] = useState(false);
   const [selected2, setSelected2] = useState(false);
-  const [textarea1, settextArea1] = useState("");
-  const [textarea2, settextArea2] = useState("");
   const [textarea3, settextArea3] = useState("");
-  const [cardname, setcardName] = useState("");
-  const [cardno, setcardno] = useState("");
-  const [cardexp, setcardexp] = useState("");
-  const [cardcvv, setcardcvv] = useState("");
+  console.log(selected2);
   // console.log(store.orders.productsDetails[0].price)
   //easy payment API
   const handlePaymentAPI = async () => {
@@ -190,10 +163,6 @@ const Step2 = ({ handleNext }) => {
     }
   }, [googleaddress]); */
 
-  const handleClickShowPassword = () => setShowPassword(!showPassword);
-  const handleMouseDownPassword = () => setShowPassword(!showPassword);
-  const handleOpen1 = () => setopenModel1(true);
-  const handleClose1 = () => setopenModel1(false);
   const handleOpen2 = () => setopenModel2(true);
   const handleOpen3 = () => setopenmodel3(true);
   const handleClose3 = () => setopenmodel3(false);
@@ -266,31 +235,7 @@ const Step2 = ({ handleNext }) => {
     setCheckedannual(event.target.checked);
   };
   // style
-  const style1 = {
-    position: "absolute",
-    top: "20%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    width: 1100,
-    bgcolor: "background.paper",
-    borderRadius: 1,
-    p: 4,
-  };
-  const style2 = {
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    width: 850,
-    height: 720,
-    bgcolor: "background.paper",
-    borderRadius: "30px",
-    p: 4,
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-between",
-    padding: "25px 25px 10px 25px",
-  };
+
   const style3 = {
     position: "absolute",
     top: "50%",
@@ -309,19 +254,19 @@ const Step2 = ({ handleNext }) => {
     setValueTab(newValue);
   };
   const breadcrumbs2 = [
-    <a style={{ color: "#9BABBF" }} key="1" onClick={handleClick}>
+    <a href style={{ color: "#9BABBF" }} key="1" onClick={handleClick}>
       Checkout
     </a>,
-    <img style={{ width: "10px" }} src={b_arrow} />,
-    <a style={{ color: "#D96581", fontWeight: "600" }} key="2">
+    <img alt="" style={{ width: "10px" }} src={b_arrow} />,
+    <a href style={{ color: "#D96581", fontWeight: "600" }} key="2">
       Info Cliente
     </a>,
-    <img style={{ width: "10px" }} src={b_arrow} />,
-    <a style={{ color: "#9BABBF" }} key="3">
+    <img alt="" style={{ width: "10px" }} src={b_arrow} />,
+    <a href style={{ color: "#9BABBF" }} key="3">
       Fecha y Horario
     </a>,
-    <img style={{ width: "10px" }} src={b_arrow} />,
-    <a style={{ color: "#9BABBF" }} key="3">
+    <img alt="" style={{ width: "10px" }} src={b_arrow} />,
+    <a href style={{ color: "#9BABBF" }} key="4">
       Card Details
     </a>,
   ];
@@ -363,7 +308,7 @@ const Step2 = ({ handleNext }) => {
       "aria-controls": `simple-tabpanel-${index}`,
     };
   }
-  const [suggestion, setSuggestion] = React.useState("");
+  const [suggestion, setSuggestion] = useState("");
 
   const handleSetSuggestion = (event) => {
     setSuggestion(event.target.value);
@@ -432,7 +377,6 @@ const Step2 = ({ handleNext }) => {
               label="Email"
               onChange={handleChangeInformation}
               variant="outlined"
-              type={showPassword ? "text" : "password"}
               value={personalInformation.email}
             />
           </div>
@@ -469,7 +413,7 @@ const Step2 = ({ handleNext }) => {
             </div>
           </div>
           <Button className="span23b1">
-            <img src={btncal} />
+            <img alt="" src={btncal} />
           </Button>
         </div>
         <div className="span-3">
@@ -478,8 +422,8 @@ const Step2 = ({ handleNext }) => {
           </div>
           <div className="span3d1">
             <div className="resp">
-              <img className="truck" src={truck} />
-              <img className="home" src={home} />
+              <img alt="" className="truck" src={truck} />
+              <img alt="" className="home" src={home} />
               <Tabs
                 value={valueTab}
                 onChange={handleChangeTab}
@@ -642,17 +586,19 @@ const Step2 = ({ handleNext }) => {
             </div>
             <div style={{ display: `${checked2 ? "none" : "block"}` }}>
               <a
+                href
                 style={{ color: "#7A838D" }}
                 title="Si deseas enviar como anónimo, firma como quieras o envía sin firma"
+                key="5"
               >
-                <img src={questionmark} height="13px" />
+                <img alt="" src={questionmark} height="13px" />
               </a>
             </div>
           </div>
 
           <TextField
             className="secondForm"
-            id="outlined-basic"
+            id="outlined-basic1"
             label="Firma la tarjeta con el nombre que quieras."
             variant="outlined"
             style={{
@@ -671,7 +617,7 @@ const Step2 = ({ handleNext }) => {
                 type="checkbox"
                 value=""
               />
-              <img src={m1} />
+              <img alt="" src={m1} />
               <p style={{ margin: "0", width: "130px" }}>Mercado Pago</p>
             </div>
           </div>
@@ -689,7 +635,7 @@ const Step2 = ({ handleNext }) => {
                 type="checkbox"
                 value=""
               />
-              <img src={m2} />
+              <img alt="" src={m2} />
               <p style={{ margin: "0", width: "130px" }}>WebPay</p>
             </div>
           </div>
@@ -707,7 +653,7 @@ const Step2 = ({ handleNext }) => {
                 type="checkbox"
                 value=""
               />
-              <img src={m3} />
+              <img alt="" src={m3} />
               <p style={{ margin: "0", width: "130px" }}>Tarjeta de Crédito</p>
             </div>
           </div>
@@ -765,7 +711,11 @@ const Step2 = ({ handleNext }) => {
             <p>$90.00</p>
           </div>
           <div className="span5d1">
-            <img style={{ width: "70px", borderRadius: "10px" }} src={f4} />
+            <img
+              alt=""
+              style={{ width: "70px", borderRadius: "10px" }}
+              src={f4}
+            />
             <div className="span5d2">
               <p style={{ marginBottom: "0" }}>Vino Rosa</p>
               <p style={{ color: "#9BABBF" }}>Ramo del día</p>
@@ -786,7 +736,11 @@ const Step2 = ({ handleNext }) => {
             <p>$90.00</p>
           </div>
           <div className="span5d1">
-            <img style={{ width: "70px", borderRadius: "10px" }} src={f1} />
+            <img
+              alt=""
+              style={{ width: "70px", borderRadius: "10px" }}
+              src={f1}
+            />
             <div className="span5d2">
               <p style={{ marginBottom: "0" }}>Vino Rosa</p>
               <p style={{ color: "#9BABBF" }}>Ramo del día</p>
@@ -811,7 +765,7 @@ const Step2 = ({ handleNext }) => {
           <div className="span5d5">
             <TextField
               className="span5t1"
-              id="outlined-basic"
+              id="outlined-basic2"
               label="Cupón de descuento"
               variant="outlined"
             />
@@ -877,7 +831,7 @@ const Step2 = ({ handleNext }) => {
                     >
                       <img
                         src={`${product.images}`}
-                        alt="productImage"
+                        alt=""
                         width="100px"
                         height="150px"
                         style={{ height: "100px" }}
@@ -927,14 +881,17 @@ const Step2 = ({ handleNext }) => {
                     </div>
                     <div>
                       <img
+                        alt=""
                         style={{ width: "30px" }}
                         src="https://dlu1537hrr98t.cloudfront.net/content/paymentmethods/V03/visa_logo.png"
                       />
                       <img
+                        alt=""
                         style={{ width: "30px" }}
                         src="https://dlu1537hrr98t.cloudfront.net/content/paymentmethods/V03/masterd_card_logo.png"
                       />
                       <img
+                        alt=""
                         style={{ width: "30px" }}
                         src="https://dlu1537hrr98t.cloudfront.net/content/paymentmethods/V03/amex_logo.png"
                       />
@@ -951,6 +908,7 @@ const Step2 = ({ handleNext }) => {
                     target="_blank"
                     // onClick={PlaceOrderApi}
                     style={{ color: "white" }}
+                    key="6"
                   >
                     {" "}
                     Continuar

@@ -79,6 +79,7 @@ const AddressModal = ({
   };
   const handleStore2 = () => {
     var temp = newAddresschild;
+
     inputvalues.address = googleaddress.label;
     temp.push(inputvalues);
     setNewAddress(temp);
@@ -87,6 +88,7 @@ const AddressModal = ({
     setShow(true);
     handleCloseMap(true);
     handleClose2();
+    setNewAddresschild(newAddresschild);
     console.log("newAddresschild:--------->");
     console.log(newAddresschild);
   };
@@ -182,6 +184,7 @@ const AddressModal = ({
               Dirección de envío
             </p>
             <img
+              alt=""
               style={{
                 cursor: "pointer",
               }}
@@ -223,13 +226,13 @@ const AddressModal = ({
                 size="small"
                 style={{ width: "45%", height: "50px" }}
               />
-              <a
+              <button
                 className="a1"
                 style={{ color: "#7A838D" }}
                 title="Info: solo llamaremos en caso de no encontrar a la persona"
               >
-                <img src={questionmark} height="13px" />
-              </a>
+                <img alt="" src={questionmark} height="13px" />
+              </button>
             </div>
             <div>
               <Autocomplete
@@ -412,7 +415,7 @@ const AddressModal = ({
               justifyContent: "flex-end",
             }}
           >
-            <img onClick={handleCloseMap} src={cross} />
+            <img alt="" onClick={handleCloseMap} src={cross} />
           </div>
           <div
             style={{

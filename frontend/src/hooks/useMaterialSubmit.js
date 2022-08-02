@@ -1,8 +1,8 @@
-import { useContext, useEffect, useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { SidebarContext } from '../context/SidebarContext';
-import MaterialServices from '../services/MaterialServices';
-import { notifyError, notifySuccess } from '../utils/toast';
+import { useContext, useEffect } from "react";
+import { useForm } from "react-hook-form";
+import { SidebarContext } from "../context/SidebarContext";
+import MaterialServices from "../services/MaterialServices";
+import { notifyError, notifySuccess } from "../utils/toast";
 
 const useMaterialSubmit = (id) => {
   const { isDrawerOpen, closeDrawer, setIsUpdate } = useContext(SidebarContext);
@@ -10,9 +10,9 @@ const useMaterialSubmit = (id) => {
   const {
     register,
     handleSubmit,
-    watch,
+
     setValue,
-    clearErrors,
+
     formState: { errors },
   } = useForm();
 
@@ -48,7 +48,7 @@ const useMaterialSubmit = (id) => {
       supplier: data.supplier,
       producer: data.producer,
       published: data.published,
-      quantity: data.quantity
+      quantity: data.quantity,
     };
 
     if (id) {
@@ -72,13 +72,13 @@ const useMaterialSubmit = (id) => {
 
   useEffect(() => {
     if (!isDrawerOpen) {
-      setValue('material');
-      setValue('materialName');
-      setValue('materialType');
-      setValue('supplier');
-      setValue('producer');
-      setValue('quantity');
-      setValue('published');
+      setValue("material");
+      setValue("materialName");
+      setValue("materialType");
+      setValue("supplier");
+      setValue("producer");
+      setValue("quantity");
+      setValue("published");
       return;
     }
 
@@ -86,25 +86,23 @@ const useMaterialSubmit = (id) => {
       MaterialServices.getMaterialById(id)
         .then((res) => {
           if (res) {
-            setValue('material', res.material);
-            setValue('materialName', res.materialName);
-            setValue('materialType', res.materialType);
-            setValue('supplier', res.supplier);
-            setValue('producer', res.producer);
-            setValue('quantity', res.quantity);
-            setValue('published', res.published);
+            setValue("material", res.material);
+            setValue("materialName", res.materialName);
+            setValue("materialType", res.materialType);
+            setValue("supplier", res.supplier);
+            setValue("producer", res.producer);
+            setValue("quantity", res.quantity);
+            setValue("published", res.published);
           }
         })
         .catch((err) => {
-          notifyError('There is a server error!');
+          notifyError("There is a server error!");
         });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id, setValue, isDrawerOpen]);
 
-  useEffect(() => {
-    
-  }, []);
+  useEffect(() => {}, []);
 
   return {
     register,

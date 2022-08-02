@@ -4,37 +4,22 @@ import "./Home.scss";
 import { styled } from "@mui/material/styles";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
-import TextField from "@mui/material/TextField";
 import calender from "./../../assets/calender.svg";
 import dividedflowers from "./../../assets/dividedflowers.png";
 import whatsapp_fix from "./../../assets/whatsapp_fix.png";
-
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import ProductSection from "../../mainLayout/ProductSection/ProductSection";
 import Service from "../../mainLayout/Service/Service";
-import { Swiper, SwiperSlide } from "swiper/react/swiper-react.js";
-import { Navigation, Thumbs } from "swiper";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import { pink } from "@mui/material/colors";
 // Import Swiper styles
 import "swiper/swiper.scss"; // core Swiper
 import "swiper/modules/navigation/navigation.scss"; // Navigation module
 import "swiper/modules/thumbs/thumbs.scss";
-import { Carousel } from "antd";
 import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
-import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: "center",
-  color: theme.palette.text.secondary,
-}));
 
 //  const contentStyle = {
 //    height: '700px',
@@ -44,12 +29,8 @@ const Item = styled(Paper)(({ theme }) => ({
 //  background: '#364d79',
 //  };
 const Home = () => {
-  const [dotPosition, setDotPosition] = React.useState("right");
   const [age, setAge] = React.useState("");
 
-  const handleChange = (event) => {
-    setAge(event.target.value);
-  };
   const [priceFilter, setPriceFilter] = useState();
 
   const handlePriceFilter = (event) => {
@@ -135,9 +116,8 @@ const Home = () => {
 
               <input
                 style={{ borderRadius: "10px", width: "220px" }}
-                className="modalCI1"
+                className="modalCI1 form-control"
                 type="email"
-                class="form-control"
                 id="email1"
                 placeholder="Comuna"
               />
@@ -166,7 +146,7 @@ const Home = () => {
 
               <button className="modalCb1">
                 Lunas, 21 feb
-                <img style={{ width: "20px" }} src={calender} />
+                <img alt="" style={{ width: "20px" }} src={calender} />
               </button>
             </Grid>
             <Grid item xs={12} sm={12} md={4} lg={2}>
@@ -178,7 +158,7 @@ const Home = () => {
             </Grid>
           </Grid>
         </div>
-        <img className="whatsapp" src={whatsapp_fix} />
+        <img alt="" className="whatsapp" src={whatsapp_fix} />
       </div>
 
       <div className="beta">
@@ -208,7 +188,7 @@ const Home = () => {
             experiencia en las flores o regalos que envíes a tus seres queridos.
           </p>
         </div>
-        <img style={{ marginTop: "50px" }} src={dividedflowers} />
+        <img alt="" style={{ marginTop: "50px" }} src={dividedflowers} />
       </div>
       {/* </Carousel> */}
 

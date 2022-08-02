@@ -39,29 +39,29 @@ const Footer = () => {
           <div className="main-elements">
             <h4>Servicio al Cliente:</h4>
             <div>
-              <a>Seguimiento de pedido</a>
-              <a>Cambiar Datos de pedido</a>
-              <a>Whatsapp</a>
-              <a>Llámanos</a>
-              <a>Contacto</a>
+              <a href>Seguimiento de pedido</a>
+              <a href>Cambiar Datos de pedido</a>
+              <a href>Whatsapp</a>
+              <a href>Llámanos</a>
+              <a href>Contacto</a>
             </div>
           </div>
           <div className="main-elements">
             <h4>Florería Suecia</h4>
             <div>
-              <a>Sobre Nosotras</a>
-              <a>Nuestra Diferencia</a>
-              <a>Nuestra Ubicación</a>
-              <a>Trabaja Con Nosotras</a>
-              <a>Referidas</a>
+              <a href>Sobre Nosotras</a>
+              <a href>Nuestra Diferencia</a>
+              <a href>Nuestra Ubicación</a>
+              <a href>Trabaja Con Nosotras</a>
+              <a href>Referidas</a>
             </div>
           </div>
           <div className="main-elements">
             <h4>INFORMACION</h4>
             <div>
-              <a>Como Comprar</a>
-              <a>Preguntas Frecuentas</a>
-              <a>Reclamos Y Sugerencias</a>
+              <a href>Como Comprar</a>
+              <a href>Preguntas Frecuentas</a>
+              <a href>Reclamos Y Sugerencias</a>
             </div>
           </div>
           <div className="main-elements">
@@ -69,25 +69,25 @@ const Footer = () => {
               <h4>Ocasión:</h4>
               <div>
                 <div>
-                  <a>Cumpleaños</a>
-                  <a>Aniversario</a>
-                  <a>Condolencias</a>
-                  <a>Agradecimiento</a>
-                  <a>Porque sí</a>
+                  <a href>Cumpleaños</a>
+                  <a href>Aniversario</a>
+                  <a href>Condolencias</a>
+                  <a href>Agradecimiento</a>
+                  <a href>Porque sí</a>
                 </div>
               </div>
             </div>
             <div style={{ marginTop: "2rem" }}>
               <h4>Mi Cuenta</h4>
-              <a>Acceder A Mi Cuenta</a>
+              <a href>Acceder A Mi Cuenta</a>
             </div>
           </div>
         </div>
         <div className="copyrights">
-          <a>TERMINOS Y CONDICIONES</a>
-          <a>POLITICA DE PRIVACIDAD</a>
-          <a>POLITICA ENVIOS</a>
-          <a>POLITICA DE REEMBOLSOS</a>
+          <a href>TERMINOS Y CONDICIONES</a>
+          <a href>POLITICA DE PRIVACIDAD</a>
+          <a href>POLITICA ENVIOS</a>
+          <a href>POLITICA DE REEMBOLSOS</a>
         </div>
         <p style={{ color: "#ffffff", paddingTop: "25px" }}>
           FLORERIA SUECIA 2022

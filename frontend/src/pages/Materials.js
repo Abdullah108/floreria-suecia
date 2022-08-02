@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext } from "react";
 import {
   Table,
   TableHeader,
@@ -11,23 +11,23 @@ import {
   Card,
   CardBody,
   Pagination,
-} from '@windmill/react-ui';
-import { FiPlus } from 'react-icons/fi';
-import { CSVReader, CSVDownloader } from 'react-papaparse';
+} from "@windmill/react-ui";
+import { FiPlus } from "react-icons/fi";
+import { CSVReader, CSVDownloader } from "react-papaparse";
 
-import useAsync from '../hooks/useAsync';
-import useFilter from '../hooks/useFilter';
+import useAsync from "../hooks/useAsync";
+import useFilter from "../hooks/useFilter";
 // import productData from '../utils/products';
-import NotFound from '../components/table/NotFound';
-import Loading from '../components/preloader/Loading';
-import MaterialServices from '../services/MaterialServices';
-import PageTitle from '../components/Typography/PageTitle';
-import { SidebarContext } from '../context/SidebarContext';
-import MaterialTable from '../components/material/MaterialTable';
-import SelectCategory from '../components/form/SelectCategory';
-import MainDrawer from '../components/drawer/MainDrawer';
-import MaterialDrawer from '../components/drawer/MaterialDrawer';
-import CouponDrawer from '../components/drawer/CouponDrawer';
+import NotFound from "../components/table/NotFound";
+import Loading from "../components/preloader/Loading";
+import MaterialServices from "../services/MaterialServices";
+import PageTitle from "../components/Typography/PageTitle";
+import { SidebarContext } from "../context/SidebarContext";
+import MaterialTable from "../components/material/MaterialTable";
+import SelectCategory from "../components/form/SelectCategory";
+import MainDrawer from "../components/drawer/MainDrawer";
+
+import CouponDrawer from "../components/drawer/CouponDrawer";
 
 const Materials = () => {
   const { toggleDrawer } = useContext(SidebarContext);
@@ -46,19 +46,18 @@ const Materials = () => {
     handleOnDrop,
     handleUploadProducts,
   } = useFilter(data);
-  
-  console.log(data, serviceData)
-  
-  const tempData =  data
-  
+
+  console.log(data, serviceData);
+
+  const tempData = data;
+
   for (var i = 0; i < tempData.length; i++) {
-    delete tempData[i].__v
+    delete tempData[i].__v;
   }
-  
-  console.log(tempData)
-  
+
+  console.log(tempData);
+
   return (
-    
     <>
       <PageTitle>Raw Materials</PageTitle>
       <MainDrawer>
@@ -115,48 +114,51 @@ const Materials = () => {
         <CardBody>
           <div className="grid gap-4 md:grid-cols-3 xl:grid-cols-3">
             <div className="col-span-2">
-              <CSVReader onDrop={handleOnDrop} addRemoveButton config={{ header: true }}
+              <CSVReader
+                onDrop={handleOnDrop}
+                addRemoveButton
+                config={{ header: true }}
                 style={{
                   dropArea: {
-                    borderColor: 'green',
+                    borderColor: "green",
                     borderRadius: 6,
                     borderWidth: 1,
-                    height: '3em',
-                    padding: '0 0.2em',
+                    height: "3em",
+                    padding: "0 0.2em",
                   },
                   dropAreaActive: {
-                    borderColor: 'green',
+                    borderColor: "green",
                   },
                   dropFile: {
-                    width: '100%',
-                    display: 'block',
-                    height: 'auto',
-                    background: 'none',
+                    width: "100%",
+                    display: "block",
+                    height: "auto",
+                    background: "none",
                     borderRadius: 6,
-                    padding: '0.2em 0.2em',
+                    padding: "0.2em 0.2em",
                   },
                   fileSizeInfo: {
-                    color: '#fff',
-                    backgroundColor: '#000',
+                    color: "#fff",
+                    backgroundColor: "#000",
                     borderRadius: 0,
                     lineHeight: 1,
                     fontSize: 12,
-                    marginBottom: '0.5em',
-                    padding: '0.3em 0.2em',
+                    marginBottom: "0.5em",
+                    padding: "0.3em 0.2em",
                   },
                   fileNameInfo: {
-                    color: '#757575',
-                    backgroundColor: 'transparent',
+                    color: "#757575",
+                    backgroundColor: "transparent",
                     borderRadius: 1,
                     fontSize: 14,
                     lineHeight: 1,
-                    padding: '0 0.4em',
+                    padding: "0 0.4em",
                   },
                   removeButton: {
-                    color: 'red',
+                    color: "red",
                   },
                   progressBar: {
-                    backgroundColor: 'green',
+                    backgroundColor: "green",
                   },
                 }}
               >
@@ -168,13 +170,13 @@ const Materials = () => {
                 Upload
               </Button>
               <div className="w-full">
-                {loading ? '' : tempData.length != 0 & tempData._id == undefined ?
-                  <CSVDownloader data={tempData} filename={'products'}>
+                {loading ? (
+                  ""
+                ) : (tempData.length !== 0) & (tempData._id === undefined) ? (
+                  <CSVDownloader data={tempData} filename={"products"}>
                     <Button className="w-full h-12">Download</Button>
                   </CSVDownloader>
-                  :
-                  null
-                }
+                ) : null}
               </div>
             </div>
           </div>

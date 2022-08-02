@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Login.scss";
-import { Link } from "react-router-dom";
-import { useHistory } from 'react-router-dom';
-import Cookies from 'js-cookie';
+
+import { useHistory } from "react-router-dom";
+import Cookies from "js-cookie";
 
 //mui
 import Button from "@mui/material/Button";
@@ -14,14 +14,13 @@ import "swiper/modules/navigation/navigation.scss"; // Navigation module
 import "swiper/modules/thumbs/thumbs.scss";
 import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
 //assets
-import g_icon from "./../../assets/g_icon.svg";
 import background from "./../../assets/background.png";
 import logo from "./../../assets/logo.svg";
 import GoogleIcon from "@mui/icons-material/Google";
 //utils
-import { notifySuccess, notifyError } from '../../utils/toast';
+import { notifySuccess, notifyError } from "../../utils/toast";
 //api
-import UserServices from "../../services/UserServices"
+import UserServices from "../../services/UserServices";
 
 const Login = () => {
   const history = useHistory();
@@ -38,22 +37,23 @@ const Login = () => {
     //     }
     //   })
     try {
-      const res = await UserServices.loginUser({email, password})
+      const res = await UserServices.loginUser({ email, password });
       if (res) {
-        Cookies.set('userInfo', JSON.stringify(res))
-        notifySuccess("Login Successful")
-        history.replace('/user/home')
+        Cookies.set("userInfo", JSON.stringify(res));
+        notifySuccess("Login Successful");
+        history.replace("/user/home");
       }
     } catch (error) {
-      notifyError('Invalid credentials')
+      notifyError("Invalid credentials");
     }
-  }
+  };
 
   return (
     <div className="LoginDiv">
       <div className="leftpage">
         <div className="leftpagediv1">
           <img
+            alt=""
             style={{ width: "100px", height: "100px", alignSelf: "center" }}
             src={logo}
           />
@@ -85,10 +85,12 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </form>
-          <a className="leftpagea1">Olvidé mi contraseña</a>
+          <a href className="leftpagea1">
+            Olvidé mi contraseña
+          </a>
           <div onClick={handleLoginSubmit}>
             {/* <Link to="home">v  */}
-              <Button className="leftpageb2">Ingresar</Button>
+            <Button className="leftpageb2">Ingresar</Button>
             {/* </Link> */}
           </div>
           <Button className="leftpageb1" style={{marginTop:'20px'}}>
@@ -103,7 +105,7 @@ const Login = () => {
         </div>
       </div>
       <div className="rightpage">
-        <img src={background} />
+        <img alt="" src={background} />
       </div>
     </div>
   );

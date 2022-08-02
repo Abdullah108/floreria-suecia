@@ -2,29 +2,18 @@ import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import "./Category.scss";
 import Stack from "@mui/material/Stack";
-import Breadcrumbs from "@mui/material/Breadcrumbs";
 import searchbar from "./../../assets/searchbar.svg";
-import arrowdown from "./../../assets/arrowdown.svg";
 import RemoveIcon from "@mui/icons-material/Remove";
 import { styled } from "@mui/material/styles";
 import InputBase from "@mui/material/InputBase";
-import SearchIcon from "@mui/icons-material/Search";
 import AddSharpIcon from "@mui/icons-material/AddSharp";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-
 import { pink } from "@mui/material/colors";
-import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import Button from "@mui/material/Button";
-import { ReactComponent as Filter } from "./../../assets/filter.svg";
-import minus from "./../../assets/minus.svg";
-import plus from "./../../assets/plus.svg";
-import IconButton from "@mui/material/IconButton";
-import TextField from "@mui/material/TextField";
-import Divider from "@mui/material/Divider";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
@@ -35,7 +24,6 @@ import Collapse from "@mui/material/Collapse";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import ProductCard from "./../../mainLayout/ProductCard/ProductCard";
-import { collectionImages } from "./../../assets/collectionImages/index";
 import Pagination from "@mui/material/Pagination";
 import Drawer from "@mui/material/Drawer";
 import useAsync from "../../hooks/useAsync";
@@ -58,17 +46,6 @@ const Search = styled("div")(({ theme }) => ({
   },
 }));
 
-const SearchIconWrapper = styled("div")(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: "100%",
-  position: "absolute",
-  pointerEvents: "none",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  color: "#D96581",
-}));
-
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: "inherit",
   "& .MuiInputBase-input": {
@@ -86,7 +63,7 @@ function valuetext(value) {
   return `$${value}`;
 }
 const Category = () => {
-  const { data, loading } = useAsync(ProductServices.getAllProducts);
+  const { data } = useAsync(ProductServices.getAllProducts);
 
   const tempData = data;
 
@@ -101,19 +78,19 @@ const Category = () => {
   };
 
   // Collapsed menu
-  const [openCollection, setopenCollection] = React.useState(true);
+  const [openCollection, setopenCollection] = useState(true);
 
   const handleCollection = () => {
     setopenProduct(!openCollection);
   };
   // Handling select box event state
-  const [age, setAge] = React.useState("");
+  const [age, setAge] = useState("");
 
   const handleChange = (event) => {
     setAge(event.target.value);
   };
   // handling Check State
-  const [checked, setChecked] = React.useState([0]);
+  const [checked, setChecked] = useState([0]);
 
   const handleToggle = (value) => () => {
     const currentIndex = checked.indexOf(value);
@@ -224,7 +201,7 @@ const Category = () => {
                   inputProps={{ "aria-label": "search" }}
                 />
                 <Button>
-                  <img src={searchbar} />
+                  <img alt="" src={searchbar} />
                 </Button>
               </Search>
             </div>
@@ -333,7 +310,7 @@ const Category = () => {
                 <Collapse
                   in={openCollection}
                   timeout="auto"
-                  unmountOnExit 
+                  unmountOnExit
                 ></Collapse>
                 <Button className="span5b1">Limpiar Filtros (0)</Button>
               </div>

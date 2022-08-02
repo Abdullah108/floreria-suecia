@@ -14,13 +14,12 @@ import special3 from "./../../assets/special3.png";
 
 import { styled } from "@mui/material/styles";
 import InputBase from "@mui/material/InputBase";
-import SearchIcon from "@mui/icons-material/Search";
+
 import Button from "@mui/material/Button";
 import MenuIcon from "@mui/icons-material/Menu";
 import IconButton from "@mui/material/IconButton";
 import Drawer from "@mui/material/Drawer";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -37,17 +36,6 @@ const Search = styled("div")(({ theme }) => ({
     marginLeft: theme.spacing(1),
     width: "auto",
   },
-}));
-
-const SearchIconWrapper = styled("div")(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: "100%",
-  position: "absolute",
-  pointerEvents: "none",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  color: "#D96581",
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
@@ -85,7 +73,6 @@ const Header = () => {
   const [checked2, setChecked2] = useState(false);
   const [checked3, setChecked3] = useState(false);
 
-  const [menu, setMenu] = useState();
   const [state, setState] = useState(false);
   const toggleDrawer = (open) => (event) => {
     setState(open);
@@ -126,11 +113,8 @@ const Header = () => {
   };
 
   //redux
-  const store = useSelector((state) => state);
-  var productCount = 0;
-  if (store.orders.productsDetails) {
-    productCount = store.orders.productsDetails.length;
-  }
+  // const store = useSelector((state) => state);
+
   return (
     <div className="mainHeader">
       <div className="Header">
@@ -147,7 +131,7 @@ const Header = () => {
               inputProps={{ "aria-label": "search" }}
             />
             <Button>
-              <img src={searchbar} />
+              <img alt="" src={searchbar} />
             </Button>
           </Search>
         </div>
@@ -160,7 +144,7 @@ const Header = () => {
               borderRadius: "10px",
             }}
           >
-            <img style={{ width: "20px" }} src={diamond} />
+            <img alt="" style={{ width: "20px" }} src={diamond} />
             <p
               style={{
                 color: "#D96581",
@@ -209,15 +193,9 @@ const Header = () => {
               alt="Cart"
               style={{ width: "34px", height: "34px" }}
             />
-            <Link
-              style={{
-                marginBottom: "0",
-                display: "flex",
-                flexDirection: "column",
-              }}
-            >
+            <p style={{ margin: "0", color: "#D96581", fontWeight: "600" }}>
               Carrito
-            </Link>
+            </p>
           </span>
           <Modal
             open={openmodelBox}
@@ -245,6 +223,7 @@ const Header = () => {
                   Esto llevas hasta ahora...
                 </p>
                 <img
+                  alt=""
                   style={{
                     cursor: "pointer",
                   }}
@@ -258,7 +237,11 @@ const Header = () => {
                   alignItems: "center",
                 }}
               >
-                <img style={{ width: "70px", borderRadius: "10px" }} src={f2} />
+                <img
+                  alt=""
+                  style={{ width: "70px", borderRadius: "10px" }}
+                  src={f2}
+                />
                 <div
                   style={{
                     display: "flex",
@@ -358,6 +341,7 @@ const Header = () => {
                 }}
               >
                 <img
+                  alt=""
                   style={{ width: "70px", borderRadius: "10px" }}
                   src={special1}
                 />
@@ -406,6 +390,7 @@ const Header = () => {
                     }}
                   >
                     <a
+                      href
                       style={{
                         fontFamily: "Nunito",
                         fontWeight: "700",
@@ -441,6 +426,7 @@ const Header = () => {
                 }}
               >
                 <img
+                  alt=""
                   style={{ width: "70px", borderRadius: "10px" }}
                   src={special2}
                 />
@@ -489,6 +475,7 @@ const Header = () => {
                     }}
                   >
                     <a
+                      href
                       style={{
                         fontFamily: "Nunito",
                         fontWeight: "700",
@@ -524,6 +511,7 @@ const Header = () => {
                 }}
               >
                 <img
+                  alt=""
                   style={{ width: "70px", borderRadius: "10px" }}
                   src={special3}
                 />
@@ -572,6 +560,7 @@ const Header = () => {
                     }}
                   >
                     <a
+                      href
                       style={{
                         fontFamily: "Nunito",
                         fontWeight: "700",
@@ -666,7 +655,7 @@ const Header = () => {
               alignItems: "flex-start",
               justifyContent: "space-around",
               margin: "1rem",
-              height: "350px",
+              height: "200px",
             }}
           >
             <Link
@@ -767,12 +756,12 @@ const Header = () => {
       >
         <div style={{ marginTop: "20px" }} className="hline"></div>
         <div className="Hlinks">
-          <a>Novedades</a>
-          <a>Mas Vendidos</a>
-          <a>Cumpleaños</a>
-          <a>Aniversario</a>
-          <a>Menos De $20.000</a>
-          <a>Porque Sí</a>
+          <a href>Novedades</a>
+          <a href>Mas Vendidos</a>
+          <a href>Cumpleaños</a>
+          <a href>Aniversario</a>
+          <a href>Menos De $20.000</a>
+          <a href>Porque Sí</a>
         </div>
         <div className="hline"></div>
       </div>

@@ -13,16 +13,8 @@ import navgift1 from "./../../assets/navgift1.svg";
 import navshare1 from "./../../assets/navshare1.svg";
 import f2 from "./../../assets/f2.svg";
 import f4 from "./../../assets/f4.png";
-import navshare2 from "./../../assets/navshare2.svg";
-import referralsinsta from "./../../assets/referralsinsta.svg";
-import logout from "./../../assets/logout.png";
-import copy from "./../../assets/copy.png";
-import thankmessenger from "./../../assets/thankmessenger.png";
-import thanksms from "./../../assets/thanksms.png";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+
 const MyOrders = () => {
   const [state, setState] = useState(false);
 
@@ -47,6 +39,7 @@ const MyOrders = () => {
 
           <Link to="home" className="myaccountbox1l2">
             <img
+              alt=""
               style={{ marginRight: "14px", marginLeft: "10px" }}
               src={navhome1}
             />
@@ -55,6 +48,7 @@ const MyOrders = () => {
 
           <Link to="reminders" className="myaccountbox1l2">
             <img
+              alt=""
               style={{ marginRight: "14px", marginLeft: "10px" }}
               src={navbell1}
             />{" "}
@@ -63,6 +57,7 @@ const MyOrders = () => {
 
           <Link to="deliveryaddress" className="myaccountbox1l2">
             <img
+              alt=""
               style={{ marginRight: "14px", marginLeft: "10px" }}
               src={navmap1}
             />
@@ -71,6 +66,7 @@ const MyOrders = () => {
 
           <Link className="myaccountbox1l1">
             <img
+              alt=""
               style={{ marginRight: "14px", marginLeft: "10px" }}
               src={navbag2}
             />
@@ -79,6 +75,7 @@ const MyOrders = () => {
 
           <Link className="myaccountbox1l2">
             <img
+              alt=""
               style={{ marginRight: "14px", marginLeft: "10px" }}
               src={navgift1}
             />
@@ -87,6 +84,7 @@ const MyOrders = () => {
 
           <Link to="referrals" className="myaccountbox1l2">
             <img
+              alt=""
               style={{ marginRight: "14px", marginLeft: "10px" }}
               src={navshare1}
             />
@@ -106,26 +104,27 @@ const MyOrders = () => {
             <p className="superdivp1">Milovan</p>
           </div>
           <Link to="home" className="superdivl2">
-            <img style={{ marginRight: "10px" }} src={navhome1} />
+            <img alt="" style={{ marginRight: "10px" }} src={navhome1} />
             Inicio
           </Link>
           <Link to="reminders" className="superdivl2">
-            <img style={{ marginRight: "10px" }} src={navbell1} /> Recordatorios
+            <img alt="" style={{ marginRight: "10px" }} src={navbell1} />{" "}
+            Recordatorios
           </Link>
           <Link to="deliveryaddress" className="superdivl2">
-            <img style={{ marginRight: "10px" }} src={navmap1} />
+            <img alt="" style={{ marginRight: "10px" }} src={navmap1} />
             Direcciones
           </Link>
           <Link className="superdivl1">
-            <img style={{ marginRight: "10px" }} src={navbag2} />
+            <img alt="" style={{ marginRight: "10px" }} src={navbag2} />
             Pedidos
           </Link>
           <Link className="superdivl2">
-            <img style={{ marginRight: "10px" }} src={navgift1} />
+            <img alt="" style={{ marginRight: "10px" }} src={navgift1} />
             VIP
           </Link>
           <Link to="referrals" className="superdivl2">
-            <img style={{ marginRight: "10px" }} src={navshare1} />
+            <img alt="" style={{ marginRight: "10px" }} src={navshare1} />
             Referidos
           </Link>
 
@@ -152,7 +151,11 @@ const MyOrders = () => {
                 }}
               >
                 {" "}
-                <img style={{ width: "70px", borderRadius: "10px" }} src={f2} />
+                <img
+                  alt=""
+                  style={{ width: "70px", borderRadius: "10px" }}
+                  src={f2}
+                />
                 <div className="myorderdivd2">
                   <p className="myorderdivp1">Vino Rosa</p>
                   <p className="myorderdivp2">Ramo del día</p>
@@ -164,7 +167,11 @@ const MyOrders = () => {
             <div className="myorderdivd1">
               <div style={{ display: "flex" }}>
                 {" "}
-                <img style={{ width: "70px", borderRadius: "10px" }} src={f4} />
+                <img
+                  alt=""
+                  style={{ width: "70px", borderRadius: "10px" }}
+                  src={f4}
+                />
                 <div className="myorderdivd2">
                   <p className="myorderdivp1">Vino Rosa</p>
                   <p className="myorderdivp2">Ramo del día</p>
@@ -224,7 +231,11 @@ const MyOrders = () => {
                 }}
               >
                 {" "}
-                <img style={{ width: "70px", borderRadius: "10px" }} src={f2} />
+                <img
+                  alt=""
+                  style={{ width: "70px", borderRadius: "10px" }}
+                  src={f2}
+                />
                 <div className="myorderdivd2">
                   <p className="myorderdivp1">Vino Rosa</p>
                   <p className="myorderdivp2">Ramo del día</p>
@@ -236,7 +247,11 @@ const MyOrders = () => {
             <div className="myorderdivd1">
               <div style={{ display: "flex" }}>
                 {" "}
-                <img style={{ width: "70px", borderRadius: "10px" }} src={f4} />
+                <img
+                  alt=""
+                  style={{ width: "70px", borderRadius: "10px" }}
+                  src={f4}
+                />
                 <div className="myorderdivd2">
                   <p className="myorderdivp1">Vino Rosa</p>
                   <p className="myorderdivp2">Ramo del día</p>
