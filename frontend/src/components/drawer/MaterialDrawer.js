@@ -1,28 +1,18 @@
-import React from 'react';
-import Scrollbars from 'react-custom-scrollbars';
-import { Textarea, Select } from '@windmill/react-ui';
-import ReactTagInput from '@pathofdev/react-tag-input';
+import React from "react";
+import Scrollbars from "react-custom-scrollbars";
 
-import Title from '../form/Title';
-import Error from '../form/Error';
-import LabelArea from '../form/LabelArea';
-import InputArea from '../form/InputArea';
-import InputValue from '../form/InputValue';
-import SelectOption from '../form/SelectOption';
-import DrawerButton from '../form/DrawerButton';
-import Uploader from '../image-uploader/Uploader';
-import ChildrenCategory from '../category/ChildrenCategory';
-import ParentCategory from '../category/ParentCategory';
-import useMaterialSubmit from '../../hooks/useMaterialSubmit';
+import Title from "../form/Title";
+import Error from "../form/Error";
+import LabelArea from "../form/LabelArea";
+import InputArea from "../form/InputArea";
+
+import DrawerButton from "../form/DrawerButton";
+
+import useMaterialSubmit from "../../hooks/useMaterialSubmit";
 
 const MaterialDrawer = ({ id }) => {
-  const {
-    register,
-    handleSubmit,
-    onSubmit,
-    errors,
-  } = useMaterialSubmit(id);
-  
+  const { register, handleSubmit, onSubmit, errors } = useMaterialSubmit(id);
+
   return (
     <>
       <div className="w-full relative p-6 border-b border-gray-100 bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300">

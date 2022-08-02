@@ -1,11 +1,10 @@
-import React, { useContext, Suspense, useEffect, lazy } from "react";
+import React, { useContext, Suspense, useEffect } from "react";
 import { Switch, Route, Redirect, useLocation } from "react-router-dom";
 
 import Main from "./Main";
 import routes from "../routes";
-import routesClient from "../routes/routesClient";
-import HeaderClient from "../mainLayout/Header/Header"
-import FooterClient from "../mainLayout/Footer/Footer"
+import HeaderClient from "../mainLayout/Header/Header";
+import FooterClient from "../mainLayout/Footer/Footer";
 import Header from "../components/header/Header";
 import Sidebar from "../components/sidebar/Sidebar";
 import { SidebarContext } from "../context/SidebarContext";
@@ -23,9 +22,11 @@ const Layout = () => {
   console.log("params", params[4]);
   return (
     <>
-      {params[3] == "user" && (
+      {params[3] === "user" && (
         <>
-          {params[4] != "login" & params[4] != "signup"  && <HeaderClient /> }
+          {(params[4] !== "login") & (params[4] !== "signup") && (
+            <HeaderClient />
+          )}
           <Suspense fallback={<ThemeSuspense />}>
             <Switch>
               {routes.map((route, i) => {
@@ -42,10 +43,12 @@ const Layout = () => {
               {/*<Route component={Page404} />*/}
             </Switch>
           </Suspense>
-          {params[4] != "login" & params[4] != "signup" && <FooterClient/>}
+          {(params[4] !== "login") & (params[4] !== "signup") && (
+            <FooterClient />
+          )}
         </>
       )}
-      {params[3] == "" && (
+      {params[3] === "" && (
         <>
           <div
             className={`flex h-screen bg-gray-50 dark:bg-gray-900 ${

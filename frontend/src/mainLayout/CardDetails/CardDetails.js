@@ -6,40 +6,36 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import "./CardDetails.scss";
 
-
-
-
-
 const CardDetails = () => {
   return (
     <div className="Step4">
       <div className="span-1">
         <div>
           <h3>Secured Checkout</h3>
-          <div style={{display: "flex",justifyContent: "flex-start"}}>
-          <p>Already Registered ?</p>
-          <a>Click here to login</a>
+          <div style={{ display: "flex", justifyContent: "flex-start" }}>
+            <p>Already Registered ?</p>
+            <button>Click here to login</button>
           </div>
         </div>
       </div>
       <div className="span-2">
         <h6>Billing Address</h6>
-          <div>
-            <label htmlFor="html"> FirstName* </label>
-            <TextField
-              label=""
-              variant="outlined"
-              InputLabelProps={{ shrink: false }}
-            />
-          </div>
-          <div>
-            <label htmlFor="html"> LastName* </label>
-            <TextField
-              label=""
-              variant="outlined"
-              InputLabelProps={{ shrink: false }}
-            />
-          </div>
+        <div>
+          <label htmlFor="html"> FirstName* </label>
+          <TextField
+            label=""
+            variant="outlined"
+            InputLabelProps={{ shrink: false }}
+          />
+        </div>
+        <div>
+          <label htmlFor="html"> LastName* </label>
+          <TextField
+            label=""
+            variant="outlined"
+            InputLabelProps={{ shrink: false }}
+          />
+        </div>
         <div>
           <label htmlFor="html"> Email* </label>
           <TextField
@@ -56,7 +52,7 @@ const CardDetails = () => {
             InputLabelProps={{ shrink: false }}
           />
         </div>
-        <div style={{gridColumn:'1/3'}}>
+        <div style={{ gridColumn: "1/3" }}>
           <label htmlFor="html"> Address* </label>
           <TextField
             label=""
@@ -111,7 +107,11 @@ const CardDetails = () => {
             />
           </FormGroup>
         </div>
-        <Button variant="contained" style={{gridColumn:'1/3'}} className="buttonViolet">
+        <Button
+          variant="contained"
+          style={{ gridColumn: "1/3" }}
+          className="buttonViolet"
+        >
           Finalizar compra
         </Button>
       </div>
@@ -192,54 +192,50 @@ const CardDetails = () => {
           <strong>$9.900</strong>
         </div>
         <div className="productPriceTotal">
-            <div>
-              <p>Sub Total</p>
-              <p>$9.900</p>
-            </div>
-            <div>
-              <p>Shipping</p>
-              <p>$9.9</p>
-            </div>
-            <div>
-              <strong>Other Total</strong>
-              <p>$9.9</p>
-            </div>
+          <div>
+            <p>Sub Total</p>
+            <p>$9.900</p>
           </div>
-          <div style={{marginLeft: "auto",gridColumn: "1/5"}}>
-            <label htmlFor="html"> Usar cupón </label>
-            <TextField
-              label=""
-              variant="outlined"
-              style={{margin:"0 1rem"}}
-            />
-            <Button variant="contained" className="buttonViolet">
-              Apply
-            </Button>
+          <div>
+            <p>Shipping</p>
+            <p>$9.9</p>
           </div>
-              <p style={{gridColumn:"1/3"}}>
-              Si quieres puedes escribir un mensaje
-aquí y lo enviaremos en un lindo sobre
-              </p>
-              <TextField
-                label=""
-                variant="outlined"
-                multiline
-                maxRows={3}
-                style={{gridColumn:"3/5"}}
-              />
-          <FormGroup style={{gridColumn: "3/5"}}>
-            <FormControlLabel
-              control={<Checkbox />}
-              label="Demuestra tu agradec "
-            />
-            <FormControlLabel
-              control={<Checkbox />}
-              label="Demuestra tu agradec "
-            />
-          </FormGroup>
-          <Button fullWidth variant="contained" className="buttonViolet">
-          Finalizar compra
+          <div>
+            <strong>Other Total</strong>
+            <p>$9.9</p>
+          </div>
+        </div>
+        <div style={{ marginLeft: "auto", gridColumn: "1/5" }}>
+          <label htmlFor="html"> Usar cupón </label>
+          <TextField label="" variant="outlined" style={{ margin: "0 1rem" }} />
+          <Button variant="contained" className="buttonViolet">
+            Apply
           </Button>
+        </div>
+        <p style={{ gridColumn: "1/3" }}>
+          Si quieres puedes escribir un mensaje aquí y lo enviaremos en un lindo
+          sobre
+        </p>
+        <TextField
+          label=""
+          variant="outlined"
+          multiline
+          maxRows={3}
+          style={{ gridColumn: "3/5" }}
+        />
+        <FormGroup style={{ gridColumn: "3/5" }}>
+          <FormControlLabel
+            control={<Checkbox />}
+            label="Demuestra tu agradec "
+          />
+          <FormControlLabel
+            control={<Checkbox />}
+            label="Demuestra tu agradec "
+          />
+        </FormGroup>
+        <Button fullWidth variant="contained" className="buttonViolet">
+          Finalizar compra
+        </Button>
       </div>
     </div>
   );

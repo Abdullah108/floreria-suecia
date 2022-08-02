@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
-import marker from "./../../assets/marker.svg";
 
 export class MapContainer extends Component {
   constructor(props) {

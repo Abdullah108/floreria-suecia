@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import "./MyAccount.scss";
 import { Button, Grid, listClasses, ListItem } from "@mui/material";
 import { Link } from "react-router-dom";
-import navhome1 from "./../../assets/navhome1.svg";
 import navhome2 from "./../../assets/navhome2.svg";
 import navbell1 from "./../../assets/navbell1.svg";
 import navmap1 from "./../../assets/navmap1.svg";
@@ -13,7 +12,6 @@ import navshare1 from "./../../assets/navshare1.svg";
 
 import card from "./../../assets/card.png";
 import card2 from "./../../assets/card2.svg";
-import logout from "./../../assets/logout.png";
 import speaker from "./../../assets/speaker.png";
 import speaker_on from "./../../assets/speaker_on.svg";
 import speaker2 from "./../../assets/speaker2.png";
@@ -38,8 +36,7 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { List } from "@mui/material";
 import { Drawer } from "@mui/material";
 import { Box } from "@mui/material";
-import { display } from "@mui/system";
-import { Twitter } from "@mui/icons-material";
+
 const MyAccount = () => {
   const [firstcard, setFirstCard] = useState(false);
   const [secondcard, setSecondCard] = useState(false);
@@ -94,6 +91,7 @@ const MyAccount = () => {
 
           <Link className="myaccountbox1l1" to="myaccount/home">
             <img
+              alt=""
               style={{ marginRight: "14px", marginLeft: "10px" }}
               src={navhome2}
             />
@@ -102,6 +100,7 @@ const MyAccount = () => {
 
           <Link className="myaccountbox1l2" to="reminders">
             <img
+              alt=""
               style={{ marginRight: "14px", marginLeft: "10px" }}
               src={navbell1}
             />{" "}
@@ -110,6 +109,7 @@ const MyAccount = () => {
 
           <Link to="deliveryaddress" className="myaccountbox1l2">
             <img
+              alt=""
               style={{ marginRight: "14px", marginLeft: "10px" }}
               src={navmap1}
             />
@@ -118,6 +118,7 @@ const MyAccount = () => {
 
           <Link to="myorders" className="myaccountbox1l2">
             <img
+              alt=""
               style={{ marginRight: "14px", marginLeft: "10px" }}
               src={navbag1}
             />
@@ -126,6 +127,7 @@ const MyAccount = () => {
 
           <Link className="myaccountbox1l2">
             <img
+              alt=""
               style={{ marginRight: "14px", marginLeft: "10px" }}
               src={navgift1}
             />
@@ -134,6 +136,7 @@ const MyAccount = () => {
 
           <Link to="referrals" className="myaccountbox1l2">
             <img
+              alt=""
               style={{ marginRight: "14px", marginLeft: "10px" }}
               src={navshare1}
             />
@@ -153,6 +156,7 @@ const MyAccount = () => {
           </div>
           <Link className="superdivl1" to="myaccount/home">
             <img
+              alt=""
               style={{ marginRight: "14px", marginLeft: "10px" }}
               src={navhome2}
             />
@@ -160,6 +164,7 @@ const MyAccount = () => {
           </Link>
           <Link className="superdivl2" to="reminders">
             <img
+              alt=""
               style={{ marginRight: "14px", marginLeft: "10px" }}
               src={navbell1}
             />{" "}
@@ -167,6 +172,7 @@ const MyAccount = () => {
           </Link>
           <Link to="deliveryaddress" className="superdivl2">
             <img
+              alt=""
               style={{ marginRight: "14px", marginLeft: "10px" }}
               src={navmap1}
             />
@@ -174,6 +180,7 @@ const MyAccount = () => {
           </Link>
           <Link to="myorders" className="superdivl2">
             <img
+              alt=""
               style={{ marginRight: "14px", marginLeft: "10px" }}
               src={navbag1}
             />
@@ -181,6 +188,7 @@ const MyAccount = () => {
           </Link>
           <Link className="superdivl2">
             <img
+              alt=""
               style={{ marginRight: "14px", marginLeft: "10px" }}
               src={navgift1}
             />
@@ -188,6 +196,7 @@ const MyAccount = () => {
           </Link>
           <Link to="referrals" className="superdivl2">
             <img
+              alt=""
               style={{ marginRight: "14px", marginLeft: "10px" }}
               src={navshare1}
             />
@@ -248,6 +257,7 @@ const MyAccount = () => {
           >
             <div className={`${thirdcard ? "picback2" : "picback"}`}>
               <img
+                alt=""
                 src={`${thirdcard ? cardfb2 : cardfb}`}
                 className="cardpic"
               />
@@ -264,6 +274,7 @@ const MyAccount = () => {
           >
             <div className={`${fourthcard ? "picback2" : "picback"}`}>
               <img
+                alt=""
                 src={`${fourthcard ? instagram2 : instagram}`}
                 className="cardpic"
               />
@@ -278,7 +289,11 @@ const MyAccount = () => {
             onClick={fifthselect}
           >
             <div className={`${fifthcard ? "picback2" : "picback"}`}>
-              <img src={`${fifthcard ? mail_on : mail}`} className="cardpic" />
+              <img
+                alt=""
+                src={`${fifthcard ? mail_on : mail}`}
+                className="cardpic"
+              />
             </div>
             <p style={{ fontSize: "16px" }}>
               <strong>25.000 </strong>Puntos
@@ -290,7 +305,11 @@ const MyAccount = () => {
             onClick={sixthselect}
           >
             <div className={`${sixthcard ? "picback2" : "picback"}`}>
-              <img src={`${sixthcard ? star2 : star}`} className="cardpic" />
+              <img
+                alt=""
+                src={`${sixthcard ? star2 : star}`}
+                className="cardpic"
+              />
             </div>
             <p style={{ fontSize: "16px" }}>
               <strong>20.000 </strong>Puntos
@@ -352,7 +371,7 @@ const MyAccount = () => {
           <h6>Invitar a amigos</h6>
           <div className="both">
             <div className="speakerdiv2">
-              <img src={speaker2} />
+              <img alt="" src={speaker2} />
 
               <p style={{ marginLeft: "15px" }}>
                 Da a un amigos un $10.000 de descuento
@@ -362,16 +381,16 @@ const MyAccount = () => {
             </div>
             <div className="socialapp">
               <div className="superdivdiv1">
-                <img src={twitter} />
-                <img src={whatsapp} />
+                <img alt="" src={twitter} />
+                <img alt="" src={whatsapp} />
               </div>
               <div className="superdivdiv1">
-                <img src={messenger} />
-                <img src={facebook} />
+                <img alt="" src={messenger} />
+                <img alt="" src={facebook} />
               </div>
               <div className="superdivdiv1">
-                <img src={mail2} />
-                <img src={link} />
+                <img alt="" src={mail2} />
+                <img alt="" src={link} />
               </div>
             </div>
           </div>

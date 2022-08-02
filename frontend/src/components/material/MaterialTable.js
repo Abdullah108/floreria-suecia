@@ -1,21 +1,15 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import {
-  TableCell,
-  TableBody,
-  TableRow,
-  Badge,
-  Avatar,
-} from '@windmill/react-ui';
-import { FiEye } from 'react-icons/fi';
+import React from "react";
+import { Link } from "react-router-dom";
+import { TableCell, TableBody, TableRow, Badge } from "@windmill/react-ui";
+import { FiEye } from "react-icons/fi";
 
-import Tooltip from '../tooltip/Tooltip';
-import MainModal from '../modal/MainModal';
-import MainDrawer from '../drawer/MainDrawer';
-import MaterialDrawer from '../drawer/MaterialDrawer';
-import ShowHideButton from '../table/ShowHideButton';
-import EditDeleteButton from '../table/EditDeleteButton';
-import useToggleDrawer from '../../hooks/useToggleDrawer';
+import Tooltip from "../tooltip/Tooltip";
+import MainModal from "../modal/MainModal";
+import MainDrawer from "../drawer/MainDrawer";
+import MaterialDrawer from "../drawer/MaterialDrawer";
+import ShowHideButton from "../table/ShowHideButton";
+import EditDeleteButton from "../table/EditDeleteButton";
+import useToggleDrawer from "../../hooks/useToggleDrawer";
 
 const MaterialTable = ({ materials }) => {
   const { serviceId, handleModalOpen, handleUpdate } = useToggleDrawer();
@@ -31,7 +25,7 @@ const MaterialTable = ({ materials }) => {
           <TableRow key={i + 1}>
             <TableCell>
               <span className="text-xs uppercase font-semibold">
-                {' '}
+                {" "}
                 {materials._id.substring(18, 26)}
               </span>
             </TableCell>
@@ -49,7 +43,9 @@ const MaterialTable = ({ materials }) => {
                   alt={materials.title}
                 /> */}
                 <div>
-                  <h2 className="text-sm font-medium">{materials.materialType}</h2>
+                  <h2 className="text-sm font-medium">
+                    {materials.materialType}
+                  </h2>
                 </div>
               </div>
             </TableCell>
@@ -72,7 +68,7 @@ const MaterialTable = ({ materials }) => {
                 <Badge type="danger">Sold Out</Badge>
               )}
             </TableCell>
-              
+
             <TableCell>
               <Link
                 to={`/materials/${materials._id}`}

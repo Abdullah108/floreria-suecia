@@ -1,30 +1,13 @@
-import React from 'react'
-import Modal from '@mui/material/Modal';
-import Box from '@mui/material/Box';
-import "./StepOne.scss"
-import { productImagesButton } from './../../assets/productImagesBottom/index';
-import ProductCardPopup from './../ProductCardPopup/ProductCardPopup';
-import Divider from "@mui/material/Divider";
-import Carousel from "react-elastic-carousel";
-import Button from '@mui/material/Button'
-import {ReactComponent as BirthdayGift} from "./../../assets/BirthdayGift.svg"
-import IconButton from '@mui/material/IconButton'
-const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    bgcolor: 'background.paper',
-    border: '2px solid #000',
-    boxShadow: 24,
-  };
-  
+import React from "react";
+
+import "./StepOne.scss";
+
 const StepOne = (props) => {
-    const [open,setOpen] = props.value;
-    const handleClose = () => setOpen(false);
-    return (
+  // const [open,setOpen] = props.value;
+  // const handleClose = () => setOpen(false);
+  return (
     <div>
-        {/* <Modal
+      {/* <Modal
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
@@ -57,7 +40,7 @@ const StepOne = (props) => {
         </Box>
       </Modal> */}
     </div>
-  )
-}
+  );
+};
 
 export default StepOne;

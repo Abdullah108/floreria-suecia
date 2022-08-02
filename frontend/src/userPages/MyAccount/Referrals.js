@@ -10,14 +10,13 @@ import navbell1 from "./../../assets/navbell1.svg";
 import navmap1 from "./../../assets/navmap1.svg";
 import navbag1 from "./../../assets/navbag1.svg";
 import navgift1 from "./../../assets/navgift1.svg";
-import navshare1 from "./../../assets/navshare1.svg";
+
 import navshare2 from "./../../assets/navshare2.svg";
 import referralsinsta from "./../../assets/referralsinsta.svg";
-import logout from "./../../assets/logout.png";
+
 import copy from "./../../assets/copy.png";
 import thankmessenger from "./../../assets/thankmessenger.png";
-import thanksms from "./../../assets/thanksms.png";
-import FacebookIcon from "@mui/icons-material/Facebook";
+
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
@@ -45,6 +44,7 @@ const Referrals = () => {
 
           <Link to="home" className="myaccountbox1l2">
             <img
+              alt=""
               style={{ marginRight: "14px", marginLeft: "10px" }}
               src={navhome1}
             />
@@ -53,6 +53,7 @@ const Referrals = () => {
 
           <Link to="reminders" className="myaccountbox1l2">
             <img
+              alt=""
               style={{ marginRight: "14px", marginLeft: "10px" }}
               src={navbell1}
             />{" "}
@@ -61,6 +62,7 @@ const Referrals = () => {
 
           <Link to="deliveryaddress" className="myaccountbox1l2">
             <img
+              alt=""
               style={{ marginRight: "14px", marginLeft: "10px" }}
               src={navmap1}
             />
@@ -69,6 +71,7 @@ const Referrals = () => {
 
           <Link to="myorders" className="myaccountbox1l2">
             <img
+              alt=""
               style={{ marginRight: "14px", marginLeft: "10px" }}
               src={navbag1}
             />
@@ -77,6 +80,7 @@ const Referrals = () => {
 
           <Link className="myaccountbox1l2">
             <img
+              alt=""
               style={{ marginRight: "14px", marginLeft: "10px" }}
               src={navgift1}
             />
@@ -85,6 +89,7 @@ const Referrals = () => {
 
           <Link className="myaccountbox1l1">
             <img
+              alt=""
               style={{ marginRight: "14px", marginLeft: "10px" }}
               src={navshare2}
             />
@@ -104,26 +109,27 @@ const Referrals = () => {
             <p className="superdivp1">Milovan</p>
           </div>
           <Link to="home" className="superdivl2">
-            <img style={{ marginRight: "10px" }} src={navhome1} />
+            <img alt="" style={{ marginRight: "10px" }} src={navhome1} />
             Inicio
           </Link>
           <Link to="reminders" className="superdivl2">
-            <img style={{ marginRight: "10px" }} src={navbell1} /> Recordatorios
+            <img alt="" style={{ marginRight: "10px" }} src={navbell1} />{" "}
+            Recordatorios
           </Link>
           <Link to="deliveryaddress" className="superdivl2">
-            <img style={{ marginRight: "10px" }} src={navmap1} />
+            <img alt="" style={{ marginRight: "10px" }} src={navmap1} />
             Direcciones
           </Link>
           <Link to="myorders" className="superdivl2">
-            <img style={{ marginRight: "10px" }} src={navbag1} />
+            <img alt="" style={{ marginRight: "10px" }} src={navbag1} />
             Pedidos
           </Link>
           <Link className="superdivl2">
-            <img style={{ marginRight: "10px" }} src={navgift1} />
+            <img alt="" style={{ marginRight: "10px" }} src={navgift1} />
             VIP
           </Link>
           <Link className="superdivl1">
-            <img style={{ marginRight: "10px" }} src={navshare2} />
+            <img alt="" style={{ marginRight: "10px" }} src={navshare2} />
             Referidos
           </Link>
 
@@ -181,6 +187,7 @@ const Referrals = () => {
                 <div className="rightdivd2">
                   <div className="rightdivd3">
                     <img
+                      alt=""
                       style={{ width: "20px", height: "16px" }}
                       src={navshare2}
                     />
@@ -196,12 +203,12 @@ const Referrals = () => {
               </div>
               <div className="ref_s2">
                 <div className="rightdivd2">
-                  <img style={{ width: "50px" }} src={thankmessenger} />
+                  <img alt="" style={{ width: "50px" }} src={thankmessenger} />
                   <p>Message</p>
                 </div>
                 <div className="rightdivd2">
                   <div className="rightdivd3">
-                    <img style={{ width: "50px" }} src={copy} />
+                    <img alt="" style={{ width: "50px" }} src={copy} />
                   </div>
                   <p>Copiar</p>
                 </div>
@@ -209,6 +216,7 @@ const Referrals = () => {
               <div className="ref_s3">
                 <div className="rightdivd3">
                   <img
+                    alt=""
                     style={{ width: "24px", height: "24px" }}
                     src={referralsinsta}
                   />

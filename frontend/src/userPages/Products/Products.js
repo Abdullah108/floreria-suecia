@@ -4,12 +4,13 @@ import { Swiper, SwiperSlide } from "swiper/react/swiper-react.js";
 import { Navigation, Thumbs } from "swiper";
 //component
 import ProductSection from "../../mainLayout/ProductSection/ProductSection";
-import TabsSection from "./Tabs"
+import TabsSection from "./Tabs";
 // Import Swiper styles
 import "swiper/swiper.scss"; // core Swiper
 import "swiper/modules/navigation/navigation.scss"; // Navigation module
 import "swiper/modules/thumbs/thumbs.scss";
 import "./Products.scss";
+
 import TextField from "@mui/material/TextField";
 import Checkbox from "@mui/material/Checkbox";
 import { pink } from "@mui/material/colors";
@@ -19,12 +20,14 @@ import Stack from "@mui/material/Stack";
 import Divider from "@mui/material/Divider";
 import { selectableProductImages } from "./../../assets/selectableProductImages/index";
 import Carousel from "react-elastic-carousel";
+
 import b_arrow from "./../../assets/breadcrumb_arrow.png";
 import cal from "./../../assets/cal.png";
 import cross from "./../../assets/cross.svg";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
+
 import { StaticDatePicker } from "@mui/x-date-pickers/StaticDatePicker";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
@@ -37,7 +40,9 @@ import ProductServices from "../../services/ProductServices";
 import { useDispatch, useSelector } from "react-redux";
 import { setProductsDetails, setTotalPrice } from "../Redux/Reducer";
 
-
+//get productID from url
+const url = window.location.href;
+var productId = url.substring(url.lastIndexOf("/") + 1);
 
 const Products = () => {
   //get productID from url
@@ -51,21 +56,12 @@ const Products = () => {
   const dispatch = useDispatch();
   const store = useSelector((state) => state);
 
-  const [productDetails, setProductDetails] = useState([]);
-  const [productCount, setProductCount] = useState(0);
   const [tempArr, setTempArr] = useState(store.orders.productsDetails);
-  
-  console.log("product by id",data);
 
-  
+  console.log("product by id", data);
+
   const [activeThumb, setactiveThumb] = useState();
-  const breadcrumbs = [
-    <a key="1">
-      {data.category}
-    </a>,
-    <a key="2">{data.productName}</a>,
 
-  ];
   const breadcrumbs2 = [
     <a style={{ color: "#9BABBF" }} key="1">
       Estado de México
@@ -147,8 +143,8 @@ const Products = () => {
   let cmonth = monthNumber[newDate.getMonth() + 1];
   const [column, setColumn] = useState("");
 
-  const [showResults1, setShowResults1] = React.useState(false);
-  const [showResults2, setShowResults2] = React.useState(false);
+  const [showResults1, setShowResults1] = useState(false);
+  const [showResults2, setShowResults2] = useState(false);
   const onClick1 = () => {
     setShowResults1(!showResults1);
     setShowResults2(false);
@@ -164,16 +160,16 @@ const Products = () => {
     setColumn("2/3");
     // nextdatestrng = (newDate.getDate() + 1).toString();
   };
-  const [time, setTime] = React.useState("");
+  const [time, setTime] = useState("");
 
-  const [timebool, settimeBool] = React.useState(false);
-  const [firsttiming, setfirstTiming] = React.useState(false);
-  const [secondtiming, setsecondTiming] = React.useState(false);
-  const [thirdtiming, setthirdTiming] = React.useState(false);
-  const [fourthtiming, setfourthTiming] = React.useState(false);
-  const [fifthtiming, setfifthTiming] = React.useState(false);
-  const [sixthtiming, setsixthTiming] = React.useState(false);
-  const [seventhtiming, setseventhTiming] = React.useState(false);
+  const [timebool, settimeBool] = useState(false);
+  const [firsttiming, setfirstTiming] = useState(false);
+  const [secondtiming, setsecondTiming] = useState(false);
+  const [thirdtiming, setthirdTiming] = useState(false);
+  const [fourthtiming, setfourthTiming] = useState(false);
+  const [fifthtiming, setfifthTiming] = useState(false);
+  const [sixthtiming, setsixthTiming] = useState(false);
+  const [seventhtiming, setseventhTiming] = useState(false);
 
   const firstTime = () => {
     setfirstTiming(!firsttiming);
@@ -392,8 +388,8 @@ const Products = () => {
     border: "2px solid #D96581",
     boxShadow: 24,
     p: 4,
-    width: "1400px",
-    height: "830px",
+    width: "85%",
+    height: "90%",
     background: " #FFFFFF",
     borderRadius: "30px",
   };
@@ -518,7 +514,6 @@ const Products = () => {
             className="product-image-slider"
             style={{ height: "500px", width: "500px", marginLeft: "0" }}
           >
-
             <SwiperSlide key="index" style={{ textAlign: "-webkit-center" }}>
               <img
                 src={data.image}
@@ -682,7 +677,12 @@ const Products = () => {
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
               >
-                <Box sx={style}>
+                <Box className="calBox" sx={style}>
+                  <img
+                    className="Cardspic1"
+                    onClick={handleClear}
+                    src={cross}
+                  />
                   <div className="both">
                     <div
                       style={{
@@ -725,12 +725,6 @@ const Products = () => {
                       </div>
                     </div>
                     <div className="rightSide">
-                      <img
-                        className="Cardspic1"
-                        onClick={handleClear}
-                        src={cross}
-                      />
-
                       <div style={{ height: "100%" }} className="time">
                         <p
                           className="Cardsp6"

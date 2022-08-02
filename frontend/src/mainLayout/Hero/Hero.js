@@ -35,7 +35,7 @@ const Hero = () => {
           </Link>
         </div>
         <div className="big_img">
-          <img className="backgroundpic" src={background} />
+          <img alt="" className="backgroundpic" src={background} />
         </div>
       </div>
     </div>

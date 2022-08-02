@@ -31,9 +31,6 @@ const responsive = {
   },
 };
 const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
-  const {
-    carouselState: { currentSlide },
-  } = rest;
   return (
     <div className="carousel-button-group">
       <ChevronLeftIcon
@@ -67,7 +64,7 @@ const Service = () => {
       >
         <div className="serviced1">
           <div className="serviced2">
-            <img style={{ width: "80px", height: "63px" }} src={clock} />
+            <img alt="" style={{ width: "80px", height: "63px" }} src={clock} />
           </div>
           <p className="bottomp">Entrega Inmediata</p>
         </div>
@@ -80,37 +77,45 @@ const Service = () => {
         </div>
         <div className="serviced1">
           <div className="serviced2">
-            <img style={{ width: "80px", height: "80px" }} src={alarm} />
+            <img alt="" style={{ width: "80px", height: "80px" }} src={alarm} />
           </div>
           <p className="bottomp">Atención 24/7</p>
         </div>
         <div className="serviced1">
           <div className="serviced2">
-            <img style={{ width: "80px", height: "80px" }} src={search} />
+            <img
+              alt=""
+              style={{ width: "80px", height: "80px" }}
+              src={search}
+            />
           </div>
           <p className="bottomp">Seguimiento en Tiempo Real</p>
         </div>
         <div className="serviced1">
           <div className="serviced2">
-            <img style={{ width: "73px", height: "80px" }} src={bell} />
+            <img alt="" style={{ width: "73px", height: "80px" }} src={bell} />
           </div>
           <p className="bottomp">Notificación de Entrega</p>
         </div>
         <div className="serviced1">
           <div className="serviced2">
-            <img style={{ width: "80px", height: "80px" }} src={gift} />
+            <img alt="" style={{ width: "80px", height: "80px" }} src={gift} />
           </div>
           <p className="bottomp">Puntos por tus compras</p>
         </div>
         <div className="serviced1">
           <div className="serviced2">
-            <img style={{ width: "80px", height: "80px" }} src={calender} />
+            <img
+              alt=""
+              style={{ width: "80px", height: "80px" }}
+              src={calender}
+            />
           </div>
           <p className="bottomp">Recordatorios de fechas importantes</p>
         </div>
         <div className="serviced1">
           <div className="serviced2">
-            <img style={{ width: "67px", height: "80px" }} src={timer} />
+            <img alt="" style={{ width: "67px", height: "80px" }} src={timer} />
           </div>
           <p className="bottomp">
             Entrega en horario acotado (ej. entrega de 4 a 5 pm)

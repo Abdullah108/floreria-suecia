@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./ProductCard.scss";
-import delivery from "./../../assets/delivery.svg";
 import truckProductCard from "./../../assets/truckProductCard.svg";
 
 import Button from "@mui/material/Button";
@@ -15,7 +14,7 @@ const ProductCard = ({ value }) => {
   return (
     <div className="productCard">
       <div className="cardImage">
-        <img src={images} />
+        <img alt="" src={images} />
       </div>
       <div style={{ width: "90%", alignSelf: "center" }}>
         <p className="cardTitle">{productName}</p>
@@ -32,7 +31,7 @@ const ProductCard = ({ value }) => {
             </Button>
           </Link>
           <div className="productcardd1">
-            <img className="productcardpic" src={truckProductCard} />
+            <img alt="" className="productcardpic" src={truckProductCard} />
           </div>
         </div>
       </div>

@@ -16,21 +16,9 @@ import navmap1 from "./../../assets/navmap1.svg";
 import navbag1 from "./../../assets/navbag1.svg";
 import navgift1 from "./../../assets/navgift1.svg";
 import navshare1 from "./../../assets/navshare1.svg";
-import dropdownarrow from "./../../assets/dropdownarrow.svg";
 
-import navshare2 from "./../../assets/navshare2.svg";
-import f2 from "./../../assets/f2.svg";
-import f4 from "./../../assets/f4.png";
-
-import referralsinsta from "./../../assets/referralsinsta.svg";
-import logout from "./../../assets/logout.png";
-import copy from "./../../assets/copy.png";
-import thankmessenger from "./../../assets/thankmessenger.png";
-import thanksms from "./../../assets/thanksms.png";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+
 const Reminders = () => {
   const [state, setState] = useState(false);
 
@@ -61,6 +49,7 @@ const Reminders = () => {
 
           <Link to="home" className="myaccountbox1l2">
             <img
+              alt=""
               style={{ marginRight: "14px", marginLeft: "10px" }}
               src={navhome1}
             />
@@ -69,6 +58,7 @@ const Reminders = () => {
 
           <Link className="myaccountbox1l1">
             <img
+              alt=""
               style={{ marginRight: "14px", marginLeft: "10px" }}
               src={navbell2}
             />{" "}
@@ -77,6 +67,7 @@ const Reminders = () => {
 
           <Link to="deliveryaddress" className="myaccountbox1l2">
             <img
+              alt=""
               style={{ marginRight: "14px", marginLeft: "10px" }}
               src={navmap1}
             />
@@ -85,6 +76,7 @@ const Reminders = () => {
 
           <Link to="myorders" className="myaccountbox1l2">
             <img
+              alt=""
               style={{ marginRight: "14px", marginLeft: "10px" }}
               src={navbag1}
             />
@@ -93,6 +85,7 @@ const Reminders = () => {
 
           <Link className="myaccountbox1l2">
             <img
+              alt=""
               style={{ marginRight: "14px", marginLeft: "10px" }}
               src={navgift1}
             />
@@ -101,6 +94,7 @@ const Reminders = () => {
 
           <Link to="referrals" className="myaccountbox1l2">
             <img
+              alt=""
               style={{ marginRight: "14px", marginLeft: "10px" }}
               src={navshare1}
             />
@@ -121,6 +115,7 @@ const Reminders = () => {
           </div>
           <Link to="home" className="superdivl2">
             <img
+              alt=""
               style={{ marginRight: "14px", marginLeft: "10px" }}
               src={navhome1}
             />
@@ -128,6 +123,7 @@ const Reminders = () => {
           </Link>
           <Link className="superdivl1">
             <img
+              alt=""
               style={{ marginRight: "14px", marginLeft: "10px" }}
               src={navbell2}
             />{" "}
@@ -135,6 +131,7 @@ const Reminders = () => {
           </Link>
           <Link to="deliveryaddress" className="superdivl2">
             <img
+              alt=""
               style={{ marginRight: "14px", marginLeft: "10px" }}
               src={navmap1}
             />
@@ -142,6 +139,7 @@ const Reminders = () => {
           </Link>
           <Link to="myorders" className="superdivl2">
             <img
+              alt=""
               style={{ marginRight: "14px", marginLeft: "10px" }}
               src={navbag1}
             />
@@ -149,6 +147,7 @@ const Reminders = () => {
           </Link>
           <Link className="superdivl2">
             <img
+              alt=""
               style={{ marginRight: "14px", marginLeft: "10px" }}
               src={navgift1}
             />
@@ -156,6 +155,7 @@ const Reminders = () => {
           </Link>
           <Link to="referrals" className="superdivl2">
             <img
+              alt=""
               style={{ marginRight: "14px", marginLeft: "10px" }}
               src={navshare1}
             />
