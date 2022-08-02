@@ -20,7 +20,6 @@ const Layout = () => {
     closeSidebar();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location]);
-  console.log("params", params[4]);
   return (
     <>
       {params[3] == "user" && (
