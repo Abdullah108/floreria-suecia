@@ -24,7 +24,7 @@
     form {
       margin-bottom: 20px;
       input {
-        max-width: 400px;
+        // max-width: 400px;
         width: 100%;
         height: 50px;
         background: #f8f8f8;
@@ -34,7 +34,7 @@
       }
     }
     Button {
-      max-width: 400px;
+      // max-width: 400px;
       width: 100%;
       height: 50px;
       background: #d96581;
@@ -50,6 +50,7 @@
       display: flex;
       flex-direction: column;
       width: fit-content;
+      width: 60%;
       // height: 700px;
       justify-content: space-around;
       .leftpagep1 {
@@ -151,7 +152,7 @@
   }
 
   .role {
-    width: 400px;
+    // width: 400px;
     height: 50px;
     background: #f8f8f8;
     border-radius: 10px;
@@ -163,5 +164,16 @@
 @media screen and (max-width: 600px) {
   .LoginDiv {
     padding: 0 10px;
+  }
+  .leftpagediv1 {
+    width: 100% !important;
+  }
+  .leftpage {
+    align-items: baseline !important;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .rightpage {
+    align-items: baseline !important;
   }
 }
