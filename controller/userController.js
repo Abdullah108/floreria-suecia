@@ -281,9 +281,9 @@ const updateUser = async (req, res) => {
     if (user) {
       user.name = req.body.name;
       user.email = req.body.email;
-      user.address = req.body.address;
-      user.phone = req.body.phone;
-      user.image = req.body.image;
+      user.password = req.body.password;
+      user.role = req.body.role;
+      user.location = req.body.location;
       const updatedUser = await user.save();
       const token = signInToken(updatedUser);
       res.send({

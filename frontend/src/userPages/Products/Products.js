@@ -550,7 +550,7 @@ const Products = () => {
         </div>
         <div className="productInformation">
           <div className="productInformationd1">
-            <h6 style={{ fontSize: "20px" }}>{data.productName}</h6>
+            <h6 style={{ fontSize: "33px" }}>{data.productName}</h6>
           </div>
           <div className="productInformationd2">
             Puntos :{" "}

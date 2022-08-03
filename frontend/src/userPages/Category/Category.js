@@ -416,12 +416,7 @@ const Category = () => {
             {tempData.map((item, index) => (
               <ProductCard key={index} value={item} />
             ))}
-            {/* {collectionImages.map((item, index) => (
-              <ProductCard key={index} value={item} />
-            ))}
-            {collectionImages.map((item, index) => (
-              <ProductCard key={index} value={item} />
-            ))} */}
+            
           </div>
         </div>
         <div className="span-7">

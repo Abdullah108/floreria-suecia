@@ -1,102 +1,42 @@
 import React, { useState, useEffect } from "react";
-import Hero from "../../mainLayout/Hero/Hero";
+import Dropdown from 'react-dropdown';
+
+//styles
 import "./Home.scss";
-import { styled } from "@mui/material/styles";
-import Grid from "@mui/material/Grid";
-import Paper from "@mui/material/Paper";
-import calender from "./../../assets/calender.svg";
-import dividedflowers from "./../../assets/dividedflowers.png";
-import whatsapp_fix from "./../../assets/whatsapp_fix.png";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-import ProductSection from "../../mainLayout/ProductSection/ProductSection";
-import Service from "../../mainLayout/Service/Service";
-// Import Swiper styles
 import "swiper/swiper.scss"; // core Swiper
 import "swiper/modules/navigation/navigation.scss"; // Navigation module
 import "swiper/modules/thumbs/thumbs.scss";
 import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
-import InputLabel from "@mui/material/InputLabel";
+import 'react-dropdown/style.css'; //react-dropdown
+//mui
+import { makeStyles } from "@material-ui/core/styles";
+import Grid from "@mui/material/Grid";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+//assets
+import calender from "./../../assets/calender.svg";
+import dividedflowers from "./../../assets/dividedflowers.png";
+import whatsapp_fix from "./../../assets/whatsapp_fix.png";
+//components
+import ProductSection from "../../mainLayout/ProductSection/ProductSection";
+import Hero from "../../mainLayout/Hero/Hero";
+import Service from "../../mainLayout/Service/Service";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
-//  const contentStyle = {
-//    height: '700px',
-//  color: '#fff',
-//  lineHeight: '160px',
-//  textAlign: 'center',
-//  background: '#364d79',
-//  };
 const Home = () => {
-  const [age, setAge] = React.useState("");
 
-  const [priceFilter, setPriceFilter] = useState();
-
-  const handlePriceFilter = (event) => {
-    setPriceFilter(event.target.value);
-  };
-
+  
+  const options = [
+    'Love', 'Birthday', 'Friendship', 'Condolences'
+  ];
+  const defaultOption = options[0]
+  
   return (
     <div style={{ overflow: "hidden" }}>
-      {/* <Carousel  dotPosition="right">
-         <div style={contentStyle}>
-          <div className="landingContainer">
-        <Hero />
-      <div style={{ display: "flex", justifyContent: "center" }} className="emptyDiv">
-
-        <Grid container rowSpacing={3} columnSpacing={{ xs: 1, sm: 2, md: 1 }} className="modalContainer">
-          <Grid item xs={12} sm={12} md={2}>
-            <Typography variant="h6" style={{ color: "#FFFFFF", fontSize: "1rem" }}>BUSCA TU REGALO</Typography>
-          </Grid>
-          <Grid item xs={12} sm={4} md={2} >
-            <TextField
-              id=""
-              label="Comuna"
-              variant="filled"
-              placeholder="A que comuna envias"
-              style={{ backgroundColor: "#FFFFFF", borderRadius: "0.3rem", width: "100%" }}
-            />
-          </Grid>
-          <Grid item xs={12} sm={4} md={2}>
-            <TextField
-              id=""
-              label="Ocasión"
-              placeholder="Cumpleanos"
-              variant="filled"
-              size="medium"
-              style={{ backgroundColor: "#FFFFFF", borderRadius: "0.3rem", width: "100%" }}
-            />
-          </Grid>
-          <Grid item xs={12} sm={4} md={2}>
-            <TextField
-              id=""
-              label="Fecha y hora de entrega"
-              placeholder="lunas, 21 feb"
-              variant="filled"
-              style={{ backgroundColor: "#FFFFFF", borderRadius: "0.3rem", width: "100%" }}
-            />
-          </Grid> 
-          <Grid item xs={12} sm={12} md={2}>
-            <Button variant="contained" style={{ backgroundColor: "#72509D", color: "#FFFFFF", padding: "0.2rem 1rem" }}>
-              encontrar regalo
-            </Button>
-          </Grid>
-        </Grid>
-      </div>
-      </div>
-        </div> 
-        <div style={contentStyle}>
-          <ProductSection />
-        </div >
-        <div style={contentStyle}>
-          <Service />
-        </div>
-        
-      </Carousel> */}
-
-      {/* <Carousel  dotPosition="right"> */}
-
+      
+      
       <div className="landingContainer">
         <Hero />
         <div className="emptyDiv">
@@ -115,7 +55,7 @@ const Home = () => {
               <p style={{ color: "#C8CED4" }}>¿Donde envías?</p>
 
               <input
-                style={{ borderRadius: "10px", width: "220px" }}
+                style={{ borderRadius: "10px", width: "100%" }}
                 className="modalCI1 form-control"
                 type="email"
                 id="email1"
@@ -124,27 +64,12 @@ const Home = () => {
             </Grid>
             <Grid item xs={12} sm={4} md={4} lg={2}>
               <p style={{ color: "#C8CED4" }}>Ocasión</p>
-              <FormControl style={{ borderRadius: "10px" }} className="form1">
-                <InputLabel>Ocasion</InputLabel>
-                <Select
-                  labelId="demo-simple-select-label"
-                  id="demo-simple-select"
-                  value={priceFilter}
-                  label="Age"
-                  onChange={handlePriceFilter}
-                  style={{
-                    height: "40px",
-                    fontSize: "20px",
-                  }}
-                >
-                  <MenuItem value={1}>Anniversary</MenuItem>
-                </Select>
-              </FormControl>
+              <Dropdown options={options} value={defaultOption} placeholder="Select an option" />
             </Grid>
             <Grid item xs={12} sm={4} md={4} lg={2}>
               <p style={{ color: "#C8CED4" }}>¿Cuando debe llegar?</p>
 
-              <button className="modalCb1">
+              <button className="modalCb1" style={{width:'100%'}}>
                 Lunas, 21 feb
                 <img alt="" style={{ width: "20px" }} src={calender} />
               </button>
@@ -190,11 +115,6 @@ const Home = () => {
         </div>
         <img alt="" style={{ marginTop: "50px" }} src={dividedflowers} />
       </div>
-      {/* </Carousel> */}
-
-      {/* <div style={{ margin: "0 auto" }}>
-        <Service />
-      </div>  */}
     </div>
   );
 };

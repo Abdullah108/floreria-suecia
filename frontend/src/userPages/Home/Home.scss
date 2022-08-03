@@ -169,19 +169,8 @@
     }
   }
 }
-//ant carousel override
-// .ant-carousel, .slick-slider {
-//     height: 100vh !important;
-// }
-// .slick-list {
-//     height: 100vh !important;
-// }
-// .ant-carousel .slick-vertical .slick-slide {
-//     height: 100vh !important;
-// }
-// .landingContainer {
-//     min-height: 100vh !important;
-// }
-// .Hero {
-//     height: 90vh !important;
-// }
+
+//react dropdown
+.Dropdown-control {
+  border-radius: 15px;
+}
