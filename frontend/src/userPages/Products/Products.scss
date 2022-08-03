@@ -3,11 +3,14 @@
 .ProductContainer {
   font-family: "Poppins";
   margin: 0 auto;
-  padding: 0 3rem;
+  width: 90%;
   display: flex;
   padding-bottom: 200px;
   flex-direction: column;
-  max-width: 1530px;
+
+  @media screen and (max-width: 750px) {
+    overflow: hidden;
+  }
   a {
     text-decoration: none;
     color: $primaryFontColor;
@@ -35,8 +38,12 @@
       padding-bottom: 20px;
       height: 100%;
       .swiper {
-        margin-left: auto;
         margin-right: 0;
+        height: -webkit-fill-available;
+        @media screen and (max-width: 1000px) {
+          height: auto !important;
+          margin: 0 auto !important;
+        }
       }
       .product-image-slider {
         .swiper-slider {
@@ -102,6 +109,49 @@
           }
         }
       }
+      @media screen and (max-width: 1250px) {
+        flex-direction: column !important;
+        .secondSwiper {
+          width: 100% !important;
+          .swiper-wrapper {
+            display: flex !important;
+            justify-content: space-around;
+          }
+        }
+      }
+      @media screen and (max-width: 1050px) {
+        .firstSwiper {
+          width: 350px !important;
+          height: 350px !important;
+        }
+      }
+      @media screen and (max-width: 1000px) {
+        grid-column: 1/5 !important;
+        flex-direction: row-reverse !important;
+        justify-self: flex-start;
+        .firstSwiper {
+          width: 500px !important;
+          height: 500px !important;
+        }
+        .secondSwiper {
+          width: auto !important;
+          .swiper-wrapper {
+            display: block !important;
+          }
+        }
+      }
+      @media screen and (max-width: 670px) {
+        .secondSwiper {
+          display: none !important;
+        }
+      }
+      @media screen and (max-width: 550px) {
+        justify-self: center !important;
+        .firstSwiper {
+          width: 300px !important;
+          height: 300px !important;
+        }
+      }
     }
     .productInformation {
       grid-column: 2/5;
@@ -117,6 +167,10 @@
         font-family: "Nunito";
         font-weight: 600;
         margin-bottom: 0.8rem;
+        @media screen and (max-width: 570px) {
+          display: flex;
+          flex-direction: column;
+        }
         div {
           &:nth-child(1) {
             padding: 10px;
@@ -131,6 +185,9 @@
             h6 {
               font-size: 0.8rem;
               font-weight: bold;
+            }
+            @media screen and (max-width: 570px) {
+              font-size: 20px !important;
             }
           }
 
@@ -153,6 +210,17 @@
             border: 2px solid #9babbf;
             background: #ffffff;
             color: #9babbf;
+            @media screen and (max-width: 1000px) {
+              height: auto !important;
+              min-height: 150px;
+            }
+            @media screen and (max-width: 570px) {
+              height: auto !important;
+              min-height: 150px;
+            }
+            @media screen and (max-width: 570px) {
+              font-size: 20px !important;
+            }
           }
           button:focus {
             border: 3px solid #d96581;
@@ -203,10 +271,20 @@
             font-size: 16px;
             color: #9babbf;
           }
+          @media screen and (max-width: 570px) {
+            display: flex !important;
+            width: 80%;
+            flex-direction: column;
+            align-self: center;
+          }
         }
         .productDescription1h6 {
+          font-family: "Nunito";
           font-weight: 700;
-          font-size: 15px;
+          font-size: 24px;
+          @media screen and (max-width: 500px) {
+            font-size: 20px !important;
+          }
         }
         .productDescription1p1 {
           color: #9babbf;
@@ -216,6 +294,8 @@
 
       #productDescription2 {
         font-family: "Nunito";
+        font-weight: 700;
+        font-size: 24px;
         margin-top: 0.8rem;
         margin-bottom: 0.8rem;
         .Cards2 {
@@ -234,11 +314,28 @@
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
+            @media screen and (max-width: 1250px) {
+              // height: 130px;
+            }
+          }
+          @media screen and (max-width: 500px) {
+            display: flex !important;
+            flex-direction: column;
+            align-self: center;
+            width: 80%;
           }
         }
         .productDescription2h {
-          font-weight: 600;
-          font-size: 15px;
+          font-family: "Nunito";
+          font-weight: 700;
+          font-size: 24px;
+          @media screen and (max-width: 500px) {
+            font-size: 20px !important;
+          }
+        }
+        @media screen and (max-width: 500px) {
+          display: flex !important;
+          flex-direction: column;
         }
       }
 
@@ -261,13 +358,20 @@
         }
         .productDescription3h1 {
           font-weight: 700;
-          font-size: 15px;
+          font-size: 24px;
+          font-family: "Nunito";
+          @media screen and (max-width: 500px) {
+            font-size: 20px !important;
+          }
         }
         .productDescription3h2 {
           color: #444444;
           font-family: "Nunito";
           font-style: normal;
           font-weight: 600 !important;
+        }
+        .guIbWC {
+          min-width: 210px;
         }
       }
       #productTotal {
@@ -276,6 +380,20 @@
         font-family: "Nunito";
 
         width: "100%";
+        @media screen and (max-width: 1000px) {
+          display: flex;
+          flex-direction: column;
+          .agregarLink {
+            width: 70%;
+            align-self: center;
+            .productTotalb1 {
+              height: 40px;
+            }
+            @media screen and (max-width: 500px) {
+              width: 85% !important;
+            }
+          }
+        }
         Button {
           height: "50px";
         }
@@ -287,8 +405,13 @@
           text-align: left;
         }
         .productTotalh1 {
+          font-family: "Nunito";
+
           font-weight: 700;
-          font-size: 15px;
+          font-size: 24px;
+          @media screen and (max-width: 500px) {
+            font-size: 20px !important;
+          }
         }
         .productTotalb1 {
           background-color: #d96581;
@@ -378,6 +501,9 @@
         height: 2px;
         margin-top: 20px;
       }
+      @media screen and (max-width: 1000px) {
+        grid-column: 1/5 !important;
+      }
     }
   }
 
@@ -394,7 +520,7 @@
       color: #9babbf;
       color: $primaryFontColor;
       border-radius: 0.2rem;
-      width: 60%;
+      width: auto;
       font-size: 1rem;
       &[aria-selected="true"] {
         color: #d96581;
@@ -410,6 +536,12 @@
     }
     .MuiTabs-indicator {
       background-color: transparent;
+    }
+    .css-heg063-MuiTabs-flexContainer {
+      @media screen and (max-width: 500px) {
+        display: flex !important;
+        flex-direction: column;
+      }
     }
   }
   .DetailList {
@@ -548,6 +680,9 @@
           .timingselect {
             width: 200px !important;
             height: 50px !important;
+            @media screen and (max-width: 570px) {
+              width: 250px !important;
+            }
           }
         }
       }
@@ -1037,4 +1172,11 @@
   gap: 1rem;
   grid-template-columns: repeat(5, 1fr);
   justify-items: center;
+}
+@media screen and (max-width: 610px) {
+  .DetailList {
+    .panelP {
+      width: auto !important;
+    }
+  }
 }

@@ -57,8 +57,6 @@ const ProductSection = () => {
   console.log(data);
   return (
     <div className="productSection">
-      <h1>Nuestros Productos</h1>
-      <p style={{ color: "#9BABBF" }}>Encuentra lo que buscas</p>
       <Carousel
         arrows={false}
         renderButtonGroupOutside={true}

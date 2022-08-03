@@ -77,7 +77,11 @@ const Home = () => {
             <Grid item xs={12} sm={12} md={4} lg={2}>
               <p style={{ color: "#C8CED4", visibility: "hidden" }}>HIDDEN</p>
 
-              <Button className="modalCb2" variant="contained" style={{width:'90%'}}>
+              <Button
+                className="modalCb2"
+                variant="contained"
+                style={{ width: "90%" }}
+              >
                 Encontrar Egalo
               </Button>
             </Grid>
@@ -87,6 +91,8 @@ const Home = () => {
       </div>
 
       <div className="beta">
+        <h1 className="betah1">Nuestros Productos</h1>
+        <p className="betap1">Encuentra lo que buscas</p>
         <ProductSection />
       </div>
 
