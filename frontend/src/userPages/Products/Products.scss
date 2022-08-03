@@ -745,6 +745,9 @@
       }
     }
   }
+  @media screen and (max-height: 773px) {
+    overflow-y: auto;
+  }
 }
 .both {
   .rightSide {
@@ -767,6 +770,9 @@
   }
   .css-mvmu1r {
     margin: 10px 0 !important;
+    @media screen and (max-height: 775px) {
+      margin: 5px 0 !important;
+    }
   }
   .css-epd502 {
     margin: 0 !important;
@@ -851,6 +857,9 @@
       #9babbf 51.56%,
       rgba(155, 171, 191, 0) 100%
     );
+    @media screen and (max-height: 895px) {
+      display: none;
+    }
   }
   .Cardsp2 {
     font-family: "Nunito";
@@ -875,6 +884,9 @@
       #9babbf 51.56%,
       rgba(155, 171, 191, 0) 100%
     );
+    @media screen and (max-height: 800px) {
+      display: none;
+    }
   }
   .Cardsp4 {
     font-family: "Nunito";
@@ -1029,13 +1041,16 @@
   height: 50px;
   background: #d96581;
   border-radius: 10px;
-  color: #ffffff !important;
+
   cursor: pointer;
 }
 .timingnormal {
-  background: #ffffff;
-  color: #000000;
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 14px;
+  color: #9babbf;
   cursor: pointer;
+  background-color: #f8f8f8 !important;
 }
 .calender {
   align-items: normal !important;
@@ -1133,7 +1148,7 @@
         font-size: 14px;
         text-align: center;
         text-transform: capitalize;
-        color: #818181 !important;
+        //color: #818181 !important;
         display: flex;
         align-items: center;
         justify-content: center;

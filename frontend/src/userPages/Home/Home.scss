@@ -192,7 +192,8 @@
 // }
 .beta {
   padding-top: 80px;
-
+  display: flex;
+  flex-direction: column;
   .betah1 {
     text-align: center;
     font-weight: 600;
