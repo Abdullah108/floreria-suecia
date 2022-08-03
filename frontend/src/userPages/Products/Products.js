@@ -62,6 +62,12 @@ const Products = () => {
 
   const [activeThumb, setactiveThumb] = useState();
 
+  const breakPoints = [
+    { width: 1, itemsToShow: 1, itemsToScroll: 1 },
+    { width: 410, itemsToShow: 2, itemsToScroll: 1 },
+    { width: 630, itemsToShow: 3, itemsToScroll: 1 },
+  ];
+
   const breadcrumbs2 = [
     <a style={{ color: "#9BABBF" }} key="1">
       Estado de México
@@ -511,7 +517,7 @@ const Products = () => {
             modules={[Navigation, Thumbs]}
             grabCursor={true}
             thumbs={{ swiper: activeThumb }}
-            className="product-image-slider"
+            className="product-image-slider firstSwiper"
             style={{ height: "500px", width: "500px", marginLeft: "0" }}
           >
             <SwiperSlide key="index" style={{ textAlign: "-webkit-center" }}>
@@ -528,7 +534,7 @@ const Products = () => {
             spaceBetween={10}
             slidesPerView={3}
             modules={[Navigation, Thumbs]}
-            className="product-image-slider-thumbs"
+            className="product-image-slider-thumbs secondSwiper"
             style={{ marginTop: "1rem", display: "block" }}
           >
             {/* {data.images.map((item, index) => ( */}
@@ -785,7 +791,7 @@ const Products = () => {
 
           <div className="productInformationline1"></div>
           <div id="productDescription2">
-            <h6 className="productDescription2">
+            <h6 className="productDescription2h">
               2.-Agrandar producto (opcional)
             </h6>
             <div className="Cards2">
@@ -805,7 +811,7 @@ const Products = () => {
                 >
                   GRAND
                 </p>
-                <p className="productDescription2">
+                <p style={{ fontSize: "15px" }}>
                   JG Rose Stems <br /> Triple line Blooms
                 </p>
               </button>
@@ -860,7 +866,7 @@ const Products = () => {
             <h6 className="productDescription3h1">
               3.- Complementar pedido (opcional)
             </h6>
-            <Carousel itemsToShow={3} className="carousel">
+            <Carousel breakPoints={breakPoints} className="carousel">
               {selectableProductImages.map((item, index) => (
                 <div key={index}>
                   <img
@@ -923,7 +929,7 @@ const Products = () => {
               Podrás escribir un mensaje en una tarjeta más adelante en el
               Carrito
             </p>
-            <Link to="cart">
+            <Link className="agregarLink" to="cart">
               <Button
                 className="productTotalb1"
                 onClick={() => assignProductDetails()}

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import PropTypes from "prop-types";
@@ -11,52 +11,50 @@ import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 
 const TabsSection = () => {
-  
-    // Tab panel State
-    const [value, setValue] = React.useState(0);
-    const [open, setOpen] = React.useState(false);
+  // Tab panel State
+  const [value, setValue] = React.useState(0);
+  const [open, setOpen] = React.useState(false);
 
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
-    };
-    const handleClickList = () => {
-        setOpen(!open);
-      };
-    
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+  const handleClickList = () => {
+    setOpen(!open);
+  };
 
-    // tab Panel Component
-    function TabPanel(props) {
-        const { children, value, index, ...other } = props;
-
-        return (
-        <div
-            role="tabpanel"
-            hidden={value !== index}
-            id={`simple-tabpanel-${index}`}
-            aria-labelledby={`simple-tab-${index}`}
-            {...other}
-        >
-            {value === index && <div>{children}</div>}
-        </div>
-        );
-    }
-    // Props Types for TabPanel
-    TabPanel.propTypes = {
-        children: PropTypes.node,
-        index: PropTypes.number.isRequired,
-        value: PropTypes.number.isRequired,
-    };
-
-    function a11yProps(index) {
-        return {
-        id: `simple-tab-${index}`,
-        "aria-controls": `simple-tabpanel-${index}`,
-        };
-    }
+  // tab Panel Component
+  function TabPanel(props) {
+    const { children, value, index, ...other } = props;
 
     return (
-        <>
-            <div>
+      <div
+        role="tabpanel"
+        hidden={value !== index}
+        id={`simple-tabpanel-${index}`}
+        aria-labelledby={`simple-tab-${index}`}
+        {...other}
+      >
+        {value === index && <div>{children}</div>}
+      </div>
+    );
+  }
+  // Props Types for TabPanel
+  TabPanel.propTypes = {
+    children: PropTypes.node,
+    index: PropTypes.number.isRequired,
+    value: PropTypes.number.isRequired,
+  };
+
+  function a11yProps(index) {
+    return {
+      id: `simple-tab-${index}`,
+      "aria-controls": `simple-tabpanel-${index}`,
+    };
+  }
+
+  return (
+    <>
+      <div>
         <div>
           <Tabs
             value={value}
@@ -99,7 +97,10 @@ const TabsSection = () => {
                 aria-labelledby="nested-list-subheader"
                 className="DetailList"
               >
-                <div style={{ display: "flex", width: "700px" }}>
+                <div
+                  className="panelP"
+                  style={{ display: "flex", width: "700px" }}
+                >
                   <div className="tabpaneld2"></div>
                   <p className="tabpanelp1">
                     Caja rígida decorativa o reutilizable tipo libro color hueso
@@ -158,7 +159,10 @@ const TabsSection = () => {
                 aria-labelledby="nested-list-subheader"
                 className="DetailList"
               >
-                <div style={{ display: "flex", width: "700px" }}>
+                <div
+                  className="panelP"
+                  style={{ display: "flex", width: "700px" }}
+                >
                   <div className="tabpaneld2"></div>
                   <p className="tabpanelp1">
                     Caja rígida decorativa o reutilizable tipo libro color hueso
@@ -217,7 +221,10 @@ const TabsSection = () => {
                 aria-labelledby="nested-list-subheader"
                 className="DetailList"
               >
-                <div style={{ display: "flex", width: "700px" }}>
+                <div
+                  className="panelP"
+                  style={{ display: "flex", width: "700px" }}
+                >
                   <div className="tabpaneld2"></div>
                   <p className="tabpanelp1">
                     Caja rígida decorativa o reutilizable tipo libro color hueso
@@ -253,8 +260,8 @@ const TabsSection = () => {
       <div className="productSlideHeading">
         <h4>Productos Relacionados</h4>
       </div>
-        </>
-    )
-}
+    </>
+  );
+};
 
-export default TabsSection
+export default TabsSection;
