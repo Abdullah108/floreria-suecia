@@ -24,22 +24,21 @@ import Carousel from "react-elastic-carousel";
 import b_arrow from "./../../assets/breadcrumb_arrow.png";
 import cal from "./../../assets/cal.png";
 import cross from "./../../assets/cross.svg";
+//mui
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
-
 import { StaticDatePicker } from "@mui/x-date-pickers/StaticDatePicker";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-
 //api
 import useAsync from "../../hooks/useAsync";
 import ProductServices from "../../services/ProductServices";
-
 //redux
 import { useDispatch, useSelector } from "react-redux";
 import { setProductsDetails, setTotalPrice } from "../Redux/Reducer";
-
+//utils
+import { notifySuccess, notifyError } from "../../utils/toast";
 //get productID from url
 const url = window.location.href;
 var productId = url.substring(url.lastIndexOf("/") + 1);
@@ -522,7 +521,7 @@ const Products = () => {
           >
             <SwiperSlide key="index" style={{ textAlign: "-webkit-center" }}>
               <img
-                src={data.image}
+                src={data.image || data.images}
                 alt="product Image"
                 style={{ height: "100%", borderRadius: "20px" }}
               />
@@ -541,7 +540,7 @@ const Products = () => {
             <SwiperSlide style={{ width: "100px" }}>
               <div className="product-image-slider-thumbs-wrapper">
                 <img
-                  src={data.image}
+                  src={data.image || data.images}
                   alt="product Image"
                   style={{
                     width: "100%",
@@ -560,11 +559,11 @@ const Products = () => {
           </div>
           <div className="productInformationd2">
             Puntos :{" "}
-            <p className="productInformationd2p1">{data.productPrice}</p>
+            <p className="productInformationd2p1">{data.productPrice || data.variantPrice}</p>
           </div>
           <div style={{ marginTop: "10px" }}>
             {" "}
-            <h6 className="productInformationh6">${data.productPrice} </h6>
+            <h6 className="productInformationh6">${data.productPrice || data.variantPrice}</h6>
           </div>
           <p className="productInformationp1">$12.990 Precio Normal </p>
           <Divider className="productInformationdivider1" />
@@ -929,13 +928,13 @@ const Products = () => {
               Podrás escribir un mensaje en una tarjeta más adelante en el
               Carrito
             </p>
-            <Link className="agregarLink" to="cart">
+            <Link className="agregarLink" to="/user/cart">
               <Button
                 className="productTotalb1"
-                onClick={() => assignProductDetails()}
+                onClick={() => notifySuccess("Product added to cart")}
                 variant="contained"
               >
-                Agregar( ${data.variantPrice} CLP)
+                Agregar( ${data.variantPrice || data.productPrice})
                 <ArrowForwardIcon sx={{ marginLeft: "5px" }} />
               </Button>
             </Link>

@@ -25,7 +25,7 @@ const ProductCard = ({ value }) => {
           {variantPrice}
         </p>
         <div className="both">
-          <Link className="link" to={`/user/product/${params}`}>
+          <Link className="link" to={`/user/product/${_id}`}>
             <Button className="productcardb1" variant="contained">
               Agregar al carrito
             </Button>

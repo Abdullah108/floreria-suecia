@@ -1,14 +1,12 @@
 import React, { useState } from "react";
-import "./Login.scss";
 
 import { useHistory } from "react-router-dom";
 import Cookies from "js-cookie";
-
 //mui
 import Button from "@mui/material/Button";
-
 import { pink } from "@mui/material/colors";
-// Import Swiper styles
+//css
+import "./Login.scss";
 import "swiper/swiper.scss"; // core Swiper
 import "swiper/modules/navigation/navigation.scss"; // Navigation module
 import "swiper/modules/thumbs/thumbs.scss";
