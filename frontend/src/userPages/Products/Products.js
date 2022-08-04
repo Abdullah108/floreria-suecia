@@ -313,7 +313,7 @@ const Products = () => {
     }
   };
   const Results = () => (
-    <div style={{ marginBottom: "15px" }} className="superdiv">
+    <div className="superdiv">
       <div
         className={`firstDiv ${firsttiming ? "timingselect" : "timingnormal"}`}
         onClick={firstTime}

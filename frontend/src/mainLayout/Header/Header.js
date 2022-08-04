@@ -155,10 +155,6 @@ const Header = () => {
               to="/user/category"
             >
               <img
-                style={{
-                  width: "34px",
-                  height: "29px",
-                }}
                 src={require("./../../assets/delivery.svg").default}
                 alt="Delievry truck"
               />
@@ -172,7 +168,6 @@ const Header = () => {
             <img
               src={require("./../../assets/cart.svg").default}
               alt="Cart"
-              style={{ width: "34px", height: "34px" }}
             />
             <p style={{ margin: "0", color: "#D96581", fontWeight: "600" }}>
               Carrito
@@ -609,7 +604,7 @@ const Header = () => {
               <img
                 src={require("./../../assets/user.svg").default}
                 alt="User"
-                style={{ width: "25.5px", height: "34px" }}
+                style={{ width: "20px" }}
               />
               Milovan
             </Link>

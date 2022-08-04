@@ -93,7 +93,7 @@ const Category = () => {
   const [checkedfilter, setCheckedfilter] = useState(false);
 
   const handlecheckboxfilter = (index) => {
-    setCheckedfilter(index.event.target.checked);
+    setCheckedfilter(index);
   };
 
   const [checked, setChecked] = useState([0]);
@@ -116,15 +116,6 @@ const Category = () => {
     setPriceFilter(event.target.value);
   };
 
-  const search = useLocation().search;
-  console.log(search);
-  const name = new URLSearchParams(search).get("products");
-  console.log(name);
-  var twoCategory = "";
-  if (name) twoCategory = name.split("|");
-  else twoCategory = name;
-  // (name.includes('|') ?)
-  console.log(name);
 
   const marks = [
     {
@@ -395,10 +386,11 @@ const Category = () => {
                           <input
                             key={index}
                             className="filterCheckbox form-check-input"
-                            checked={checkedfilter}
+                            checked={checkedfilter == index}
+                            onClick={(e) => console.log(index)}
                             onChange={(e) => handlecheckboxfilter(index)}
                             type="checkbox"
-                            value=""
+                            
                           />
                         </ListItemIcon>
                         <ListItemText id={labelId} primary={`${item}`} />
