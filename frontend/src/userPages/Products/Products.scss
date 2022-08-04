@@ -635,6 +635,7 @@
 }
 //---------------------------------calender--------------------------------------->
 .calBox {
+  overflow-y: auto;
   .Cardspic1 {
     position: relative;
     left: 97%;
@@ -1179,4 +1180,15 @@
       width: auto !important;
     }
   }
+}
+//calendar overwrite
+.css-1vofi97 {
+  display: none !important;
+}
+.css-1brzq0m {
+  width: 100% !important;
+}
+
+.css-wed0tz.Mui-selected, .css-ub1r1.Mui-selected {
+  background-color: #d96581 !important;
 }
