@@ -136,28 +136,9 @@ const Header = () => {
           </Search>
         </div>
         <div className="rewards">
-          <Button
-            style={{
-              border: "1px solid #D96581",
-              width: "170px",
-              justifyContent: "space-evenly",
-              borderRadius: "10px",
-            }}
-          >
-            <img alt="" style={{ width: "20px" }} src={diamond} />
-            <p
-              style={{
-                color: "#D96581",
-                marginBottom: "0",
-                textTransform: "none",
-                fontFamily: "Nunito",
-                fontStyle: "normal",
-                fontWeight: "700",
-                fontSize: "12px",
-              }}
-            >
-              Suecia Rewards
-            </p>
+          <Button className="rewardsb1">
+            <img className="rewardsimg" alt="" src={diamond} />
+            <p className="rewardsp1">Suecia VIP</p>
           </Button>
         </div>
         <div className="menu-desktop">

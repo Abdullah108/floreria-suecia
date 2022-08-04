@@ -17,16 +17,21 @@
     display: flex;
     flex-direction: row;
     width: 645px;
+    height: 50px;
     .css-10ce8mg {
       width: 645px;
       display: flex;
       justify-content: space-between;
+      border-radius: 10px;
     }
     @media (max-width: 1250px) {
       width: 100%;
       .css-10ce8mg {
         width: 100%;
       }
+    }
+    @media (min-width: 1200px) {
+      margin-left: 100px;
     }
   }
   .menuMobile {
@@ -56,9 +61,10 @@
         align-self: center;
       }
       a {
+        font-family: "Nunito";
         text-decoration: none;
-        font-size: 14px;
-        font-weight: 500;
+        font-size: 12px;
+        font-weight: 700;
         line-height: 30px;
         letter-spacing: 0em;
         text-align: center;
@@ -69,6 +75,12 @@
       &:hover {
         color: $secondaryColor;
         fill: $secondaryColor;
+      }
+      p {
+        font-family: "Nunito";
+
+        font-size: 12px;
+        font-weight: 700;
       }
     }
 
@@ -96,6 +108,27 @@
     }
     .searchBar {
       width: 60% !important;
+    }
+  }
+  .rewards {
+    .rewardsb1 {
+      width: 200px;
+      height: 50px;
+      border: 1px solid #d96581;
+      justify-content: space-evenly;
+      border-radius: 10px;
+    }
+    .rewardsp1 {
+      font-family: "Nunito";
+      font-weight: 700;
+      font-size: 16px;
+      color: #d96581;
+      margin-bottom: 0;
+      text-transform: none;
+    }
+    .rewardsimg {
+      width: 24px;
+      height: 24px;
     }
   }
 }

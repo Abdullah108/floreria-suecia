@@ -17,17 +17,17 @@ import "swiper/swiper.scss"; // core Swiper
 
 const responsive2 = {
   desktop: {
-    breakpoint: { max: 3000, min: 1024 },
+    breakpoint: { max: 3000, min: 1300 },
     items: 3,
     slidesToSlide: 1,
   },
   tablet: {
-    breakpoint: { max: 1024, min: 700 },
+    breakpoint: { max: 1300, min: 840 },
     items: 2,
     slidesToSlide: 1,
   },
   mobile: {
-    breakpoint: { max: 700, min: 0 },
+    breakpoint: { max: 840, min: 0 },
     items: 1,
     slidesToSlide: 1,
   },

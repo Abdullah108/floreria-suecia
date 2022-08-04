@@ -394,7 +394,7 @@ const Products = () => {
     boxShadow: 24,
     p: 4,
     width: "85%",
-    height: "90%",
+    height: "95%",
     background: " #FFFFFF",
     borderRadius: "30px",
   };

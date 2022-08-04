@@ -90,6 +90,12 @@ const Category = () => {
     setAge(event.target.value);
   };
   // handling Check State
+  const [checkedfilter, setCheckedfilter] = useState(false);
+
+  const handlecheckboxfilter = (index) => {
+    setCheckedfilter(index.event.target.checked);
+  };
+
   const [checked, setChecked] = useState([0]);
 
   const handleToggle = (value) => () => {
@@ -191,7 +197,16 @@ const Category = () => {
         </div>
         <div className="span-5">
           <div className="span5d1">
-            <h5 style={{ fontSize: "20px" }}>Filters</h5>
+            <h5
+              style={{
+                fontFamily: "Nunito",
+
+                fontWeight: 700,
+                fontSize: "24px",
+              }}
+            >
+              Filtros
+            </h5>
 
             <div className="span-3">
               <Search className="span3S">
@@ -276,17 +291,12 @@ const Category = () => {
                             dense
                           >
                             <ListItemIcon>
-                              <Checkbox
-                                edge="start"
-                                checked={
-                                  false
-                                  //checked.indexOf(item) !== -1 ||
-                                  //(twoCategory[0] == item ? true : false) ||
-                                  //(twoCategory[1] == item ? true : false)
-                                }
-                                tabIndex={-1}
-                                disableRipple
-                                inputProps={{ "aria-labelledby": labelId }}
+                              <input
+                                className="span45i1 form-check-input"
+                                checked={checkedfilter}
+                                onChange={handlecheckboxfilter}
+                                type="checkbox"
+                                value=""
                               />
                             </ListItemIcon>
                             <ListItemText id={labelId} primary={`${item}`} />
@@ -317,7 +327,17 @@ const Category = () => {
             </Drawer>
           </div>
           <div className="DesktopFilter">
-            <h6 style={{ paddingBottom: "20px" }}>Rango de precio</h6>
+            <h6
+              style={{
+                fontFamily: "Nunito",
+
+                fontWeight: "700",
+                fontSize: "16px",
+                paddingBottom: "20px",
+              }}
+            >
+              Rango de precio
+            </h6>
             <Box sx={{ width: 300 }}>
               <Slider
                 style={{ color: "#D96581", background: "none" }}
@@ -372,17 +392,13 @@ const Category = () => {
                         dense
                       >
                         <ListItemIcon>
-                          <Checkbox
-                            edge="start"
-                            checked={
-                              false
-                              //checked.indexOf(item) !== -1 ||
-                              //(twoCategory[0] == item ? true : false) ||
-                              //(twoCategory[1] == item ? true : false)
-                            }
-                            tabIndex={-1}
-                            disableRipple
-                            inputProps={{ "aria-labelledby": labelId }}
+                          <input
+                            key={index}
+                            className="filterCheckbox form-check-input"
+                            checked={checkedfilter}
+                            onChange={(e) => handlecheckboxfilter(index)}
+                            type="checkbox"
+                            value=""
                           />
                         </ListItemIcon>
                         <ListItemText id={labelId} primary={`${item}`} />

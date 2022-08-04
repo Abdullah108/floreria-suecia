@@ -349,6 +349,38 @@
       }
       .css-nnid7-MuiSlider-valueLabel.MuiSlider-valueLabelOpen {
         background: transparent !important;
+        font-family: "Nunito";
+        font-weight: 800 !important;
+        font-size: 14px !important;
+      }
+      .css-nnid7-MuiSlider-valueLabel {
+        font-family: "Nunito";
+        font-weight: 800 !important;
+        font-size: 14px !important;
+      }
+      .css-eg0mwd-MuiSlider-thumb {
+        width: 14px !important;
+        height: 14px !important;
+      }
+      .css-et1ao3-MuiTypography-root {
+        color: #9babbf;
+        font-family: "Nunito";
+
+        font-weight: 300;
+        font-size: 16px;
+      }
+      .css-cveggr-MuiListItemIcon-root {
+        min-width: auto !important;
+        margin-right: 5px;
+        .css-i4bv87-MuiSvgIcon-root {
+          width: 24px !important;
+          height: 24px !important;
+        }
+      }
+      .filterCheckbox {
+        width: 24px !important;
+        height: 24px !important;
+        margin-right: 15px;
       }
     }
 
@@ -442,7 +474,6 @@
 }
 .MuiSlider-valueLabelLabel {
   color: #d96581;
-  font-weight: 600;
 }
 .css-1kz0hui-MuiSlider-valueLabel.MuiSlider-valueLabelOpen {
   background-color: #ffffff;

@@ -1,7 +1,7 @@
 @import "./../../mainLayout/utillities_config";
 .cartContainer {
   margin: 0 auto;
-  padding: 0 5rem;
+  width: 90%;
   font-family: "Poppins";
   @media (max-width: 900px) {
     overflow: hidden;
@@ -11,6 +11,10 @@
     grid-template-columns: 1fr 1fr 1fr;
     gap: 0.5rem;
     margin-bottom: 100px;
+    @media (max-width: 470px) {
+      display: flex !important;
+      flex-direction: column;
+    }
     .span-1 {
       display: flex;
       align-items: center;
@@ -42,6 +46,9 @@
         .css-63vwl1-MuiTypography-root-MuiBreadcrumbs-root {
           font-size: 0.7rem !important;
         }
+      }
+      @media (max-width: 500px) {
+        display: none !important;
       }
     }
 
@@ -237,7 +244,7 @@
               width: 150px;
             }
             @media (max-width: 490px) {
-              width: 100px;
+              width: 130px;
             }
           }
           @media (max-width: 900px) {
@@ -249,7 +256,7 @@
             font-size: 0.8rem;
           }
           @media (max-width: 700px) {
-            width: 100px;
+            width: 130px;
             font-size: 0.8rem;
           }
         }
@@ -341,6 +348,12 @@
           .home {
             display: none !important;
           }
+        }
+      }
+      @media (max-width: 470px) {
+        .addbtn {
+          width: 150px !important;
+          height: 150px !important;
         }
       }
       .address {
@@ -469,6 +482,7 @@
       .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
         border: none;
         border-radius: 10px;
+        background-color: #f8f8f8;
       }
       .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
         background: #f8f8f8;
@@ -684,6 +698,12 @@
         position: relative;
         right: 50px;
       }
+      @media (max-width: 470px) {
+        width: 350px !important;
+        position: inherit !important;
+        margin-left: -30px;
+        margin: 0 auto;
+      }
       @media (max-width: 500px) {
         width: 380px;
         .bigbtn {
@@ -714,6 +734,9 @@
         display: flex;
         flex-direction: column;
         margin-left: -170px;
+        @media (max-width: 470px) {
+          margin-left: -50px !important;
+        }
       }
       .span5d3 {
         width: 2px;
@@ -738,6 +761,9 @@
         text-transform: capitalize;
         color: #ffffff;
         cursor: pointer;
+        @media (max-width: 470px) {
+          width: 270px !important;
+        }
       }
       .bigbtn:hover {
         background-color: #ffffff;
@@ -764,6 +790,9 @@
         height: 50px;
         background: #f8f8f8;
         border-radius: 10px;
+        @media (max-width: 470px) {
+          width: 200px !important;
+        }
       }
       .span5b1 {
         width: 100px;
@@ -807,6 +836,9 @@
           width: 320px !important;
           font-size: 1rem !important;
         }
+      }
+      @media (max-width: 470px) {
+        margin: 0 auto;
       }
       @media (max-width: 900px) {
         width: 90%;

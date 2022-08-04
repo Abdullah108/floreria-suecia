@@ -1,4 +1,22 @@
 .box2 {
+  overflow-y: auto;
+  .box2p1 {
+    color: #d96581;
+    font-weight: 700;
+    font-family: "Nunito";
+    font-size: 30px;
+    margin-bottom: 0;
+    @media (max-width: 400px) {
+      font-size: 24px !important;
+    }
+  }
+  .box2img1 {
+    cursor: pointer;
+    @media (max-width: 400px) {
+      width: 20px;
+    }
+  }
+
   p {
     font-size: 20px;
   }
@@ -32,5 +50,10 @@
         margin-top: 15px;
       }
     }
+  }
+  .endbtndiv {
+    display: flex;
+    justify-content: end;
+    padding: 20px 0px;
   }
 }

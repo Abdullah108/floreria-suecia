@@ -172,22 +172,10 @@ const AddressModal = ({
               justifyContent: "space-between",
             }}
           >
-            <p
-              style={{
-                color: "#D96581",
-                fontWeight: "700",
-                fontFamily: "Nunito",
-                fontSize: "30px",
-                marginBottom: "0",
-              }}
-            >
-              Dirección de envío
-            </p>
+            <p className="box2p1">Dirección de envío</p>
             <img
+              className="box2img1"
               alt=""
-              style={{
-                cursor: "pointer",
-              }}
               onClick={handleClose2}
               src={cross}
             />
@@ -379,12 +367,7 @@ const AddressModal = ({
                 </Select>
               </FormControl>
 
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "end",
-                }}
-              >
+              <div className="endbtndiv">
                 <Button
                   style={{
                     width: "280px",
