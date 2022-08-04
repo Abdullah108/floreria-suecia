@@ -2,7 +2,7 @@ import axios from 'axios';
 import Cookies from 'js-cookie';
 
 const instance = axios.create({
-  baseURL: `http://floreria-suecia.herokuapp.com/api/`,
+  baseURL: `https://floreria-suecia.herokuapp.com/api/`,
   timeout: 500000,
   headers: {
     Accept: 'application/json',

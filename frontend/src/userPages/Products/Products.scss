@@ -636,6 +636,7 @@
 //---------------------------------calender--------------------------------------->
 .calBox {
   overflow-y: auto;
+  padding-bottom: 20px !important;
   padding: 0 !important;
   .Cardspic1 {
     position: relative;
@@ -646,7 +647,7 @@
   }
   @media screen and (max-width: 1400px) {
     width: 85% !important;
-    height: 95% !important;
+    height: auto !important;
   }
   height: 700px !important;
   width: 85% !important;
@@ -829,14 +830,14 @@
     font-size: 30px;
     color: #d96581;
   }
-  .css-1ae9t7h-MuiButtonBase-root-MuiIconButton-root-MuiPickersArrowSwitcher-button {
+  .css-1ae9t7h-MuiButtonBase-root-MuiIconButton-root-MuiPickersArrowSwitcher-button, .css-h1vjls {
     margin-right: 15px;
     width: 40px;
     height: 40px;
     background: rgba(217, 101, 129, 0.1);
     border-radius: 10px;
   }
-  .css-jro82b-MuiButtonBase-root-MuiIconButton-root-MuiPickersArrowSwitcher-button {
+  .css-jro82b-MuiButtonBase-root-MuiIconButton-root-MuiPickersArrowSwitcher-button, .css-fp6ecq {
     width: 40px;
     height: 40px;
     background: rgba(217, 101, 129, 0.1);
@@ -879,6 +880,7 @@
     font-weight: 400;
     font-size: 16px;
     color: #9babbf;
+    margin-bottom: 0 !important;
   }
   .Cardsline2 {
     margin-bottom: 10px;
@@ -918,7 +920,7 @@
     margin-top: 50px;
   }
   .css-1cnkspq {
-    min-height: 290px !important;
+    min-height: 210px !important;
   }
   .Cardsd2 {
     flex-direction: column;
@@ -1006,7 +1008,7 @@
 .firstDiv:hover,
 .secondDiv:hover,
 .thirdDiv:hover {
-  background: #d96581;
+  background: #d96581 !important;
   color: #ffffff;
 }
 .superdiv {
@@ -1039,7 +1041,7 @@
 }
 .timingselect {
   border: 1px solid #d96581 !important;
-  color: #d96581 !important;
+  color: white !important;
   font-family: "Poppins";
   font-style: normal;
   font-weight: 500 !important;
@@ -1048,6 +1050,18 @@
   background: #d96581;
   border-radius: 10px;
 
+  cursor: pointer;
+}
+.timingselectModal {
+  border: 1px solid #d96581 !important;
+  color: #d96581 !important;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500 !important;
+  width: 208px;
+  height: 50px;
+  background: #d96581;
+  border-radius: 10px;
   cursor: pointer;
 }
 .timingnormal {
@@ -1217,4 +1231,13 @@
 
 .css-1h8fkga {
   min-height: auto !important;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+
+.css-14b29qc {
+  display: none !important;
 }

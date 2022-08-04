@@ -672,6 +672,7 @@ const Header = () => {
                   margin: "1rem 0rem",
                   width: "80%",
                   justifyContent: "space-around",
+                  cursor: 'pointer'
                 }}
               >
                 <img

@@ -315,6 +315,30 @@ const Products = () => {
   const Results = () => (
     <div className="superdiv">
       <div
+        className={`firstDiv ${firsttiming ? "timingselectModal" : "timingnormal"}`}
+        onClick={firstTime}
+      >
+        08:00am - 02:00pm
+      </div>
+      <div
+        className={`secondDiv ${
+          secondtiming ? "timingselectModal" : "timingnormal"
+        }`}
+        onClick={secondTime}
+      >
+        10:00am - 04:00pm
+      </div>
+      <div
+        className={`thirdDiv ${thirdtiming ? "timingselectModal" : "timingnormal"}`}
+        onClick={thirdTime}
+      >
+        03:00am - 08:00pm
+      </div>
+    </div>
+  );
+  const Results3 = () => (
+    <div className="superdiv">
+      <div
         className={`firstDiv ${firsttiming ? "timingselect" : "timingnormal"}`}
         onClick={firstTime}
       >
@@ -340,7 +364,7 @@ const Products = () => {
     <div style={{ marginBottom: "15px" }} className="superdiv">
       <div
         className={`fourthDiv ${
-          fourthtiming ? "timingselect" : "timingnormal"
+          fourthtiming ? "timingselectModal" : "timingnormal"
         }`}
         style={{ width: "160px", height: "50px" }}
         onClick={fourthTime}
@@ -348,14 +372,14 @@ const Products = () => {
         12:00 PM - 01:00 PM
       </div>
       <div
-        className={`fifthDiv ${fifthtiming ? "timingselect" : "timingnormal"}`}
+        className={`fifthDiv ${fifthtiming ? "timingselectModal" : "timingnormal"}`}
         style={{ width: "160px", height: "50px" }}
         onClick={fifthTime}
       >
         01:00 PM - 02:00 PM
       </div>
       <div
-        className={`sixthDiv ${sixthtiming ? "timingselect" : "timingnormal"}`}
+        className={`sixthDiv ${sixthtiming ? "timingselectModal" : "timingnormal"}`}
         style={{ width: "160px", height: "50px" }}
         onClick={sixthTime}
       >
@@ -363,7 +387,7 @@ const Products = () => {
       </div>
       <div
         className={`seventhDiv ${
-          seventhtiming ? "timingselect" : "timingnormal"
+          seventhtiming ? "timingselectModal" : "timingnormal"
         }`}
         style={{ width: "160px", height: "50px" }}
         onClick={seventhTime}
@@ -517,7 +541,7 @@ const Products = () => {
             grabCursor={true}
             thumbs={{ swiper: activeThumb }}
             className="product-image-slider firstSwiper"
-            style={{ height: "500px", width: "500px", marginLeft: "0" }}
+            style={{ height: "400px", width: "400px", marginLeft: "0" }}
           >
             <SwiperSlide key="index" style={{ textAlign: "-webkit-center" }}>
               <img
@@ -577,7 +601,7 @@ const Products = () => {
                 <button className="button1">
                   <h6 className="Cardsh61">Hoy</h6>
                   {date} {month}
-                  {showResults1 ? <Results /> : null}
+                  {showResults1 ? <Results3 /> : null}
                 </button>
               ) : (
                 <button className="button1" onClick={onClick1}>
@@ -590,7 +614,7 @@ const Products = () => {
                 <button className="button2">
                   <h6 className="Cardsh63">Manana</h6>
                   {nextdate} {month}
-                  {showResults2 ? <Results /> : null}
+                  {showResults2 ? <Results3 /> : null}
                 </button>
               ) : (
                 <button className="button2" onClick={onClick2}>
