@@ -75,7 +75,13 @@ const ProductSection = () => {
                 <p className="dabbap2">{product.description}</p>
                 <p className="dabbap3"> Ramo del día</p>
                 <p className="dabbap4"> ${product.productPrice}</p>
-                <div style={{ display: "flex", paddingTop: "10px" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    paddingTop: "10px",
+                    paddingBottom: "10px",
+                  }}
+                >
                   <Link className="dabbaa1" to={`/user/product/${product._id}`}>
                     <Button className="dabbab1">Agregar al carrito</Button>
                   </Link>

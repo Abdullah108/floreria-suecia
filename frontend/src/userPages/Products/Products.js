@@ -1,17 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react/swiper-react.js";
 import { Navigation, Thumbs } from "swiper";
 //component
 import ProductSection from "../../mainLayout/ProductSection/ProductSection";
 import TabsSection from "./Tabs";
+import CalendarModal from "./CalendarModal";
+
 // Import Swiper styles
 import "swiper/swiper.scss"; // core Swiper
 import "swiper/modules/navigation/navigation.scss"; // Navigation module
 import "swiper/modules/thumbs/thumbs.scss";
 import "./Products.scss";
 
-import TextField from "@mui/material/TextField";
 import Checkbox from "@mui/material/Checkbox";
 import { pink } from "@mui/material/colors";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
@@ -23,14 +24,9 @@ import Carousel from "react-elastic-carousel";
 
 import b_arrow from "./../../assets/breadcrumb_arrow.png";
 import cal from "./../../assets/cal.png";
-import cross from "./../../assets/cross.svg";
 //mui
 import Button from "@mui/material/Button";
-import Box from "@mui/material/Box";
-import Modal from "@mui/material/Modal";
-import { StaticDatePicker } from "@mui/x-date-pickers/StaticDatePicker";
-import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+
 //api
 import useAsync from "../../hooks/useAsync";
 import ProductServices from "../../services/ProductServices";
@@ -39,6 +35,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setProductsDetails, setTotalPrice } from "../Redux/Reducer";
 //utils
 import { notifySuccess, notifyError } from "../../utils/toast";
+
 //get productID from url
 const url = window.location.href;
 var productId = url.substring(url.lastIndexOf("/") + 1);
@@ -167,232 +164,48 @@ const Products = () => {
   };
   const [time, setTime] = useState("");
 
-  const [timebool, settimeBool] = useState(false);
-  const [firsttiming, setfirstTiming] = useState(false);
-  const [secondtiming, setsecondTiming] = useState(false);
-  const [thirdtiming, setthirdTiming] = useState(false);
-  const [fourthtiming, setfourthTiming] = useState(false);
-  const [fifthtiming, setfifthTiming] = useState(false);
-  const [sixthtiming, setsixthTiming] = useState(false);
-  const [seventhtiming, setseventhTiming] = useState(false);
+  const [timetext, settimetext] = useState("");
 
-  const firstTime = () => {
-    setfirstTiming(!firsttiming);
-    setsecondTiming(false);
-    setthirdTiming(false);
-    setfourthTiming(false);
-    setfifthTiming(false);
-    setsixthTiming(false);
-    setseventhTiming(false);
-    if (firsttiming) {
+  const firstTime = (event) => {
+    settimetext(event.target.innerText);
+
+    if (timetext[2] === ":") {
       setTime("");
-      settimeBool(false);
 
       settimeDisplay(false);
     } else {
-      setTime("08:00am - 02:00pm");
       setcaldateBool(false);
-      settimeBool(true);
+
       settimeDisplay(true);
     }
   };
 
-  const secondTime = () => {
-    setsecondTiming(!secondtiming);
-    setfirstTiming(false);
-    setthirdTiming(false);
-    setfourthTiming(false);
-    setfifthTiming(false);
-    setsixthTiming(false);
-    setseventhTiming(false);
-    if (secondtiming) {
-      setTime("");
-      settimeBool(false);
-      settimeDisplay(false);
-    } else {
-      setTime("10:00am - 04:00pm");
-      setcaldateBool(false);
-      settimeBool(true);
-      settimeDisplay(true);
-    }
-  };
-  const thirdTime = () => {
-    setthirdTiming(!thirdtiming);
-    setsecondTiming(false);
-    setfirstTiming(false);
-    setfourthTiming(false);
-    setfifthTiming(false);
-    setsixthTiming(false);
-    setseventhTiming(false);
-    if (thirdtiming) {
-      setTime("");
-      settimeBool(false);
-      settimeDisplay(false);
-    } else {
-      setTime("03:00am - 08:00pm");
-      setcaldateBool(false);
-      settimeBool(true);
-      settimeDisplay(true);
-    }
-  };
-  const fourthTime = () => {
-    setfourthTiming(!fourthtiming);
-    setsecondTiming(false);
-    setfirstTiming(false);
-    setthirdTiming(false);
-    setfifthTiming(false);
-    setsixthTiming(false);
-    setseventhTiming(false);
-
-    if (fourthtiming) {
-      setTime("");
-      settimeBool(false);
-      settimeDisplay(false);
-    } else {
-      setTime("12:00 PM - 01:00 PM");
-      setcaldateBool(false);
-      settimeBool(true);
-      settimeDisplay(true);
-    }
-  };
-  const fifthTime = () => {
-    setfifthTiming(!fifthtiming);
-    setsecondTiming(false);
-    setfirstTiming(false);
-    setthirdTiming(false);
-    setfourthTiming(false);
-    setsixthTiming(false);
-    setseventhTiming(false);
-    if (fifthtiming) {
-      setTime("");
-      settimeBool(false);
-      settimeDisplay(false);
-    } else {
-      setTime("01:00 PM - 02:00 PM");
-      setcaldateBool(false);
-      settimeBool(true);
-      settimeDisplay(true);
-    }
-  };
-  const sixthTime = () => {
-    setsixthTiming(!sixthtiming);
-    setsecondTiming(false);
-    setfirstTiming(false);
-    setthirdTiming(false);
-    setfourthTiming(false);
-    setfifthTiming(false);
-    setseventhTiming(false);
-    if (sixthtiming) {
-      setTime("");
-      settimeBool(false);
-      settimeDisplay(false);
-    } else {
-      setTime("02:00 PM - 03:00 PM");
-      setcaldateBool(false);
-      settimeBool(true);
-      settimeDisplay(true);
-    }
-  };
-  const seventhTime = () => {
-    setseventhTiming(!seventhtiming);
-    setsecondTiming(false);
-    setfirstTiming(false);
-    setthirdTiming(false);
-    setfourthTiming(false);
-    setfifthTiming(false);
-    setsixthTiming(false);
-    if (seventhtiming) {
-      setTime("");
-      settimeBool(false);
-      settimeDisplay(false);
-    } else {
-      setTime("03:00 PM - 04:00 PM");
-      setcaldateBool(false);
-      settimeBool(true);
-      settimeDisplay(true);
-    }
-  };
-  const Results = () => (
-    <div className="superdiv">
-      <div
-        className={`firstDiv ${firsttiming ? "timingselectModal" : "timingnormal"}`}
-        onClick={firstTime}
-      >
-        08:00am - 02:00pm
-      </div>
-      <div
-        className={`secondDiv ${
-          secondtiming ? "timingselectModal" : "timingnormal"
-        }`}
-        onClick={secondTime}
-      >
-        10:00am - 04:00pm
-      </div>
-      <div
-        className={`thirdDiv ${thirdtiming ? "timingselectModal" : "timingnormal"}`}
-        onClick={thirdTime}
-      >
-        03:00am - 08:00pm
-      </div>
-    </div>
-  );
+  console.log(timetext);
   const Results3 = () => (
     <div className="superdiv">
       <div
-        className={`firstDiv ${firsttiming ? "timingselect" : "timingnormal"}`}
+        className={`firstDiv ${
+          timetext.slice(0, 7) === "08:00am" ? "timingselect" : "timingnormal"
+        }`}
         onClick={firstTime}
       >
         08:00am - 02:00pm
       </div>
       <div
         className={`secondDiv ${
-          secondtiming ? "timingselect" : "timingnormal"
+          timetext.slice(0, 7) === "10:00am" ? "timingselect" : "timingnormal"
         }`}
-        onClick={secondTime}
+        onClick={firstTime}
       >
         10:00am - 04:00pm
       </div>
       <div
-        className={`thirdDiv ${thirdtiming ? "timingselect" : "timingnormal"}`}
-        onClick={thirdTime}
+        className={`thirdDiv ${
+          timetext.slice(0, 7) === "03:00am" ? "timingselect" : "timingnormal"
+        }`}
+        onClick={firstTime}
       >
         03:00am - 08:00pm
-      </div>
-    </div>
-  );
-  const Results2 = () => (
-    <div style={{ marginBottom: "15px" }} className="superdiv">
-      <div
-        className={`fourthDiv ${
-          fourthtiming ? "timingselectModal" : "timingnormal"
-        }`}
-        style={{ width: "160px", height: "50px" }}
-        onClick={fourthTime}
-      >
-        12:00 PM - 01:00 PM
-      </div>
-      <div
-        className={`fifthDiv ${fifthtiming ? "timingselectModal" : "timingnormal"}`}
-        style={{ width: "160px", height: "50px" }}
-        onClick={fifthTime}
-      >
-        01:00 PM - 02:00 PM
-      </div>
-      <div
-        className={`sixthDiv ${sixthtiming ? "timingselectModal" : "timingnormal"}`}
-        style={{ width: "160px", height: "50px" }}
-        onClick={sixthTime}
-      >
-        02:00 PM - 03:00 PM
-      </div>
-      <div
-        className={`seventhDiv ${
-          seventhtiming ? "timingselectModal" : "timingnormal"
-        }`}
-        style={{ width: "160px", height: "50px" }}
-        onClick={seventhTime}
-      >
-        03:00 PM - 04:00 PM
       </div>
     </div>
   );
@@ -401,44 +214,12 @@ const Products = () => {
 
   const [openmod, setopenMod] = useState(false);
   const handleOpen = () => setopenMod(true);
-  //const handleClose = () => setopenMod(false);
-  const handleClear = () => {
-    setopenMod(false);
-    setTime("");
-    setcaldateBool(false);
-  };
-
-  const style = {
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    bgcolor: "background.paper",
-    border: "2px solid #D96581",
-    boxShadow: 24,
-    p: 4,
-    width: "85%",
-    height: "95%",
-    background: " #FFFFFF",
-    borderRadius: "30px",
-  };
 
   const [caldatebool, setcaldateBool] = useState();
   const [calvalue, setcalValue] = useState(new Date());
 
   let calDate = calvalue.getDate(); //taking date and month from calender values
   let calMonth = months[calvalue.getMonth()];
-
-  //taking weekday name in spanish
-  let weekday = [
-    "Domingo",
-    "Lunes",
-    "Martes",
-    "Miércoles",
-    "Jueves",
-    "Viernes",
-    "Sábado",
-  ][new Date().getDay() + 2];
 
   const setConfirm = () => {
     setopenMod(false);
@@ -460,42 +241,16 @@ const Products = () => {
       productAttributes.date = calDate;
       productAttributes.month = calMonth;
     }
-    if (
-      showResults1 &&
-      firsttiming |
-        secondtiming |
-        thirdtiming |
-        fourthtiming |
-        fifthtiming |
-        sixthtiming |
-        seventhtiming
-    ) {
+    if (showResults1 && timetext[2] === ":") {
       productAttributes.date = date;
       productAttributes.month = month;
     }
-    if (
-      showResults2 &&
-      firsttiming |
-        secondtiming |
-        thirdtiming |
-        fourthtiming |
-        fifthtiming |
-        sixthtiming |
-        seventhtiming
-    ) {
+    if (showResults2 && timetext[2] === ":") {
       productAttributes.date = nextdate;
       productAttributes.month = month;
     }
-    if (
-      firsttiming |
-      secondtiming |
-      thirdtiming |
-      fourthtiming |
-      fifthtiming |
-      sixthtiming |
-      seventhtiming
-    ) {
-      productAttributes.time = time;
+    if (timetext[2] === ":") {
+      productAttributes.timetext = timetext;
     }
     console.log(tempArr);
     await dispatch(setProductsDetails(productAttributes));
@@ -583,11 +338,15 @@ const Products = () => {
           </div>
           <div className="productInformationd2">
             Puntos :{" "}
-            <p className="productInformationd2p1">{data.productPrice || data.variantPrice}</p>
+            <p className="productInformationd2p1">
+              {data.productPrice || data.variantPrice}
+            </p>
           </div>
           <div style={{ marginTop: "10px" }}>
             {" "}
-            <h6 className="productInformationh6">${data.productPrice || data.variantPrice}</h6>
+            <h6 className="productInformationh6">
+              ${data.productPrice || data.variantPrice}
+            </h6>
           </div>
           <p className="productInformationp1">$12.990 Precio Normal </p>
           <Divider className="productInformationdivider1" />
@@ -629,61 +388,17 @@ const Products = () => {
                   <div
                     className="Cardsd1"
                     style={{
-                      display: `${caldatebool ? "flex" : "none"}`,
+                      display: `${timetext[2] === ":" ? "flex" : "none"}`,
                     }}
                   >
                     {caldatebool ? `${calDate}` : ""}{" "}
                     {caldatebool ? `${calMonth}` : ""}{" "}
-                    {showResults1 &&
-                    firsttiming |
-                      secondtiming |
-                      thirdtiming |
-                      fourthtiming |
-                      fifthtiming |
-                      sixthtiming |
-                      seventhtiming
-                      ? date
-                      : ""}{" "}
-                    {showResults1 &&
-                    firsttiming |
-                      secondtiming |
-                      thirdtiming |
-                      fourthtiming |
-                      fifthtiming |
-                      sixthtiming |
-                      seventhtiming
-                      ? month
-                      : ""}
-                    {showResults2 &&
-                    firsttiming |
-                      secondtiming |
-                      thirdtiming |
-                      fourthtiming |
-                      fifthtiming |
-                      sixthtiming |
-                      seventhtiming
-                      ? nextdate
-                      : ""}{" "}
-                    {showResults2 &&
-                    firsttiming |
-                      secondtiming |
-                      thirdtiming |
-                      fourthtiming |
-                      fifthtiming |
-                      sixthtiming |
-                      seventhtiming
-                      ? month
-                      : ""}
+                    {showResults1 && timetext[2] === ":" ? date : ""}{" "}
+                    {showResults1 && timetext[2] === ":" ? month : ""}
+                    {showResults2 && timetext[2] === ":" ? nextdate : ""}{" "}
+                    {showResults2 && timetext[2] === ":" ? month : ""}
                     <br />
-                    {firsttiming |
-                    secondtiming |
-                    thirdtiming |
-                    fourthtiming |
-                    fifthtiming |
-                    sixthtiming |
-                    seventhtiming
-                      ? time
-                      : ""}
+                    {timetext[2] === ":" ? timetext : ""}
                     <br />
                   </div>
                 </div>
@@ -701,114 +416,19 @@ const Products = () => {
                   {time}
                 </div> */}
               </button>
-              <Modal
-                open={openmod}
-                aria-labelledby="modal-modal-title"
-                aria-describedby="modal-modal-description"
-              >
-                <Box className="calBox" sx={style}>
-                  <img
-                    className="Cardspic1"
-                    onClick={handleClear}
-                    src={cross}
-                  />
-                  <div className="both">
-                    <div
-                      style={{
-                        width: "65%",
-                      }}
-                      className="leftSide"
-                    >
-                      <LocalizationProvider dateAdapter={AdapterDateFns}>
-                        <StaticDatePicker
-                          orientation="landscape"
-                          openTo="day"
-                          value={calvalue}
-                          onChange={(options) => {
-                            setcalValue(options);
-                          }}
-                          renderInput={(params) => <TextField {...params} />}
-                        />
-                      </LocalizationProvider>
-                      <div className="Cardsline1"></div>
-                      <div className="timediv">
-                        <div style={{ width: "100%" }}>
-                          <p className="Cardsp2">
-                            Selecciona el horario de entrega
-                          </p>
-                          <p className="Cardsp3">
-                            Se hara un cargo de envío por $4.990
-                          </p>
-                          <div className="result">
-                            <Results />
-                          </div>
-                          <div className="Cardsline2"></div>
-                          <p className="Cardsp4">Horario especial</p>
-                          <p className="Cardsp5">
-                            Se hara un cargo adicional de envío por $3.990
-                          </p>
-                          <div className="result">
-                            <Results2 />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="rightSide">
-                      <div style={{ height: "100%" }} className="time">
-                        <p
-                          className="Cardsp6"
-                          style={{
-                            display: `${timebool ? "none" : "block"}`,
-                          }}
-                        >
-                          Sin tiempo seleccionado
-                        </p>
-                        <div
-                          className="Cardsd2"
-                          style={{
-                            display: `${timebool ? "flex" : "none"}`,
-                          }}
-                        >
-                          <div>
-                            <p className="Cardsp7">
-                              Su pedido se entregará el día
-                            </p>
-                            <div className="Cardsd3">
-                              <p className="Cardsp8">
-                                {weekday} {calDate}
-                              </p>
-                              <p className="Cardsp9">
-                                {calMonth}
-                                {new Date().getFullYear()}
-                              </p>
-                            </div>
-                          </div>
-
-                          <div>
-                            <p className="Cardsp10">En el horario :</p>
-                            <div className="Cardsd4" style={{}}>
-                              {time}
-                            </div>
-                          </div>
-
-                          <button
-                            className="confirmbtn"
-                            style={{
-                              display: `${timebool ? "block" : "none"}`,
-                            }}
-                            onClick={setConfirm}
-                          >
-                            Confirmar
-                          </button>
-                          <p className="Cardsp11">
-                            Todos nuestros precios están en CLP
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </Box>
-              </Modal>
+              <CalendarModal
+                setopenMod={setopenMod}
+                openmod={openmod}
+                setTime={setTime}
+                timetext={timetext}
+                setcaldateBool={setcaldateBool}
+                setcalValue={setcalValue}
+                calvalue={calvalue}
+                calMonth={calMonth}
+                calDate={calDate}
+                setConfirm={setConfirm}
+                firstTime={firstTime}
+              />
             </div>
           </div>
 
