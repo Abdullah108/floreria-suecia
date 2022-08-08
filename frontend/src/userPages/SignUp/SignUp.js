@@ -59,7 +59,12 @@ const SignUp = () => {
   return (
     <div className="LoginDiv">
       <div className="leftpage">
-        <div className="leftpagediv1">
+        <div
+          style={{
+            minHeight: "1150px",
+          }}
+          className="leftpagediv1"
+        >
           <div
             style={{
               display: "flex",

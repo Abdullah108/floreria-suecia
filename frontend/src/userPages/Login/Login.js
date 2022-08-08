@@ -49,7 +49,12 @@ const Login = () => {
   return (
     <div className="LoginDiv">
       <div className="leftpage">
-        <div className="leftpagediv1">
+        <div
+          style={{
+            minHeight: "700px",
+          }}
+          className="leftpagediv1"
+        >
           <div
             style={{
               display: "flex",
