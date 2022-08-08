@@ -25,6 +25,7 @@
     //height: 550px;
     background-color: #f8f8f8;
     border-radius: 20px;
+    padding-bottom: 30px;
     @media (max-width: 415px) {
       width: auto !important;
       min-width: auto !important;
@@ -38,6 +39,11 @@
       height: 330px;
     }
     .dabbap1 {
+      font-weight: 600;
+      color: #000;
+      margin-top: 10px;
+      margin: 0px 15px;
+      font-size: 20px;
       font-family: "Nunito";
       font-weight: 700;
       font-size: 18px;
@@ -50,6 +56,10 @@
       font-weight: 400;
       font-size: 14px;
       color: #818181;
+      font-size: 12px;
+      // line-height: 0;
+      // padding-top: 10px;
+      margin: 0px 15px;
       padding-top: 10px;
       margin-bottom: 0 !important;
       line-height: 0px;
@@ -60,6 +70,8 @@
       font-weight: 400;
       font-size: 14px;
       color: #d96581;
+      font-size: 12px;
+      margin: 0px 15px;
       padding-top: 15px;
       margin-bottom: 0 !important;
       line-height: 31px;
@@ -70,6 +82,8 @@
       font-weight: 600;
       font-size: 22px;
       color: #000000;
+      font-size: 17px;
+      margin: 0px 15px;
       line-height: 33px;
       margin-bottom: 0 !important;
     }
