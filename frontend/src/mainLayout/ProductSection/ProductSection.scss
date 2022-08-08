@@ -21,6 +21,7 @@
     //height: 550px;
     background-color: #f8f8f8;
     border-radius: 20px;
+    padding-bottom: 30px;
     @media (max-width: 415px) {
       width: auto !important;
       min-width: auto !important;
@@ -30,25 +31,28 @@
     }
     .dabbap1 {
       font-weight: 600;
-      color: #000000;
-      margin-top: 15px;
+      color: #000;
+      margin-top: 10px;
+      margin: 0px 15px;
+      font-size: 20px;
     }
     .dabbap2 {
       color: #818181;
       font-size: 12px;
       // line-height: 0;
-      padding-top: 10px;
+      // padding-top: 10px;
+      margin: 0px 15px;
     }
     .dabbap3 {
       color: #d96581;
-      padding-top: 15px;
       font-size: 12px;
+      margin: 0px 15px;
     }
     .dabbap4 {
       font-weight: 700;
       color: #000000;
       font-size: 17px;
-      padding-top: 10px;
+      margin: 0px 15px;
     }
     .dabbaa1 {
       color: #ffffff;
