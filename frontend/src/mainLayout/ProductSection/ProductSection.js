@@ -1,12 +1,14 @@
 import React from "react";
-import Carousel from "react-multi-carousel";
+import Carousel, { consts } from "react-elastic-carousel";
+
 import "react-multi-carousel/lib/styles.css";
 
 import Button from "@mui/material/Button";
 import { pink } from "@mui/material/colors";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import delivery from "./../../assets/delivery.svg";
+import truckProductCard from "./../../assets/truckProductCard.svg";
+
 import ProductServices from "../../services/ProductServices";
 import useAsync from "../../hooks/useAsync";
 import "./ProductSection.scss";
@@ -51,41 +53,68 @@ const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
     </div>
   );
 };
-
+const myArrow = ({ type, onClick, isEdge }) => {
+  const pointer =
+    type === consts.PREV ? (
+      <ChevronLeftIcon
+        className="left_arr"
+        style={{ alignSelf: "center", cursor: "pointer" }}
+      />
+    ) : (
+      <ChevronRightIcon
+        className="right_arr"
+        style={{ alignSelf: "center", cursor: "pointer" }}
+      />
+    );
+  return (
+    <Button onClick={onClick} disabled={isEdge}>
+      {pointer}
+    </Button>
+  );
+};
 const ProductSection = () => {
+  const breakPoints = [
+    { width: 1, itemsToShow: 1, itemsToScroll: 1 },
+    { width: 450, itemsToShow: 2, itemsToScroll: 1 },
+    { width: 750, itemsToShow: 3, itemsToScroll: 1 },
+  ];
   const { data } = useAsync(ProductServices.getAllProducts);
   console.log(data);
   return (
     <div className="productSection">
       <Carousel
-        arrows={false}
-        renderButtonGroupOutside={true}
-        customButtonGroup={<ButtonGroup />}
-        responsive={responsive2}
-        infinite={true}
-        swipeable={true}
-        containerClass="home-carousel h-full"
+        breakPoints={breakPoints}
+        renderArrow={myArrow}
+        className="carousel"
       >
         {data.map((product, index) => {
           return (
             <div className="dabba">
-              <div key={index}>
-                <img alt="" style={{ width: "100%" }} src={product.image} />
-                <p className="dabbap1">{product.productName}</p>
-                <p className="dabbap2">{product.description}</p>
-                <p className="dabbap3"> Ramo del día</p>
-                <p className="dabbap4"> ${product.productPrice}</p>
-                <div
-                  style={{
-                    display: "flex",
-                    paddingTop: "10px",
-                    paddingBottom: "10px",
-                  }}
-                >
-                  <Link className="dabbaa1" to={`/user/product/${product._id}`}>
-                    <Button className="dabbab1">Agregar al carrito</Button>
-                  </Link>
-                  <img alt="" style={{ width: "20px" }} src={delivery} />
+              <div
+                style={{ display: "flex", flexDirection: "column" }}
+                key={index}
+              >
+                <img className="dabbaimg" alt="" src={product.image} />
+                <div style={{ width: "90%", alignSelf: "center" }}>
+                  <p className="dabbap1">{product.productName}</p>
+                  <p className="dabbap2">{product.description}</p>
+                  <p className="dabbap3"> Ramo del día</p>
+                  <p className="dabbap4"> ${product.productPrice}</p>
+                  <div className="dabbad1">
+                    <Link
+                      className="dabbaa1"
+                      to={`/user/product/${product._id}`}
+                    >
+                      Agregar al carrito
+                    </Link>
+                    <div className="dabbad2">
+                      <img
+                        className="dabbad2img"
+                        alt=""
+                        src={truckProductCard}
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

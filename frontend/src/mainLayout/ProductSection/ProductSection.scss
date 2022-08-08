@@ -3,9 +3,13 @@
   flex-direction: column;
   align-items: center;
   background-color: #ffffff;
-  width: 80%;
+  width: 1250px;
   align-self: center;
-  @media (max-width: 768px) {
+  @media (max-width: 1220px) {
+    width: 850px !important;
+  }
+  @media (max-width: 810px) {
+    width: 450px !important;
   }
 
   .lastslider {
@@ -14,10 +18,10 @@
     }
   }
   .dabba {
-    min-width: 300px;
+    min-width: 330px;
     //min-height: 550px;
-    width: 300px;
-    // height: 550px;
+    width: 330px;
+    height: 550px;
     //height: 550px;
     background-color: #f8f8f8;
     border-radius: 20px;
@@ -28,67 +32,88 @@
     @media (max-width: 768px) {
       margin-top: 20px;
     }
+    .dabbaimg {
+      border-radius: 20px 20px 0px 0px;
+      width: 330px;
+      height: 330px;
+    }
     .dabbap1 {
-      font-weight: 600;
+      font-family: "Nunito";
+      font-weight: 700;
+      font-size: 18px;
       color: #000000;
       margin-top: 15px;
+      margin-bottom: 0 !important;
     }
     .dabbap2 {
+      font-family: "Poppins";
+      font-weight: 400;
+      font-size: 14px;
       color: #818181;
-      font-size: 12px;
-      // line-height: 0;
       padding-top: 10px;
+      margin-bottom: 0 !important;
+      line-height: 0px;
     }
     .dabbap3 {
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
       color: #d96581;
       padding-top: 15px;
-      font-size: 12px;
+      margin-bottom: 0 !important;
+      line-height: 31px;
     }
     .dabbap4 {
-      font-weight: 700;
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 22px;
       color: #000000;
-      font-size: 17px;
-      padding-top: 10px;
+      line-height: 33px;
+      margin-bottom: 0 !important;
+    }
+    .dabbad1 {
+      display: flex;
+      padding-top: 12px;
+      padding-bottom: 10px;
+      justify-content: space-between;
+      width: 90%;
+    }
+    .dabbad2 {
+      width: 44px;
+      height: 44px;
+      background: #ffffff;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .dabbad2img {
+        width: 24px;
+        height: 20px;
+      }
     }
     .dabbaa1 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       color: #ffffff;
       text-transform: none;
       background-color: #d96581;
       border-radius: 10px;
       margin-right: 10px;
-      width: 80%;
-      height: 40px;
-      text-align: center;
+      width: 200px;
+      height: 44px;
       transition: 0s;
+      font-family: "Nunito";
+      font-weight: 500;
+      font-size: 14px;
+      cursor: pointer;
     }
     .dabbaa1:hover {
       background-color: #ffffff;
       color: #d96581;
       border: 1px solid #d96581;
-
-      .dabbab1 {
-        background-color: #ffffff;
-        color: #d96581;
-        border-bottom: 0.5px solid #d96581;
-        border-radius: 0;
-      }
-    }
-    .dabbab1 {
-      color: #ffffff;
-      text-transform: none;
-      background-color: #d96581;
-      border-radius: 10px;
-      margin-right: 10px;
-      width: 80%;
-      height: 40px;
-      font-size: 12px;
-      transition: 0s;
-    }
-    .dabbab1:hover {
-      background-color: #ffffff;
-      color: #d96581;
-      border-bottom: 0.5px solid #d96581;
-      border-radius: 0;
     }
   }
   .carosel {
@@ -147,5 +172,31 @@
     @media (max-width: 450px) {
       display: none !important;
     }
+  }
+}
+
+.carousel {
+  .left_arr,
+  .right_arr {
+    font-size: 70px !important;
+    color: #d96581 !important;
+  }
+  .css-1e6y48t-MuiButtonBase-root-MuiButton-root:hover {
+    width: 50px;
+    height: 50px;
+    align-self: center;
+  }
+  .css-1e6y48t-MuiButtonBase-root-MuiButton-root,
+  .css-1ujsas3 {
+    height: 70px;
+    width: 70px;
+    align-self: center;
+    @media (max-width: 420px) {
+      display: none !important;
+    }
+  }
+  .kdCslO,
+  .hHSNMm {
+    display: none;
   }
 }

@@ -273,12 +273,12 @@ const Products = () => {
   return (
     <div className="ProductContainer">
       <div className="topNavigation">
-        <Stack spacing={2}>
+        <Stack className="Firstcrumb" spacing={2}>
           <Breadcrumbs separator="" aria-label="breadcrumb">
             {breadcrumbs2}
           </Breadcrumbs>
         </Stack>
-        <Stack spacing={2}>
+        <Stack className="Secondcrumb" spacing={2}>
           <Breadcrumbs separator="|" aria-label="breadcrumb">
             <a style={{ color: "#818181" }}>Enviar a</a>
             <a style={{ fontWeight: "bold", color: "#444444" }}> Providencia</a>

@@ -50,7 +50,6 @@
     @media (max-width: 600px) {
       width: 95%;
       display: flex;
-      text-align: -webkit-center;
     }
 
     .tf {
@@ -155,6 +154,9 @@
     padding-top: 90px;
     margin-bottom: 3rem;
     font-size: 3rem;
+    @media (max-width: 500px) {
+      padding-top: 0 !important;
+    }
   }
   p {
     color: #9babbf;
@@ -196,13 +198,16 @@
   flex-direction: column;
   .betah1 {
     text-align: center;
-    font-weight: 600;
+    font-weight: 700;
     font-family: "Cormorant Upright";
     margin-top: 3rem;
     margin-bottom: 3rem;
     font-size: 1.8rem;
+    @media (min-width: 250px) {
+      font-size: 2.2rem;
+    }
     @media (min-width: 450px) {
-      font-size: 1.8rem;
+      font-size: 3rem;
     }
     @media (min-width: 768px) {
       font-size: 2.5rem;
@@ -217,15 +222,6 @@
     font-family: "Nunito";
     font-weight: 400;
     font-size: 20px;
-  }
-}
-
-
-@media screen and (min-width: 1600px) {
-  .productSection .dabba {
-    width: 85% !important;
-  }
-  .productSection .react-multi-carousel-list .react-multi-carousel-item {
-    height: auto !important;
+    margin-bottom: 90px;
   }
 }

@@ -227,7 +227,7 @@ const Category = () => {
                   />
                 </div>
                 <h6 style={{ paddingBottom: "20px" }}>Rango de precio</h6>
-                <Box sx={{ width: 300 }}>
+                <Box sx={{ width: " 90%" }}>
                   <Slider
                     style={{ color: "#D96581", background: "none" }}
                     getAriaLabel={() => "Money range"}

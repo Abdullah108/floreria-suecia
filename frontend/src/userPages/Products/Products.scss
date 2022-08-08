@@ -22,6 +22,16 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 50px;
+    .Secondcrumb {
+      @media screen and (max-width: 580px) {
+        display: none;
+      }
+    }
+    .Firstcrumb {
+      @media screen and (max-width: 440px) {
+        display: none;
+      }
+    }
   }
   .productDetails {
     display: grid;
@@ -173,9 +183,6 @@
         }
         div {
           &:nth-child(1) {
-            padding: 10px;
-            padding-right: 30px;
-            padding-left: 30px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -210,13 +217,16 @@
             border: 2px solid #9babbf;
             background: #ffffff;
             color: #9babbf;
+            @media screen and (min-width: 1000px) {
+              min-height: 100px;
+            }
             @media screen and (max-width: 1000px) {
               height: auto !important;
               min-height: 150px;
             }
             @media screen and (max-width: 570px) {
               height: auto !important;
-              min-height: 150px;
+              min-height: 100px;
             }
             @media screen and (max-width: 570px) {
               font-size: 20px !important;
@@ -264,6 +274,7 @@
             padding-top: 10px;
             font-family: "Nunito";
             color: #9babbf;
+            margin-bottom: 0 !important;
           }
           .Cardsd1 {
             font-family: "Nunito";
@@ -537,7 +548,8 @@
     .MuiTabs-indicator {
       background-color: transparent;
     }
-    .css-heg063-MuiTabs-flexContainer {
+    .css-heg063-MuiTabs-flexContainer,
+    .css-k008qs {
       @media screen and (max-width: 500px) {
         display: flex !important;
         flex-direction: column;
@@ -551,7 +563,7 @@
     }
   }
   .productSlideHeading {
-    margin-top: 200px;
+    margin-top: 100px;
     position: relative;
     height: 50px;
     width: 100%;
@@ -580,6 +592,9 @@
       margin: 0;
       color: #444444;
       font-family: "Cormorant Upright";
+    }
+    @media screen and (max-width: 500px) {
+      margin-top: 20px !important;
     }
   }
   .productSlide {
@@ -647,6 +662,9 @@
     @media screen and (max-width: 400px) {
       top: 0 !important;
     }
+    @media screen and (min-width: 1000px) {
+      left: 95% !important;
+    }
   }
   @media screen and (max-width: 1400px) {
     width: 85% !important;
@@ -689,6 +707,9 @@
           .timingnormal {
             width: 200px !important;
             height: 50px !important;
+            @media screen and (max-width: 570px) {
+              font-size: 20px !important;
+            }
           }
           .timingselect {
             width: 200px !important;
@@ -784,14 +805,16 @@
     display: flex;
     justify-content: space-around !important;
   }
-  .css-bkrceb-MuiButtonBase-root-MuiPickersDay-root {
+  .css-bkrceb-MuiButtonBase-root-MuiPickersDay-root,
+  .css-ub1r1 {
     background-color: #ffffff !important;
     font-size: 16px;
   }
   .css-1tbq6mc-MuiPickersToolbar-root-MuiDatePickerToolbar-root {
     display: none !important;
   }
-  .css-i4bv87-MuiSvgIcon-root {
+  .css-i4bv87-MuiSvgIcon-root,
+  .css-vubbuv {
     display: block !important;
     color: #d96581 !important;
   }
@@ -833,12 +856,14 @@
     background: rgba(217, 101, 129, 0.1);
     border-radius: 10px;
   }
-  .css-1w13o7u-MuiTypography-root {
+  .css-1w13o7u-MuiTypography-root,
+  .css-10qkmc3 {
     font-size: 16px;
     font-weight: 700;
     color: #444444;
   }
-  .css-9reuh9-MuiPickersArrowSwitcher-root {
+  .css-9reuh9-MuiPickersArrowSwitcher-root,
+  .css-k008qs {
     margin-left: 30px;
   }
   .css-l0iinn {
@@ -994,7 +1019,9 @@
 }
 
 //-----------------------------------end--------------------------------------->
-
+.css-1wjkg3 {
+  display: none !important;
+}
 .firstDiv:hover,
 .secondDiv:hover,
 .thirdDiv:hover {
@@ -1061,6 +1088,9 @@
   color: #9babbf;
   cursor: pointer;
   background-color: #f8f8f8 !important;
+  @media screen and (max-width: 570px) {
+    font-size: 20px !important;
+  }
 }
 .calender {
   align-items: normal !important;
@@ -1166,6 +1196,7 @@
     }
   }
 }
+
 // .swiper-wrapper {
 //   display: block;
 // }
@@ -1174,14 +1205,17 @@
     display: block;
   }
 }
-.css-15x1sh8-MuiButtonBase-root-MuiCheckbox-root {
+.css-15x1sh8-MuiButtonBase-root-MuiCheckbox-root,
+.css-9kfpwd {
   left: 10rem !important;
   //  bottom: 13rem !important;
   z-index: 10;
 }
-.css-15x1sh8-MuiButtonBase-root-MuiCheckbox-root .MuiSvgIcon-root {
+.css-15x1sh8-MuiButtonBase-root-MuiCheckbox-root .MuiSvgIcon-root,
+.css-9kfpwd .MuiSvgIcon-root {
   font-size: 20px !important;
 }
+
 /* .css-i4bv87-MuiSvgIcon-root {
   display: none !important;
 } */

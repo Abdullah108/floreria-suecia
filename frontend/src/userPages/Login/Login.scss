@@ -1,42 +1,45 @@
-/* .mainHeader {
-  display: none;
-}
-.footerWrapper {
-  display: none;
-} */
 .LoginDiv {
   width: 100%;
   display: flex;
   margin: 0 auto;
   justify-content: space-between;
 
-  p,
   h6 {
     margin: 0 !important;
   }
   .leftpage {
-    width: 70%;
+    width: 40% !important;
     display: flex;
     justify-content: center;
-    margin-top: 30px;
+
     form {
-      margin-bottom: 20px;
       input {
         // max-width: 400px;
-        width: 100%;
+        width: 400px;
         height: 50px;
         background: #f8f8f8;
         border-radius: 10px;
         padding-left: 15px;
         outline: none;
+        @media screen and (max-width: 600px) {
+          width: 95% !important;
+        }
       }
     }
     Button {
       // max-width: 400px;
-      width: 100%;
+      width: 400px;
       height: 50px;
       background: #d96581;
       border-radius: 10px;
+      @media screen and (max-width: 600px) {
+        margin: 0 auto;
+        width: 95% !important;
+      }
+      @media screen and (max-width: 420px) {
+        width: 95% !important;
+        margin: 0 auto;
+      }
       p {
         margin: 0 auto !important;
       }
@@ -50,15 +53,17 @@
       width: fit-content;
       // height: 700px;
       width: 60%;
+      height: 90%;
       justify-content: space-around;
       .leftpagep1 {
         font-family: "Cormorant Upright";
         font-size: 14px;
         font-weight: 600;
-        line-height: 0;
+        line-height: 20px;
         text-transform: uppercase;
         color: #d96581;
         text-align: center;
+        letter-spacing: 2px;
       }
       .leftpagep2 {
         font-family: "Nunito";
@@ -66,7 +71,7 @@
         font-size: 30px;
         color: #d96581;
         text-align: center;
-        margin-top: 20px !important;
+        margin-bottom: 0 !important;
       }
       .leftpagep3 {
         font-family: "Nunito";
@@ -80,13 +85,23 @@
         font-weight: 700;
         font-size: 18px;
         color: #d96581;
-        margin-top: 10px;
+      }
+      .logdivl {
+        @media screen and (max-width: 420px) {
+          width: 95% !important;
+          .logbtn {
+            width: 100% !important;
+          }
+        }
       }
 
       .leftpageb1 {
         background: #ffffff;
         border: 1px solid #d96581;
         color: #d96581;
+        margin: 0 !important;
+
+        margin-top: -15px !important;
       }
       .leftpageb1:hover {
         background-color: #d96581;
@@ -103,6 +118,14 @@
         background-color: #ffffff;
         border: 1px solid #d96581;
       }
+      .leftpagegp {
+        display: flex;
+        justify-content: center;
+        width: 400px;
+        @media screen and (max-width: 420px) {
+          width: 95% !important;
+        }
+      }
       .leftpagep4 {
         font-family: "Nunito";
         font-weight: 400;
@@ -116,36 +139,55 @@
         font-size: 14px;
         color: #d96581;
       }
+
+      @media screen and (max-width: 900px) {
+        width: fit-content !important;
+      }
+      @media screen and (max-width: 420px) {
+        width: 100% !important;
+      }
+
+      @media screen and (max-height: 900px) {
+        min-height: 700px !important;
+      }
     }
   }
   .rightpage {
     width: 50%;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     img {
-      width: 100%;
+      width: 950px;
       height: 100%;
       max-height: 600px;
       position: relative;
       right: 0;
-      
+
       z-index: -1;
       max-width: none;
-      @media screen and (max-width: 1050px) {
-        height: 80% !important;
-        top: 20% !important;
-      }
-      @media screen and (max-width: 850px) {
+
+      @media screen and (max-width: 900px) {
         display: none;
+      }
+      @media screen and (max-width: 1200px) {
+        width: 650px !important;
+        height: 600px !important;
+      }
+      @media screen and (max-width: 1130px) {
+        width: 500px !important;
+        height: 450px !important;
+      }
+      @media screen and (max-width: 980px) {
+        width: 400px !important;
+        height: 400px !important;
       }
     }
   }
-  
-}
-@media screen and (max-width: 850px) {
-  .leftpage {
-    // width: 100% !important;
+  @media screen and (max-width: 600px) {
+    width: 95% !important;
   }
+}
+@media screen and (max-width: 900px) {
   .rightpage {
     display: none !important;
   }

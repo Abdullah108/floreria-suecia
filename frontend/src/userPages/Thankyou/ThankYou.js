@@ -38,17 +38,19 @@ const ThankYou = () => {
         </div>
         <div className="two">
           <p className="sabkapapap1">Pedido Realizado</p>
-          <p>Hemos aceptado tu pedido y lo estamos preparando.</p>
-          <p>
+          <p className="twop1">
+            Hemos aceptado tu pedido y lo estamos preparando.
+          </p>
+          <p className="twop2">
             Se ha enviado un correo electrónico de confirmación a
             abcd@gmail.com.
           </p>
-          <p>
+          <p className="twop3">
             Regrese a esta página para obtener actualizaciones sobre el estado
             de su pedido.
           </p>
         </div>
-        <img style={{ width: "60%" }} src={map} />
+        <img className="mapimg" src={map} />
         <p className="sabkapapap2">Pedido #11685</p>
         <div className="parent">
           <div className="child1">
@@ -148,32 +150,32 @@ const ThankYou = () => {
           amigos hacen una compra.{" "}
         </p>
         <div className="sabkapapad1"></div>
-        <div>
+        <div className="grand_aba">
           <div style={{ marginTop: "20px", marginBottom: "20px" }}>
             <form className="form_aba" style={{ display: "flex" }}>
               <div className="first_form" style={{ display: "flex" }}>
-                <div class="form-group">
+                <div class="form-groupI">
                   <input
                     type="email"
-                    class="form-control"
+                    className="formI"
                     id="email1"
                     placeholder="Email"
                   />
                 </div>
-                <div class="form-group">
+                <div class="form-groupI">
                   <input
                     type="email"
-                    class="form-control"
+                    className="formI"
                     id="email2"
                     placeholder="Email"
                   />
                 </div>
               </div>
               <div className="second_form" style={{ display: "flex" }}>
-                <div class="form-group">
+                <div className="form-groupI">
                   <input
                     type="email"
-                    class="form-control"
+                    className="formI"
                     id="email3"
                     placeholder="Email"
                   />
@@ -191,31 +193,37 @@ const ThankYou = () => {
         </div>
         <div className="sabkapapad1"></div>
         <div className="sabkapapad6">
-          <div className="sabkapapad7">
-            <img style={{ width: "50px" }} src={copy} />
-            <p>Copiar</p>
-          </div>
-          <div className="sabkapapad7">
-            <div className="sabkapapad8">
-              <WhatsAppIcon sx={{ color: "#ffffff", fontSize: "30px" }} />
+          <div className="sabkapapad6d1">
+            <div className="sabkapapad7">
+              <img style={{ width: "50px" }} src={copy} />
+              <p>Copiar</p>
             </div>
+            <div className="sabkapapad7">
+              <div className="sabkapapad8">
+                <WhatsAppIcon sx={{ color: "#ffffff", fontSize: "30px" }} />
+              </div>
 
-            <p>Whatsapp</p>
-          </div>
-          <div className="sabkapapad7">
-            <img style={{ width: "50px" }} src={thankmessenger} />
-            <p>Message</p>
-          </div>
-          <div className="sabkapapad7">
-            <div className="sabkapapad8">
-              <FacebookIcon sx={{ color: "#ffffff", fontSize: "30px" }} />
+              <p>Whatsapp</p>
             </div>
-
-            <p>Facebook</p>
           </div>
-          <div className="sabkapapad7">
-            <img style={{ width: "50px" }} src={thanksms} />
-            <p>SMS</p>
+          <div className="sabkapapad6d2">
+            <div className="sabkapapad7">
+              <img style={{ width: "50px" }} src={thankmessenger} />
+              <p>Message</p>
+            </div>
+            <div className="sabkapapad7">
+              <div className="sabkapapad8">
+                <FacebookIcon sx={{ color: "#ffffff", fontSize: "30px" }} />
+              </div>
+
+              <p>Facebook</p>
+            </div>
+          </div>
+          <div className="sabkapapad6d3">
+            <div className="sabkapapad7">
+              <img style={{ width: "50px" }} src={thanksms} />
+              <p>SMS</p>
+            </div>
           </div>
         </div>
         <div style={{ marginTop: "50px" }} className="sabkapapad1"></div>
