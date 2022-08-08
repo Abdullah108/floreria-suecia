@@ -60,7 +60,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
       },
     },
     [theme.breakpoints.up("lg")]: {
-      width: "60ch",
+      width: "40ch",
       "&:focus": {
         width: "70ch",
       },
@@ -165,10 +165,7 @@ const Header = () => {
             onClick={handleOpenBox}
             style={{ justifyContent: "flex-end", marginBottom: "0" }}
           >
-            <img
-              src={require("./../../assets/cart.svg").default}
-              alt="Cart"
-            />
+            <img src={require("./../../assets/cart.svg").default} alt="Cart" />
             <p style={{ margin: "0", color: "#D96581", fontWeight: "600" }}>
               Carrito
             </p>
@@ -672,7 +669,7 @@ const Header = () => {
                   margin: "1rem 0rem",
                   width: "80%",
                   justifyContent: "space-around",
-                  cursor: 'pointer'
+                  cursor: "pointer",
                 }}
               >
                 <img
@@ -722,15 +719,7 @@ const Header = () => {
           </div>
         </Drawer>
       </div>
-      <div
-        style={{
-          gap: "1.5rem",
-          display: "flex",
-          flexDirection: "column",
-          margin: "0 auto",
-          width: "90%",
-        }}
-      >
+      {/*   <div className="Secondnav">
         <div style={{ marginTop: "20px" }} className="hline"></div>
         <div className="Hlinks">
           <a href>Novedades</a>
@@ -741,7 +730,7 @@ const Header = () => {
           <a href>Porque Sí</a>
         </div>
         <div className="hline"></div>
-      </div>
+      </div> */}
     </div>
   );
 };

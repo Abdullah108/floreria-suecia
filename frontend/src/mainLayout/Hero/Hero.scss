@@ -1,6 +1,10 @@
 .Hero {
   min-height: 180px;
   position: relative;
+
+  @media (min-width: 1350px) {
+    margin-bottom: 100px;
+  }
   @media (min-width: 450px) {
     min-height: 254px;
   }

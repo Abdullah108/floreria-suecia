@@ -79,6 +79,7 @@
         font-weight: 400;
         font-size: 18px;
         color: #000000;
+        margin-bottom: 0.5em;
       }
       .span2p1 {
         font-family: "Nunito";
@@ -195,7 +196,8 @@
         grid-row-start: 2;
         grid-row-end: 3;
       }
-      .css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
+      .css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root,
+      .css-fvipm8 {
         background-image: url("./../../assets/arrowdown.svg");
         background-repeat: no-repeat;
         background-position: center;
@@ -204,8 +206,9 @@
         @media (max-width: 1250px) {
           font-size: 14px !important;
         }
-        .css-hfutr2-MuiSvgIcon-root-MuiSelect-icon {
-          display: none;
+        .css-hfutr2-MuiSvgIcon-root-MuiSelect-icon,
+        .css-1636szt {
+          display: none !important;
         }
         .css-bpeome-MuiSvgIcon-root-MuiSelect-icon {
           display: none;
@@ -260,8 +263,9 @@
       @media (min-width: 1024px) {
         grid-column: 1/2;
       }
-      .css-1kst3do-MuiInputBase-root .MuiInputBase-input {
-        padding-left: 10px;
+      .css-1kst3do-MuiInputBase-root .MuiInputBase-input,
+      .css-mnn31 {
+        padding-left: 10px !important;
       }
       .css-17djbj3-MuiSlider-valueLabel.MuiSlider-valueLabelOpen {
         background-color: transparent;
@@ -272,47 +276,7 @@
         align-items: center;
         justify-content: space-between;
       }
-      .span5d2 {
-        width: 80%;
-        align-self: center;
-        margin-top: 40px;
-        display: flex;
-        flex-direction: column;
-      }
-      .span5l1 {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-      }
-      .span5d3 {
-        display: flex;
-        flex-direction: row;
-        //align-items: center;
-        margin-top: 20px;
-        justify-content: space-between;
-        align-items: center;
-      }
-      .span5d4 {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding-top: 20px;
-      }
-      .span5b1 {
-        color: #fff;
-        background-color: #d96581;
-        border-radius: 10px;
-        width: 290px;
-        height: 44px;
-        margin-top: 20px;
-      }
-      .span5b1:hover {
-        background-color: #ffffff;
-        color: #d96581;
-        border: 1px solid #d96581;
-      }
+
       .span5d5 {
         display: flex;
         flex-direction: row;
@@ -347,7 +311,8 @@
         color: #d96581;
         border: 1px solid #db6e88;
       }
-      .css-nnid7-MuiSlider-valueLabel.MuiSlider-valueLabelOpen {
+      .css-nnid7-MuiSlider-valueLabel.MuiSlider-valueLabelOpen,
+      .css-3besu {
         background: transparent !important;
         font-family: "Nunito";
         font-weight: 800 !important;
@@ -358,11 +323,13 @@
         font-weight: 800 !important;
         font-size: 14px !important;
       }
-      .css-eg0mwd-MuiSlider-thumb, .css-7drnjp {
+      .css-eg0mwd-MuiSlider-thumb,
+      .css-7drnjp {
         width: 14px !important;
         height: 14px !important;
       }
-      .css-et1ao3-MuiTypography-root, .css-14tqbo1 {
+      .css-et1ao3-MuiTypography-root,
+      .css-14tqbo1 {
         color: #9babbf;
         font-family: "Nunito";
 
@@ -487,13 +454,63 @@
 }
 .MuiDrawer-paperAnchorDown {
   width: 50% !important;
-  @media (max-width: 650px) {
+  @media (max-width: 750px) {
     width: 70% !important ;
   }
   @media (max-width: 500px) {
     width: 100% !important ;
   }
 }
+.span5d2 {
+  flex-direction: column;
+
+  width: 80%;
+  align-self: center;
+  margin-top: 40px;
+  display: flex;
+  .span5b1 {
+    color: #fff;
+    background-color: #d96581;
+    border-radius: 10px;
+    width: 290px;
+    height: 44px;
+    margin-top: 20px;
+    align-self: center;
+  }
+  .span5b1:hover {
+    background-color: #ffffff;
+    color: #d96581;
+    border: 1px solid #d96581;
+  }
+  .span5l1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .span5d3 {
+    display: flex;
+    flex-direction: row;
+    //align-items: center;
+    margin-top: 20px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .span5d4 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+  }
+  .css-et1ao3-MuiTypography-root {
+    color: #9babbf;
+    font-family: "Nunito";
+    font-weight: 300;
+    font-size: 16px;
+  }
+}
+
 .downarrowDiv {
   box-shadow: 0px 5px 20px rgba(155, 171, 191, 0.3);
   border-radius: 10px;
@@ -528,4 +545,8 @@
 }
 .css-3besu {
   background-color: white !important;
+}
+.span45i1 {
+  width: 24px !important;
+  height: 24px !important;
 }

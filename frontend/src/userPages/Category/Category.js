@@ -116,7 +116,6 @@ const Category = () => {
     setPriceFilter(event.target.value);
   };
 
-
   const marks = [
     {
       value: 10,
@@ -228,7 +227,7 @@ const Category = () => {
                   />
                 </div>
                 <h6 style={{ paddingBottom: "20px" }}>Rango de precio</h6>
-                <Box sx={{ width: 300 }}>
+                <Box sx={{ width: " 90%" }}>
                   <Slider
                     style={{ color: "#D96581", background: "none" }}
                     getAriaLabel={() => "Money range"}
@@ -347,12 +346,28 @@ const Category = () => {
             <div className="span5d6">
               <h6>Rango de precio</h6>
               <RemoveIcon
-                sx={{ color: pink[400], fontSize: 40 }}
+                sx={{
+                  color: pink[400],
+                  fontSize: 40,
+                  display: `${openProduct ? "block" : "none"}`,
+                }}
                 onClick={handleProduct}
               >
                 {" "}
                 {openProduct ? <ExpandLess /> : <ExpandMore />}
               </RemoveIcon>
+              <AddSharpIcon
+                sx={{
+                  color: pink[400],
+                  fontSize: 40,
+                  display: `${openProduct ? "none" : "block"}`,
+                }}
+                onClick={handleProduct}
+              >
+                {" "}
+                {openProduct ? <ExpandLess /> : <ExpandMore />}
+              </AddSharpIcon>
+              {/*  AddSharpIcon */}
             </div>
             <Collapse in={openProduct} timeout="auto" unmountOnExit>
               <List
@@ -390,7 +405,6 @@ const Category = () => {
                             onClick={(e) => console.log(index)}
                             onChange={(e) => handlecheckboxfilter(index)}
                             type="checkbox"
-                            
                           />
                         </ListItemIcon>
                         <ListItemText id={labelId} primary={`${item}`} />
@@ -424,7 +438,6 @@ const Category = () => {
             {tempData.map((item, index) => (
               <ProductCard key={index} value={item} />
             ))}
-            
           </div>
         </div>
         <div className="span-7">

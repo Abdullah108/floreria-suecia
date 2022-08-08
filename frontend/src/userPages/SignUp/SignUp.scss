@@ -1,44 +1,47 @@
-/* .mainHeader {
-  display: none;
-}
-.footerWrapper {
-  display: none;
-} */
 .LoginDiv {
   justify-content: space-between;
-  // width: 90%;
+  width: 100%;
   display: flex;
   margin: 0 auto;
   min-height: 100vh;
 
-  p,
   h6 {
     margin: 0 !important;
   }
   .leftpage {
-    width: 50%;
     display: flex;
     justify-content: center;
-    margin-top: 30px;
+
     align-items: center;
     form {
-      margin-bottom: 20px;
       input {
         // max-width: 400px;
-        width: 100%;
+        width: 400px;
         height: 50px;
         background: #f8f8f8;
         border-radius: 10px;
         padding-left: 15px;
         outline: none;
+        @media screen and (max-width: 600px) {
+          width: 95% !important;
+        }
       }
     }
     Button {
       // max-width: 400px;
-      width: 100%;
+      width: 400px;
       height: 50px;
       background: #d96581;
       border-radius: 10px;
+
+      @media screen and (max-width: 600px) {
+        margin: 0 auto;
+        width: 100% !important;
+      }
+      @media screen and (max-width: 420px) {
+        width: 95% !important;
+        margin: 0 auto;
+      }
       p {
         margin: 0 auto !important;
       }
@@ -51,16 +54,19 @@
       flex-direction: column;
       width: fit-content;
       width: 60%;
+      height: 90%;
       // height: 700px;
       justify-content: space-around;
       .leftpagep1 {
         font-family: "Cormorant Upright";
         font-size: 14px;
         font-weight: 600;
-        line-height: 0;
+        line-height: 20px;
         text-transform: uppercase;
         color: #d96581;
         text-align: center;
+
+        letter-spacing: 2px;
       }
       .leftpagep2 {
         font-family: "Nunito";
@@ -68,7 +74,6 @@
         font-size: 30px;
         color: #d96581;
         text-align: center;
-        margin-top: 20px !important;
       }
       .leftpagep3 {
         font-family: "Nunito";
@@ -82,9 +87,23 @@
         font-weight: 700;
         font-size: 18px;
         color: #d96581;
-        margin-top: 10px;
       }
-
+      .leftpagegp {
+        display: flex;
+        justify-content: center;
+        width: 400px;
+        @media screen and (max-width: 420px) {
+          width: 95% !important;
+        }
+      }
+      .logdivl {
+        @media screen and (max-width: 420px) {
+          width: 95% !important;
+          .logbtn {
+            width: 100% !important;
+          }
+        }
+      }
       .leftpageb1 {
         background: #ffffff;
         border: 1px solid #d96581;
@@ -118,25 +137,34 @@
         font-size: 14px;
         color: #d96581;
       }
+
+      @media screen and (max-width: 900px) {
+        width: fit-content !important;
+      }
+      @media screen and (max-width: 420px) {
+        width: 100% !important;
+      }
+
+      @media screen and (max-height: 900px) {
+        min-height: 1150px !important;
+      }
     }
   }
   .rightpage {
-    // width: 50%;
-    position: fixed;
+    width: 50%;
+    //position: fixed;
     right: 0;
-    height: 100%;
+    justify-content: flex-end;
+
     img {
       // width: 100%;
       height: 100%;
       position: relative;
       right: 0%;
-
+      bottom: 2%;
       z-index: -1;
       max-width: none;
-      @media screen and (max-width: 1050px) {
-        height: 80% !important;
-        top: 20% !important;
-      }
+
       @media screen and (max-width: 850px) {
         display: none;
       }
@@ -152,28 +180,29 @@
   }
 
   .role {
-    // width: 400px;
+    width: 400px;
     height: 50px;
     background: #f8f8f8;
     border-radius: 10px;
     padding-left: 15px;
     outline: none;
+    @media screen and (max-width: 600px) {
+      width: 95% !important;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    width: 95% !important;
   }
 }
 
 @media screen and (max-width: 600px) {
   .LoginDiv {
-    padding: 0 10px;
+    padding: 50px 10px 0px 10px;
   }
   .leftpagediv1 {
     width: 100% !important;
   }
   .leftpage {
-    align-items: baseline !important;
-  }
-}
-@media screen and (max-width: 1050px) {
-  .rightpage {
     align-items: baseline !important;
   }
 }

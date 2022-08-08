@@ -8,11 +8,14 @@
   @media screen and (max-width: 1000px) {
     overflow: hidden !important;
     .Ref {
-      margin-top: 150px !important;
+      margin-top: 200px !important;
     }
   }
-  .form_aba {
-    @media screen and (max-width: 1000px) {
+  .grand_aba {
+    @media screen and (max-width: 500px) {
+      width: 90%;
+    }
+    .form_aba {
       .first_form,
       .second_form {
         display: flex !important;
@@ -23,12 +26,32 @@
         button {
           margin-top: 10px;
         }
+        @media screen and (max-width: 1000px) {
+          align-items: center;
+        }
+      }
+      @media screen and (max-width: 500px) {
+        flex-direction: column;
+      }
+      .form-groupI {
+        width: 100%;
+        margin-top: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .formI {
+          width: 264px;
+          height: 50px;
+          background: #f8f8f8;
+          border-radius: 10px;
+        }
       }
     }
-    .second_form {
-      @media screen and (max-width: 1000px) {
-        align-items: center;
-      }
+
+    @media screen and (max-width: 460px) {
+      display: flex;
+      flex-direction: column;
     }
   }
   .sabkapapad1 {
@@ -40,6 +63,9 @@
     );
     width: 80%;
     height: 2px;
+    @media screen and (max-width: 995px) {
+      margin: 15px 0px 15px 0px;
+    }
   }
   .sabkapapap1 {
     font-family: "Cormorant Upright";
@@ -64,6 +90,9 @@
     display: flex;
     flex-direction: column;
     margin-left: -170px;
+    @media screen and (max-width: 460px) {
+      margin-left: -80px;
+    }
   }
   .sabkapapad4 {
     display: flex;
@@ -89,18 +118,49 @@
     color: #444444;
     font-weight: 600;
     margin-top: 50px;
+    @media screen and (max-width: 400px) {
+      font-size: 50px;
+    }
   }
   .sabkapapap4 {
     color: #9babbf;
     text-align: center;
     line-height: 40px;
     margin-bottom: 60px;
+    @media screen and (max-width: 400px) {
+      text-align: start !important;
+    }
   }
   .sabkapapad6 {
     display: flex;
     width: 500px;
     justify-content: space-evenly;
     margin-top: 50px;
+    .sabkapapad6d1,
+    .sabkapapad6d2,
+    .sabkapapad6d3 {
+      display: flex;
+      width: 170px;
+      justify-content: space-around;
+      @media screen and (max-width: 460px) {
+        width: 200px !important;
+      }
+    }
+    .sabkapapad6d2 {
+      width: 200px;
+    }
+    .sabkapapad6d3 {
+      display: flex;
+      width: 80px;
+      justify-content: flex-start !important;
+      @media screen and (max-width: 460px) {
+        justify-content: center !important;
+      }
+    }
+    @media screen and (max-width: 460px) {
+      flex-direction: column;
+      width: auto !important;
+    }
   }
   .sabkapapad7 {
     display: flex;
@@ -116,6 +176,12 @@
     justify-content: center;
     align-items: center;
   }
+  .mapimg {
+    width: 60%;
+    @media screen and (max-width: 750px) {
+      width: 90% !important;
+    }
+  }
 }
 .flexwali {
   justify-content: center;
@@ -124,6 +190,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 20px;
 }
 .one-1 {
   font-family: "Bonheur Royale";
@@ -132,12 +199,17 @@
   margin-bottom: 0;
   text-align: center;
   font-size: 100px;
-
-  /* identical to box height */
-
   letter-spacing: 0.05em;
-
   color: #d96581;
+  @media screen and (max-width: 580px) {
+    font-size: 70px !important;
+  }
+  @media screen and (max-width: 420px) {
+    font-size: 60px !important;
+  }
+  @media screen and (max-width: 350px) {
+    font-size: 50px !important;
+  }
 }
 .one-2 {
   font-family: "Nunito";
@@ -162,6 +234,13 @@
     font-size: 15px;
     font-family: "Nunito";
   }
+  @media screen and (max-width: 500px) {
+    .twop1,
+    .twop2,
+    .twop3 {
+      align-self: baseline;
+    }
+  }
 }
 
 .parent {
@@ -180,6 +259,12 @@
     box-shadow: 0px 5px 20px rgba(155, 171, 191, 0.3);
     border-radius: 20px;
     width: 450px;
+    @media screen and (max-width: 460px) {
+      width: 350px;
+    }
+    @media screen and (max-width: 360px) {
+      width: 300px;
+    }
   }
   .child2 {
     width: 450px;
@@ -189,6 +274,12 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    @media screen and (max-width: 460px) {
+      width: 350px;
+    }
+    @media screen and (max-width: 360px) {
+      width: 300px;
+    }
   }
   @media screen and (max-width: 1000px) {
     display: flex;
@@ -196,7 +287,7 @@
     justify-content: center;
     align-items: center;
     .child1 {
-      margin-top: 200px;
+      margin-top: 250px;
     }
     .child2 {
       margin-top: 50px;
@@ -209,11 +300,17 @@
   background-color: #d96581;
   color: #ffffff;
   font-size: 12px;
-  width: 150px;
   border-radius: 10px;
-  cursor: pointer;
+  align-self: center;
+  width: 200px;
+  height: 50px;
+  font-family: "Nunito";
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer !important;
   .sabkapapapic1 {
     color: #ffffff;
+    font-size: 25px;
   }
 }
 .btn:hover {

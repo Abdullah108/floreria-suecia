@@ -1,6 +1,14 @@
 //Desktop
 @import "./../utillities_config";
-
+.mainHeader {
+  .Secondnav {
+    gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 90%;
+  }
+}
 .Header {
   font-family: Poppins;
   display: flex;
@@ -18,18 +26,36 @@
     flex-direction: row;
     width: 645px;
     height: 40px;
+    @media (max-width: 1350px) {
+      width: 500px !important;
+      .css-10ce8mg {
+        width: 500px !important;
+      }
+    }
+    @media (max-width: 1150px) {
+      width: 400px !important;
+      .css-10ce8mg {
+        width: 400px !important;
+      }
+    }
+    @media (max-width: 1000px) {
+      width: 100% !important;
+      .css-10ce8mg {
+        width: 85% !important;
+      }
+    }
     .css-10ce8mg {
       width: 645px;
       display: flex;
       justify-content: space-between;
       border-radius: 10px;
     }
-    @media (max-width: 1250px) {
-      width: 100%;
+    /*    @media (max-width: 1250px) {
+      width: 100% !important;
       .css-10ce8mg {
-        width: 100%;
+        width: 100% !important;
       }
-    }
+    } */
     @media (min-width: 1200px) {
       margin-left: 80px;
       margin-right: 30px;
@@ -133,7 +159,8 @@
     }
   }
 }
-.css-1160xiw-MuiPaper-root-MuiDrawer-paper {
+.css-1160xiw-MuiPaper-root-MuiDrawer-paper,
+.css-1ab2xsx {
   width: 250px !important;
 }
 .form-check-input:checked {

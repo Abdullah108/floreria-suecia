@@ -60,13 +60,28 @@ const SignUp = () => {
     <div className="LoginDiv">
       <div className="leftpage">
         <div className="leftpagediv1">
-          <img
-            style={{ width: "100px", height: "100px", alignSelf: "center" }}
-            src={logo}
-          />
-          <p className="leftpagep1">Florería Suecia</p>
-          <p className="leftpagep2">Ingresa a tu cuenta</p>
-          <p className="leftpagep3">Ingresa tus datos</p>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              minWidth: "300px",
+            }}
+          >
+            <img
+              style={{ width: "100px", height: "100px", alignSelf: "center" }}
+              src={logo}
+            />
+            <p className="leftpagep1">Florería Suecia</p>
+          </div>
+          <div
+            style={{
+              marginTop: "30px",
+              minWidth: "300px",
+            }}
+          >
+            <p className="leftpagep2">Ingresa a tu cuenta</p>
+            <p className="leftpagep3">Ingresa tus datos</p>
+          </div>
           <form>
             <br />
 
@@ -135,18 +150,30 @@ const SignUp = () => {
               <MenuItem value={2}>Admin</MenuItem>
             </Select>
           </form>
-          <a className="leftpagea1">Olvidé mi contraseña</a>
-          <div onClick={handleLoginSubmit}>
+          <a
+            style={{
+              marginBottom: "25px",
+              marginTop: "20px",
+            }}
+            className="leftpagea1"
+          >
+            Olvidé mi contraseña
+          </a>
+          <div
+            className="logdivl"
+            style={{ display: "flex", width: "400px" }}
+            onClick={handleLoginSubmit}
+          >
             {/* <Link to="home">v  */}
-            <Button className="leftpageb2">Ingresar</Button>
+            <Button className="leftpageb2 logbtn">Ingresar</Button>
             {/* </Link> */}
           </div>
-          <Button className="leftpageb1" style={{marginTop:'20px'}}>
+          <Button className="leftpageb1">
             <GoogleIcon className="googleicon" sx={{ color: pink[300] }} />
             <p>Ingresar con Google</p>
           </Button>
 
-          <div style={{ display: "flex", alignSelf: "center" }}>
+          <div className="leftpagegp">
             <p className="leftpagep4">¿Aún no tienes cuenta?</p>
             <p className="leftpagep5">Regístrate gratis</p>
           </div>
